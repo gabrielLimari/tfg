@@ -6,14 +6,31 @@
 </head>
 <body>
 
+
     <section class="filters">
         <span>Filtrar por:</span>
-        <button class="filter-btn">Fechas</button>
+        <button class="filter-btn" (click)="toggleDatePicker()">Fechas</button>
         <button class="filter-btn">Lugares</button>
         <button class="filter-btn active">Reggaeton</button>
         <button class="filter-btn">Ambientes</button>
         <button class="filter-btn">Instalaciones</button>
     </section>
+    
+    <section class="date-picker" *ngIf="showDatePicker">
+        <input type="date" [min]="minDate" (change)="onDateSelect($event)" />
+    </section>
+    
+
+    <section class="eventos-container">
+        <div *ngFor="let evento of proximosEventos" class="imagenEvento">
+          <h2>{{ evento.documentName }}</h2>
+          
+          <a [routerLink]="['/evento', evento.documentName]">
+            <img [src]="evento.eventImageUrl || 'img_default.jpg'" alt="{{ evento.documentName }}">
+          </a>
+        </div>
+      </section>
+      
 
     <section class="map">
         <!-- Aquí podrías insertar un mapa interactivo -->

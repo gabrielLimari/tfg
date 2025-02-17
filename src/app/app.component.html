@@ -1,5 +1,5 @@
 <body>
-    <app-nav *ngIf="esAutenticado() && !isLoginPage()">
+    <app-nav *ngIf=" !isLoginPage()">
         Cerrar Sesión
     </app-nav>
     <router-outlet></router-outlet>

@@ -102,3 +102,52 @@ th {
 img {
     border-radius: 5px;
 }
+.date-picker {
+    margin-top: 10px;
+  }
+  
+  input[type="date"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+
+  .eventos-container {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin: 100px;
+    flex-wrap: wrap; /* Asegura que los elementos se ajusten al espacio disponible */
+}
+
+.imagenEvento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px; /* Ajusta el margen para dejar espacio entre las imágenes */
+    cursor: pointer; /* Añadimos el cursor pointer para simular un clic */
+    transition: all 0.3s ease-in-out;
+}
+
+.imagenEvento img {
+    border-radius: 8px;
+    width: 300px; /* Ajusta el ancho de las imágenes */
+    height: 500px; /* Ajusta la altura automáticamente */
+    box-shadow: 0px 0px 30px #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.imagenEvento:hover img {
+    transform: scale(1.1); /* Hace que la imagen se agrande al pasar el mouse */
+    box-shadow: 0px 0px 50px #000; /* Efecto de sombra */
+}
+
+.imagenEvento h2 {
+    color: rgb(20, 20, 20);
+    font-family: nunito;
+    margin-top: 10px;
+}
+
+.imagenEvento img:hover {
+    transform: scale(1.1); /* Agrandar la imagen */
+    box-shadow: 0px 0px 50px #000; /* Agrandar la sombra */
+}

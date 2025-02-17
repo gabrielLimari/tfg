@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
+import { TarjetaEventoComponent } from './pages/tarjeta-evento/tarjeta-evento.component';
 
 export const routes: Routes = [
     {
@@ -12,5 +13,10 @@ export const routes: Routes = [
         path: 'home',
         component: HomeComponent,
         title: 'Inicio'
+    },
+    {
+        path: 'evento/:documentName',
+        component: TarjetaEventoComponent,
+        title: 'Tarjeta Evento'
     }
 ];
