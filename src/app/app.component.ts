@@ -15,7 +15,6 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements OnInit {
   title = 'proyecto';
-  user = { id: '', nombre: '' };
 
   locals: Local[] = [];
 

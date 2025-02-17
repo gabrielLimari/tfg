@@ -1,13 +1,30 @@
 
 <header>
-    <div class="logo">Mundu berria</div>
+    <div class="logo">
+        <img [src]="'logo.png'" alt="Logo" class="logo" />
+    </div>
     <input type="text" class="search" placeholder="Busca una ciudad, club, evento...">
     <nav>
-        <a routerLink="/publicarEvento" routerLinkActive="active">Publicar un evento</a>
-
-       <a routerLink="/login" routerLinkActive="active">Guias</a>
-
+        <button routerLink="/publicarEvento" routerLinkActive="active">Publicar un evento</button>
+       
+        <div class="language-switcher">
+            <button class="dropdown-btn">Cambiar idioma
+            </button>
+            <div class="dropdown-content">
+                <div class="language-option" (click)="translateText('es')" >
+                    <img [src]="'espanol.png'" alt="Español" class="flag" /> Español
+                </div>
+                <div class="language-option" (click)="translateText('eu')">
+                    <img [src]="'euskera.png'" alt="Euskera" class="flag" /> Euskera
+                </div>
+                <div class="language-option" (click)="translateText('en')">
+                    <img [src]="'ingles.png'" alt="Inglés" class="flag" /> Inglés
+                </div>
+            </div>
+        </div>
+        
         <a routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+        
 
     </nav>
 </header>

@@ -9,5 +9,9 @@ import { RouterLink, RouterModule } from '@angular/router';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
+  
+translateText(arg0: string) {
+throw new Error('Method not implemented.');
+}
 
 }
