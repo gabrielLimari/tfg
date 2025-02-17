@@ -61,6 +61,10 @@
             "production": {
               "buildTarget": "proyecto:build:production"
             },
+            "options": {
+              "proxyConfig": "proxy.conf.json"
+            }
+            ,
             "development": {
               "buildTarget": "proyecto:build:development"
             }

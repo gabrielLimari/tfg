@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://www.esmadrid.com",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+  
