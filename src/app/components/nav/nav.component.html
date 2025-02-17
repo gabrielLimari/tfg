@@ -1,0 +1,44 @@
+
+<header>
+    <div class="logo">
+        <img [src]="'logo.png'" alt="Logo" class="logo" />
+    </div>
+    <input type="text" class="search" placeholder="Busca una ciudad, club, evento...">
+    <nav>
+        <button routerLink="/publicarEvento" routerLinkActive="active">Publicar un evento</button>
+       
+        <div class="language-switcher">
+            <button class="dropdown-btn">Cambiar idioma
+            </button>
+            <div class="dropdown-content">
+                <div class="language-option" (click)="translateText('es')" >
+                    <img [src]="'espanol.png'" alt="Español" class="flag" /> Español
+                </div>
+                <div class="language-option" (click)="translateText('eu')">
+                    <img [src]="'euskera.png'" alt="Euskera" class="flag" /> Euskera
+                </div>
+                <div class="language-option" (click)="translateText('en')">
+                    <img [src]="'ingles.png'" alt="Inglés" class="flag" /> Inglés
+                </div>
+            </div>
+        </div>
+        
+        <a routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+        
+
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Discotecas populares en España</h1>
+    <p>Los clubs más famosos en España</p>
+    <nav class="menu">
+        <a href="#">Eventos</a>
+        <a href="#">Bares</a>
+        <a href="#">Restaurantes</a>
+        <a href="#" class="active">Clubs</a>
+        <a href="#">Artistas</a>
+        <a href="#">Guía</a>
+    </nav>
+</section>
+

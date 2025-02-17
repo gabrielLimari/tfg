@@ -1,0 +1,61 @@
+<p>tarjeta-evento works!</p>
+<div class="container mt-4">
+    <div class="text-center mb-4">
+      <h2>{{ evento?.documentName }}</h2>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-5">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4>Datos del Evento</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th>Descripción</th>
+                  <td>{{ evento?.documentDescription }}</td>
+                </tr>
+                <tr>
+                  <th>Tipo de Evento</th>
+                  <td>{{ evento?.eventType }}</td>
+                </tr>
+                <tr>
+                  <th>Fecha de Inicio</th>
+                  <td>{{ evento?.eventStartDate | date: 'short' }}</td>
+                </tr>
+                <tr>
+                  <th>Fecha de Fin</th>
+                  <td>{{ evento?.eventEndDate | date: 'short' }}</td>
+                </tr>
+                <tr>
+                  <th>Ubicación</th>
+                  <td>{{ evento?.eventLocation }}</td>
+                </tr>
+                <tr>
+                  <th>Lugar</th>
+                  <td>{{ evento?.eventWhere }}</td>
+                </tr>
+                <tr>
+                  <th>Precio</th>
+                  <td>{{ evento?.eventPrice }}</td>
+                </tr>
+                <tr>
+                  <th>Duración</th>
+                  <td>{{ evento?.eventDuration }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  
+      
+  
+      <!-- Columna del mapa -->
+      <div class="col-md-7">
+        <div id="mapa" style="width: 100%; height: 88.5vh; border-style: solid;"></div>
+      </div>
+    </div>
+  </div>
+  
