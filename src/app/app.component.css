@@ -137,3 +137,8 @@ th {
 img {
     border-radius: 5px;
 }
+
+.btnPaginacion{
+    max-height: 50px;
+    margin-top: 250px;
+}

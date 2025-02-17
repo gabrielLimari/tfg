@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { parseString } from 'xml2js'; // Correctly import parseString from xml2js
-import { Local } from './interface';
+import { Local } from './interface/local';
 
 @Injectable({
   providedIn: 'root',
@@ -71,4 +71,12 @@ export class ServiceDataService {
         })
       );
     }
+
+    getLocalById(id: string): Observable<Local | undefined> {
+      return this.getServiceData().pipe(
+        map((locals: Local[]) => locals.find(local => local.id === id))
+      );
+    }
+    
+
   }

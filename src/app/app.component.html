@@ -7,7 +7,7 @@
 <body>
 
     <header>
-        <div class="logo">Mundu berria</div>
+        <div class="logo">FESTIVITY</div>
         <input type="text" class="search" placeholder="Busca una ciudad, club, evento...">
         <nav>
             <a href="#">Publicar un evento</a>
@@ -38,38 +38,21 @@
         <button class="filter-btn">Instalaciones</button>
     </section>
 
-    <section class="map">
-        <!-- Aquí podrías insertar un mapa interactivo -->
-        <p>Mapa aquí...</p>
-    </section>
 
-    <section class="local-list">
-        <h2>Lista de Discotecas</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Dirección</th>
-                    <th>Teléfono</th>
-                    <th>Horario</th>
-                    <th>Web</th>
-                    <th>Imagen</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let local of locals">
-                    <td>{{ local.basicData.name }}</td>
-                    <td>{{ local.geoData.address }}</td>
-                    <td>{{ local.basicData.phone }}</td>
-                    <td [innerHTML]="local.extraData.schedule"></td>
-                    <td><a [href]="local.basicData.web" target="_blank">Visitar</a></td>
-                    <td>
-                        <img *ngIf="local.multimedia.images.length" [src]="local.multimedia.images[0]" alt="Imagen" width="100">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <h2 style="text-align: center; padding-top: 15px;" >Lista de Discotecas</h2>
     
-
+  <div id="contenedor_card">
+    
+    <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
+        &lt; <!-- Flecha izquierda -->
+    </button> 
+    
+    <div *ngFor="let local of locals  | paginate: { itemsPerPage: 3, currentPage: page }">
+        <app-locales-tarjeta [local]=local></app-locales-tarjeta>
+    </div>
+       
+    <button class="btnPaginacion" mat-fab (click)="goToNextPage()">
+        &gt; <!-- Flecha derecha -->
+    </button>
+  </div>    
 </body>

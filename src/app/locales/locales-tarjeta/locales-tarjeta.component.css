@@ -1,0 +1,22 @@
+mat-card{
+    margin-top: 20px;
+}
+
+#imagenes{
+    max-height: 500px;
+    max-width: 500px;
+}
+#card{
+    min-height: 450px;
+    max-width: 400px; 
+}
+
+.local-card {
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.local-card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al 105% */
+}
+
+
