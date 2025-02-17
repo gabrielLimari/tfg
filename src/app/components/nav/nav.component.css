@@ -33,6 +33,7 @@ header {
     width: 250px;
     font-size: 14px;
     transition: all 0.3s ease;
+    flex-grow: 0.5;
 }
 
 .search:focus {
@@ -170,6 +171,7 @@ nav a:hover, nav button:hover {
     .search {
         width: 80%;
         margin: 10px 0;
+        flex-grow: 1;
     }
 
     nav {
