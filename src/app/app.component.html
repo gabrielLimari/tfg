@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<body>
+    <app-nav *ngIf="esAutenticado() && !isLoginPage()">
+        Cerrar Sesión
+    </app-nav>
+    <router-outlet></router-outlet>
+</body>
