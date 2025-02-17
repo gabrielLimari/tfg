@@ -27,10 +27,16 @@ export class AppComponent implements OnInit {
     });
   }
 
+  usuarios: any[] = []; 
 
-  usuarios: any[] = []; // Arreglo para almacenar usuarios
-   // Objeto de usuario con id y nombre
+  /* Para detectar si estoy en la página de login */
+  isLoginPage(): boolean {
+    return this.router.url === '/login';
+  }
 
-
+  // Método para verificar si el usuario está autenticado
+  esAutenticado(): boolean {
+    return this.authService.esAutenticado();
+  }
   
 }
