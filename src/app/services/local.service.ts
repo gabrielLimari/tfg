@@ -3,17 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { parseString } from 'xml2js'; // Correctly import parseString from xml2js
-import { Local } from './interfaces/Local';
+import { Local } from '../interfaces/local';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ServiceDataService {
+export class LocalService {
   private xmlUrl = '/api/opendata/noche_v1_es.xml';
 
   constructor(private http: HttpClient) {}
 
-    getServiceData(): Observable<Local[]> {
+    getLocales(): Observable<Local[]> {
       return this.http.get(this.xmlUrl, { responseType: 'text' }).pipe(
         map((xml) => {
           let result: any;
@@ -73,7 +73,7 @@ export class ServiceDataService {
     }
 
     getLocalById(id: string): Observable<Local | undefined> {
-      return this.getServiceData().pipe(
+      return this.getLocales().pipe(
         map((locals: Local[]) => locals.find(local => local.id === id))
       );
     }

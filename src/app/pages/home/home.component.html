@@ -33,7 +33,6 @@
       
 
     <section class="map">
-        <!-- Aquí podrías insertar un mapa interactivo -->
         <p>Mapa aquí...</p>
     </section>
 
@@ -46,7 +45,9 @@
       </button> 
       
       <div *ngFor="let local of locals  | paginate: { itemsPerPage: 3, currentPage: page }">
+        <a [routerLink]="['/local', local.id]">
           <app-locales-tarjeta [local]=local></app-locales-tarjeta>
+        </a>
       </div>
          
       <button class="btnPaginacion" mat-fab (click)="goToNextPage()">

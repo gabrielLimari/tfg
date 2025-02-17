@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Evento } from '../../interfaces/evento';
-import { Local } from '../../interfaces/Local';
-import { ServiceDataService } from '../../service.service';
+import { Local } from '../../interfaces/local';
 import { EventoService } from '../../services/evento.service';
-import { LocalesTarjetaComponent } from "../../locales/locales-tarjeta/locales-tarjeta.component";
+import { LocalesTarjetaComponent } from "../locales/locales-tarjeta/locales-tarjeta.component";
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LocalService } from '../../services/local.service';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   page: number = 1; // Página inicial
   itemsPerPage: number = 3; // Cantidad de elementos por página
   constructor(
-    private serviceDataService: ServiceDataService,
+    private localService: LocalService,
     private eventoService: EventoService ) {}
 
   ngOnInit() {
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     });
 
     // Obtener otros datos como locales
-    this.serviceDataService.getServiceData().subscribe((data) => {
+    this.localService.getLocales().subscribe((data) => {
       this.locals = data;
     });
   }

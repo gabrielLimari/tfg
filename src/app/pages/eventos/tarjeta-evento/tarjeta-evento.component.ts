@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import * as mapboxgl from 'mapbox-gl';
-import { EventoService } from '../../services/evento.service';
-import { Evento } from '../../interfaces/evento';
+import { EventoService } from '../../../services/evento.service';
+import { Evento } from '../../../interfaces/evento';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -31,10 +31,10 @@ export class TarjetaEventoComponent implements OnInit {
   ngOnInit(): void {
     // Obtenemos el 'documentName' de la URL
     this.documentName = this.activatedRoute.snapshot.params['documentName'];
-    this.obtenerEventoPorNombre(this.documentName);
+    this.getEventoByNombre(this.documentName);
   }
 
-  obtenerEventoPorNombre(documentName: string): void {
+  getEventoByNombre(documentName: string): void {
     // Llamamos al servicio para obtener el evento usando el documentName
     this.eventoService.getEventoByDocumentName(documentName).subscribe({
       next: (evento) => {

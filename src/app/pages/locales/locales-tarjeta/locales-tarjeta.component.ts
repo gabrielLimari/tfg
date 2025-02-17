@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Local } from '../../interface/local';
+import { Local } from '../../../interfaces/local';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatButton } from '@angular/material/button';
