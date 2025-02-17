@@ -1,0 +1,75 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discotecas Populares</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Mundu berria</div>
+        <input type="text" class="search" placeholder="Busca una ciudad, club, evento...">
+        <nav>
+            <a href="#">Publicar un evento</a>
+            <a href="#">Guías </a>
+            <a href="#">Iniciar sesión</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Discotecas populares en España</h1>
+        <p>Los clubs más famosos en España</p>
+        <nav class="menu">
+            <a href="#">Eventos</a>
+            <a href="#">Bares</a>
+            <a href="#">Restaurantes</a>
+            <a href="#" class="active">Clubs</a>
+            <a href="#">Artistas</a>
+            <a href="#">Guía</a>
+        </nav>
+    </section>
+
+    <section class="filters">
+        <span>Filtrar por:</span>
+        <button class="filter-btn">Fechas</button>
+        <button class="filter-btn">Lugares</button>
+        <button class="filter-btn active">Reggaeton</button>
+        <button class="filter-btn">Ambientes</button>
+        <button class="filter-btn">Instalaciones</button>
+    </section>
+
+    <section class="map">
+        <!-- Aquí podrías insertar un mapa interactivo -->
+        <p>Mapa aquí...</p>
+    </section>
+
+    <section class="local-list">
+        <h2>Lista de Discotecas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Horario</th>
+                    <th>Web</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let local of locals">
+                    <td>{{ local.basicData.name }}</td>
+                    <td>{{ local.geoData.address }}</td>
+                    <td>{{ local.basicData.phone }}</td>
+                    <td [innerHTML]="local.extraData.schedule"></td>
+                    <td><a [href]="local.basicData.web" target="_blank">Visitar</a></td>
+                    <td>
+                        <img *ngIf="local.multimedia.images.length" [src]="local.multimedia.images[0]" alt="Imagen" width="100">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+
+</body>

@@ -1,0 +1,16 @@
+{
+    "login": "LogIn",
+    "logout": "LogOut",
+    "inicioSesion": "Login",
+    "registro": "Sign Up",
+    "ingresaUsuario": "Enter your username",
+    "ingresaContrasena": "Enter your password",
+    "datosprofesor": "Teacher's data",
+    "datosalumno": "Student's data",
+    "id": "ID",
+    "nombre": "Name",
+    "apellidos": "Last Name",
+    "usuario": "Username",
+    "contrasena": "Password",
+    "email": "Email"
+}

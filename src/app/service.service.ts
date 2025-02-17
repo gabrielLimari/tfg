@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { parseString } from 'xml2js'; // Correctly import parseString from xml2js
-import { Local } from './interface';
+import { Local } from './interfaces/Local';
 
 @Injectable({
   providedIn: 'root',

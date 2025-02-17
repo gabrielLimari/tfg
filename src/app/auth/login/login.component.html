@@ -1,1 +1,19 @@
-<p>login works!</p>
+<body>
+    <div class="page-container">
+        <h1>{{ "inicioSesion" | translate }}</h1>
+        <div class="login-container">
+            <img [src]="'login.png'" alt="Login Illustration">
+            <form>
+                <div class="form-group">
+                    <label for="username">{{ "usuario"| translate }}</label>
+                    <input type="text" id="username" name="username" placeholder="{{ 'ingresaUsuario' | translate }}" required [(ngModel)]="username">
+                </div>
+                <div class="form-group">
+                    <label for="password"> {{ "contrasena" | translate }}</label>
+                    <input type="password" id="password" name="password" placeholder="{{ 'ingresaContrasena' | translate}}" required [(ngModel)]="password">
+                </div>
+                <button class="login-button" (click)="comprobarLogin()">Login</button>
+            </form>
+        </div>
+    </div>
+</body>

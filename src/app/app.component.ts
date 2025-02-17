@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ServiceDataService } from './service.service';
-import { Local } from './interface';
+import { Local } from './interfaces/Local';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,0 +1,16 @@
+{
+    "login": "Saioa Hasi",
+    "logout": "Saioa Itxi",
+    "inicioSesion": "Saio Hasiera",
+    "registro": "Erregistroa",
+    "ingresaUsuario": "Sartu zure erabiltzailea",
+    "ingresaContrasena": "Sartu zure pasahitza",
+    "datosprofesor": "Irakaslearen datuak",
+    "datosalumno": "Ikaslearen datuak",
+    "id": "ID",
+    "nombre": "Izena",
+    "apellidos": "Abizenak",
+    "usuario": "Erabiltzailea",
+    "contrasena": "Pasahitza",
+    "email": "Posta elektronikoa"
+}

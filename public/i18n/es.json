@@ -1,0 +1,16 @@
+{
+    "login": "LogIn",
+    "logout": "LogOut",
+    "inicioSesion": "Inicio de Sesión",
+    "registro": "Registro",
+    "ingresaUsuario": "Ingresa tu usuario",
+    "ingresaContrasena": "Ingresa tu contraseña",
+    "datosprofesor": "Datos del profesor",
+    "datosalumno": "Datos del alumno",
+    "id": "ID",
+    "nombre": "Nombre",
+    "apellidos": "Apellidos",
+    "usuario": "Usuario",
+    "contrasena": "Contraseña",
+    "email": "Email"
+}
