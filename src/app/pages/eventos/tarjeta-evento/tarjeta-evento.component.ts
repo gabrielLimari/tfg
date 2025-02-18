@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import {  MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { Local } from '../../../interfaces/local';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tarjeta-evento',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatCardModule,CommonModule,MatButtonModule],
+  imports: [CommonModule, RouterModule, MatCardModule, CommonModule, MatButtonModule, TranslateModule],
   templateUrl: './tarjeta-evento.component.html',
   styleUrls: ['./tarjeta-evento.component.css']
 })

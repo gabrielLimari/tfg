@@ -7,41 +7,41 @@
       <div class="col-md-5">
         <div class="card">
           <div class="card-header bg-primary text-white">
-            <h4>Datos del Evento</h4>
+            <h4>{{ "datosEvento" | translate }}</h4>
           </div>
           <div class="card-body">
             <table class="table table-bordered">
               <tbody>
                 <tr>
-                  <th>Descripción</th>
+                  <th>{{ "descripcion" | translate }}</th>
                   <td>{{ evento?.documentDescription }}</td>
                 </tr>
                 <tr>
-                  <th>Tipo de Evento</th>
+                  <th>{{ "tipEvento" | translate }}</th>
                   <td>{{ evento?.eventType }}</td>
                 </tr>
                 <tr>
-                  <th>Fecha de Inicio</th>
+                  <th>{{ "fechaInicio" | translate }}</th>
                   <td>{{ evento?.eventStartDate | date: 'short' }}</td>
                 </tr>
                 <tr>
-                  <th>Fecha de Fin</th>
+                  <th>{{ "fechaFin" | translate }}</th>
                   <td>{{ evento?.eventEndDate | date: 'short' }}</td>
                 </tr>
                 <tr>
-                  <th>Ubicación</th>
+                  <th>{{ "ubicacion" | translate }}</th>
                   <td>{{ evento?.eventLocation }}</td>
                 </tr>
                 <tr>
-                  <th>Lugar</th>
+                  <th>{{ "lugar" | translate }}</th>
                   <td>{{ evento?.latwgs84 }}</td>
                 </tr>
                 <tr>
-                  <th>Precio</th>
+                  <th>{{ "precio" | translate }}</th>
                   <td>{{ evento?.lonwgs84 }}</td>
                 </tr>
                 <tr>
-                  <th>Duración</th>
+                  <th>{{ "duracion" | translate }}</th>
                   <td>{{ evento?.eventDuration }}</td>
                 </tr>
               </tbody>

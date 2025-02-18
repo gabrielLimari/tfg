@@ -5,11 +5,12 @@ import { LocalService } from '../../../services/local.service';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-detalle-local',
   standalone: true,
-  imports: [MatCardModule, CommonModule, MatButtonModule],
+  imports: [MatCardModule, CommonModule, MatButtonModule, TranslateModule],
   templateUrl: './detalle-local.component.html',
   styleUrl: './detalle-local.component.css'
 })

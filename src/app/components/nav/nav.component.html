@@ -1,10 +1,14 @@
-
 <header>
     <div class="logo">
-        <img [src]="'logo.png'" alt="Logo" class="logo" />
+        <img [src]="'logo.png'" alt="Logo" class="logo" routerLink="/home" />
     </div>
-    <input type="text" class="search" placeholder='{{ "buscaCiudad" | translate }}'>
-    <nav>
+    <input 
+    type="text" 
+    class="search" 
+    placeholder='{{ "buscaCiudad" | translate }}'
+    [(ngModel)]="searchQuery" 
+    (ngModelChange)="onSearch()"
+  >    <nav>
         <button routerLink="/publicarEvento" routerLinkActive="active">{{ "publicarEvento" | translate }}</button>
        
         <div class="language-switcher">
@@ -23,23 +27,19 @@
                 </div>
             </div>
         </div>
-        
-        
-        
-        <a routerLink="/login" routerLinkActive="active">{{"inicioSesion" | translate}}</a>
-        
+
+
+
+        <button routerLink="/login" routerLinkActive="active">{{ "inicioSesion" | translate}}</button>
+
 
     </nav>
 </header>
 
-<section class="hero">
-    <h1>{{ "discotecas" | translate }}</h1>
-    <p>{{"clubsFamosos" | translate }}</p>
+<section class="nav">
     <nav class="menu">
-        <a href="#">{{"eventos" | translate }}</a>
-        <a href="#">{{"bares" | translate }}</a>
-        <a href="#" class="active">{{"clubs" | translate }}</a>
-        <a href="#">{{"artistas" | translate }}</a>
+        <button routerLink="/coctelerias" routerLinkActive="active">{{ "coctelerias" | translate }}</button>
+        <button routerLink="/bares" routerLinkActive="active">{{ "bares" | translate }}</button>
+        <button routerLink="/discotecas" routerLinkActive="active">{{ "discos" | translate }}</button>
     </nav>
 </section>
-
