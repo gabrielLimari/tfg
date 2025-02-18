@@ -4,11 +4,12 @@ import mapboxgl from 'mapbox-gl';
 import { Evento } from '../../../interfaces/evento';
 import { EventoService } from '../../../services/evento.service';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-detalles-evento',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './detalles-evento.component.html',
   styleUrl: './detalles-evento.component.css'
 })

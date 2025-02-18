@@ -1,6 +1,6 @@
 
 <mat-card id="card" class="local-card" appearance="outlined" (click)="verDetalles(local.id)">
-            <img id="imagenes" *ngIf="local.multimedia.images.length"  mat-card-image [src]="local.multimedia.images[0]" alt="Imagen" >
+            <img id="imagenes" *ngIf="local.multimedia.images.length"  mat-card-image [src]="local.multimedia.images[0]" alt='{{ "imagen" | translate }}' >
 
         <mat-card-content>
             <br>
@@ -9,15 +9,15 @@
                 {{ local.basicData.phone }}
             </h4>
             <ng-template #noPhone>
-                <h4>No hay un teléfono disponible</h4>
+                <h4>{{ "noTelefono" | translate }}</h4>
             </ng-template>
             <hr>
             <!--<p [innerHTML]="local.extraData.schedule"></p>-->
             <p *ngIf="local.basicData.web?.length; else noWEB">
-                <a [href]="local.basicData.web" target="_blank">Visitar</a>
+                <a [href]="local.basicData.web" target="_blank">{{ "visitar" | translate }}</a>
             </p>
             <ng-template #noWEB>
-                <p>No Disponemos De Una WEB</p>
+                <p>{{ "noWeb" | translate }}</p>
             </ng-template>
         </mat-card-content>
         

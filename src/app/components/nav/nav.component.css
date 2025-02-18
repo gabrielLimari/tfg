@@ -9,6 +9,7 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f6f9;
     color: #333;
+    line-height: 1.6;
 }
 
 /* 🔹 HEADER */
@@ -19,55 +20,105 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
 }
 
 .logo img {
     width: 120px;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 .search {
-    padding: 10px 15px;
-    border-radius: 25px;
+    padding: 12px 15px;
+    border-radius: 30px;
     border: 1px solid #ddd;
-    width: 250px;
+    width: 280px;
     font-size: 14px;
+    background-color: #fff;
     transition: all 0.3s ease;
-    flex-grow: 0.5;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
+
 
 .search:focus {
     border-color: #3498db;
+    border-width: 2px;
     outline: none;
+    box-shadow: 5 5 10px rgba(118, 188, 235, 0.5);
+}
+
+.search:hover {
+    border-color: #2980b9;
 }
 
 nav {
     display: flex;
     align-items: center;
     gap: 20px;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 nav a, nav button {
     color: white;
     font-weight: bold;
-    background: none;
-    border: none;
-    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
     transition: all 0.3s ease;
 }
 
-nav a:hover, nav button:hover {
-    color: #3498db;
-    text-decoration: underline;
+nav button {
+    background-color: #2980b9;
+    border: none;
+    cursor: pointer;
 }
 
+nav button:hover, nav a:hover {
+    background-color: #1c5377;
+    transform: translateY(-2px);
+}
+
+.nav .menu button.active {
+    background-color: #1c5377;  
+    color: white;              
+    transform: translateY(-2px); 
+}
+
+
+/* 🔹 IDIOMAS */
 .language-switcher {
     position: relative;
-    display: inline-block; /* Asegura que el contenedor esté alineado con el botón */
 }
 
-.language-switcher:hover .dropdown-content {
-    display: block;
+.dropdown-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+.dropdown-btn:hover {
+    background-color: #1c5377;
 }
 
 .dropdown-content {
@@ -76,8 +127,8 @@ nav a:hover, nav button:hover {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    z-index: 1;
-    top: 35px;
+    z-index: 10;
+    top: 100%;
     left: 0;
     min-width: 160px;
     padding: 5px 0;
@@ -99,64 +150,39 @@ nav a:hover, nav button:hover {
     background-color: #ecf0f1;
 }
 
-.language-switcher:hover .dropdown-content .language-option {
-    /* Asegura que las opciones de idioma estén bien alineadas */
-    padding: 10px;
-}
-
-
-
 .language-option img {
     margin-right: 10px;
     width: 20px;
     height: 15px;
 }
 
-/* 🔹 SECCIÓN HERO */
-.hero {
+/* 🔹 MENÚ PRINCIPAL */
+.nav {
     background-color: #34495e;
     color: white;
-    padding: 60px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    font-weight: 300;
-}
-
-.hero .menu {
+.nav .menu {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.hero .menu a {
+.nav .menu a {
     text-decoration: none;
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-radius: 25px;
     transition: all 0.3s ease;
 }
 
-.hero .menu a:hover {
+.nav .menu a:hover, .nav .menu .active {
     background-color: #3498db;
     color: white;
-}
-
-.hero .menu .active {
-    background-color: #3498db;
-    color: white;
-    border-radius: 25px;
 }
 
 /* 🔹 RESPONSIVO */
@@ -167,7 +193,7 @@ nav a:hover, nav button:hover {
     }
 
     .search {
-        width: 80%;
+        width: 100%;
         margin: 10px 0;
         flex-grow: 1;
     }
@@ -177,19 +203,31 @@ nav a:hover, nav button:hover {
         gap: 15px;
     }
 
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .hero .menu {
+    .nav .menu {
         flex-direction: column;
     }
 
-    .hero .menu a {
+    .nav .menu a {
         padding: 12px 0;
     }
 }
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .search {
+        width: 90%;
+    }
+
+    nav button, .dropdown-btn {
+        width: 100%;
+    }
+}
+
+

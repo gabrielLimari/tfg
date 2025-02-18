@@ -16,7 +16,8 @@ import { SearchService } from '../../services/search.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, LocalesTarjetaComponent, NgxPaginationModule, MatIconModule, TarjetaEventoComponent, MatIconModule, TranslateModule, NavComponent],
+  imports: [CommonModule, RouterModule, LocalesTarjetaComponent, NgxPaginationModule, 
+    MatIconModule, TarjetaEventoComponent, TranslateModule, NavComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ "discoPopus" | translate }}</title>
+</head>
+>>>>>>> 1b3d2031e391e4f97314f34c9d9793407488122f
 <body>
   <section class="filters">
     <span>Filtrar por:</span>
@@ -41,6 +50,7 @@
       <mat-icon>navigate_before</mat-icon>
     </button>
 
+<<<<<<< HEAD
     <div *ngFor="let local of filteredLocales | paginate: { itemsPerPage: 3, currentPage: page }">
       <a [routerLink]="['/local', local.id]">
         <app-locales-tarjeta [local]="local"></app-locales-tarjeta>
@@ -51,4 +61,25 @@
       <mat-icon>navigate_next</mat-icon>
     </button>
   </div>
+=======
+    <h2 style="text-align: center; padding-top: 15px;" >{{ "listaDiscos" | translate }}</h2>
+    
+    <div id="contenedor_card">
+      
+      <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
+        <mat-icon>navigate_before</mat-icon>
+      </button> 
+      
+      <div *ngFor="let local of locals  | paginate: { itemsPerPage: 3, currentPage: page }">
+        <a [routerLink]="['/local', local.id]">
+          <app-locales-tarjeta [local]=local></app-locales-tarjeta>
+        </a>
+      </div>
+         
+      <button mat-fab class="btnPaginacion" (click)="goToNextPage()">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+      
+    </div>    
+>>>>>>> 1b3d2031e391e4f97314f34c9d9793407488122f
 </body>
