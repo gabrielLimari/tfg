@@ -9,11 +9,13 @@ import { LocalService } from '../../services/local.service';
 import { Local } from '../../interfaces/local';
 import { MatIconModule } from '@angular/material/icon';
 import { TarjetaEventoComponent } from "../eventos/tarjeta-evento/tarjeta-evento.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, LocalesTarjetaComponent, NgxPaginationModule, MatIconModule, TarjetaEventoComponent],
+  imports: [CommonModule, RouterModule, LocalesTarjetaComponent, NgxPaginationModule, 
+    MatIconModule, TarjetaEventoComponent, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

@@ -5,11 +5,12 @@ import { AuthService } from '../../services/auth.service';
 import { Usuario } from '../../interfaces/usuario';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, MatSnackBarModule, CommonModule, FormsModule],
+  imports: [RouterModule, MatSnackBarModule, CommonModule, FormsModule, TranslateModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

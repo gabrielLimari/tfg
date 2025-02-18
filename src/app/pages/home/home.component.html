@@ -2,18 +2,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discotecas Populares</title>
+    <title>{{ "discoPopus" | translate }}</title>
 </head>
 <body>
 
 
     <section class="filters">
-        <span>Filtrar por:</span>
-        <button class="filter-btn" (click)="toggleDatePicker()">Fechas</button>
-        <button class="filter-btn">Lugares</button>
-        <button class="filter-btn active">Reggaeton</button>
-        <button class="filter-btn">Ambientes</button>
-        <button class="filter-btn">Instalaciones</button>
+        <span>{{ "filtrar" | translate }}</span>
+        <button class="filter-btn" (click)="toggleDatePicker()">{{ "fechas" | translate }}</button>
+        <button class="filter-btn">{{ "lugares" | translate }}</button>
+        <button class="filter-btn active">{{ "reggaeton" | translate }}</button>
+        <button class="filter-btn">{{ "ambientes" | translate }}</button>
+        <button class="filter-btn">{{ "instalaciones" | translate }}</button>
     </section>
     
     <section class="date-picker" *ngIf="showDatePicker">
@@ -23,12 +23,12 @@
 
 <!-- Etiqueta dinámica que muestra la fecha seleccionada -->
 <h2 *ngIf="fechaSeleccionada" style="text-align: center; margin-top: 10px;">
-  Eventos desde el {{ fechaSeleccionada }}
+  {{ "eventosDesde" | translate}} {{ fechaSeleccionada }}
 </h2>
 
 <!-- Etiqueta "Próximos Eventos" siempre visible -->
 <h2 *ngIf="!fechaSeleccionada" style="text-align: center; margin-top: 10px;">
-  Próximos Eventos
+  {{ "proximosEventos" | translate }}
 </h2>
 
     <div id="contenedor_card">
@@ -44,7 +44,7 @@
         <p>Mapa aquí...</p>
     </section>
 
-    <h2 style="text-align: center; padding-top: 15px;" >Lista de Discotecas</h2>
+    <h2 style="text-align: center; padding-top: 15px;" >{{ "listaDiscos" | translate }}</h2>
     
     <div id="contenedor_card">
       

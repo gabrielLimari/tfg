@@ -5,10 +5,11 @@ import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { Local } from '../../../interfaces/local';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-locales-tarjeta',
   standalone: true,
-  imports: [MatCardModule,CommonModule,MatButton],
+  imports: [MatCardModule,CommonModule,MatButton, TranslateModule],
   templateUrl: './locales-tarjeta.component.html',
   styleUrl: './locales-tarjeta.component.css'
 })
