@@ -3,42 +3,43 @@
     <div class="logo">
         <img [src]="'logo.png'" alt="Logo" class="logo" />
     </div>
-    <input type="text" class="search" placeholder="Busca una ciudad, club, evento...">
+    <input type="text" class="search" placeholder='{{ "buscaCiudad" | translate }}'>
     <nav>
-        <button routerLink="/publicarEvento" routerLinkActive="active">Publicar un evento</button>
+        <button routerLink="/publicarEvento" routerLinkActive="active">{{ "publicarEvento" | translate }}</button>
        
         <div class="language-switcher">
-            <button class="dropdown-btn">Cambiar idioma
+            <button class="dropdown-btn" (click)="toggleDropdown()">
+                {{ "cambiarIdioma" | translate }}
             </button>
-            <div class="dropdown-content">
-                <div class="language-option" (click)="translateText('es')" >
-                    <img [src]="'espanol.png'" alt="Español" class="flag" /> Español
+            <div class="dropdown-content" [class.show]="dropdownVisible">
+                <div class="language-option" (click)="translateText('es')">
+                    <img src="espanol.png" alt='{{ "español" | translate}}' class="flag" /> {{ "español" | translate }}
                 </div>
                 <div class="language-option" (click)="translateText('eu')">
-                    <img [src]="'euskera.png'" alt="Euskera" class="flag" /> Euskera
+                    <img src="euskera.png" alt='{{ "euskera" | translate}}' class="flag" /> {{ "euskera" | translate }}
                 </div>
                 <div class="language-option" (click)="translateText('en')">
-                    <img [src]="'ingles.png'" alt="Inglés" class="flag" /> Inglés
+                    <img src="ingles.png" alt='{{ "ingles" | translate}}' class="flag" /> {{ "ingles" | translate }}
                 </div>
             </div>
         </div>
         
-        <a routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+        
+        
+        <a routerLink="/login" routerLinkActive="active">{{"inicioSesion" | translate}}</a>
         
 
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Discotecas populares en España</h1>
-    <p>Los clubs más famosos en España</p>
+    <h1>{{ "discotecas" | translate }}</h1>
+    <p>{{"clubsFamosos" | translate }}</p>
     <nav class="menu">
-        <a href="#">Eventos</a>
-        <a href="#">Bares</a>
-        <a href="#">Restaurantes</a>
-        <a href="#" class="active">Clubs</a>
-        <a href="#">Artistas</a>
-        <a href="#">Guía</a>
+        <a href="#">{{"eventos" | translate }}</a>
+        <a href="#">{{"bares" | translate }}</a>
+        <a href="#" class="active">{{"clubs" | translate }}</a>
+        <a href="#">{{"artistas" | translate }}</a>
     </nav>
 </section>
 

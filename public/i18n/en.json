@@ -1,16 +1,15 @@
 {
-    "login": "LogIn",
-    "logout": "LogOut",
+    "buscaCiudad": "Search for a city, club, event...",
+    "publicar": "Post an event",
+    "cambiarIdioma": "Change language",
+    "español": "Spanish",
+    "euskera": "Basque",
+    "ingles": "English",
     "inicioSesion": "Login",
-    "registro": "Sign Up",
-    "ingresaUsuario": "Enter your username",
-    "ingresaContrasena": "Enter your password",
-    "datosprofesor": "Teacher's data",
-    "datosalumno": "Student's data",
-    "id": "ID",
-    "nombre": "Name",
-    "apellidos": "Last Name",
-    "usuario": "Username",
-    "contrasena": "Password",
-    "email": "Email"
+    "discotecas": "Popular nightclubs in Spain",
+    "clubsFamosos": "The most famous clubs in Spain",
+    "eventos": "Events",
+    "bares": "Bars",
+    "clubs": "Clubs",
+    "artistas": "Artists"
 }

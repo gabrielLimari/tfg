@@ -1,16 +1,16 @@
 {
-    "login": "Saioa Hasi",
-    "logout": "Saioa Itxi",
-    "inicioSesion": "Saio Hasiera",
-    "registro": "Erregistroa",
-    "ingresaUsuario": "Sartu zure erabiltzailea",
-    "ingresaContrasena": "Sartu zure pasahitza",
-    "datosprofesor": "Irakaslearen datuak",
-    "datosalumno": "Ikaslearen datuak",
-    "id": "ID",
-    "nombre": "Izena",
-    "apellidos": "Abizenak",
-    "usuario": "Erabiltzailea",
-    "contrasena": "Pasahitza",
-    "email": "Posta elektronikoa"
+    "buscaCiudad": "Bilatu hiri bat, kluba, ekitaldia...",
+    "publicar": "Argitaratu ekitaldi bat",
+    "cambiarIdioma": "Aldatu hizkuntza",
+    "español": "Española",
+    "euskera": "Euskara",
+    "ingles": "Ingelesa",
+    "inicioSesion": "Saioa hasi",
+    "discotecas": "Espainiako diskotekarik ospetsuenak",
+    "clubsFamosos": "Espainiako klub ospetsuenak",
+    "eventos": "Ekitaldiak",
+    "bares": "Tabernak",
+    "clubs": "Klubak",
+    "artistas": "Artista"
 }
+

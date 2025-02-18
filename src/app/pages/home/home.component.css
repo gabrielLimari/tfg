@@ -12,7 +12,9 @@ body {
 
 /* 🔹 SECCIÓN HERO */
 .hero {
-    background-color: #A9C3D5;
+    background-image: url('/fondo.jpg');
+    background-size: cover;  /* Asegura que la imagen cubra todo el área */
+    background-position: center;  /* Centra la imagen */
     padding: 50px 20px;
     text-align: center;
     color: white;

@@ -63,21 +63,11 @@ nav a:hover, nav button:hover {
 
 .language-switcher {
     position: relative;
+    display: inline-block; /* Asegura que el contenedor esté alineado con el botón */
 }
 
-.dropdown-btn {
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.dropdown-btn:hover {
-    color: #3498db;
+.language-switcher:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown-content {
@@ -90,9 +80,10 @@ nav a:hover, nav button:hover {
     top: 35px;
     left: 0;
     min-width: 160px;
+    padding: 5px 0;
 }
 
-.language-switcher:hover .dropdown-content {
+.dropdown-content.show {
     display: block;
 }
 
@@ -107,6 +98,13 @@ nav a:hover, nav button:hover {
 .language-option:hover {
     background-color: #ecf0f1;
 }
+
+.language-switcher:hover .dropdown-content .language-option {
+    /* Asegura que las opciones de idioma estén bien alineadas */
+    padding: 10px;
+}
+
+
 
 .language-option img {
     margin-right: 10px;
