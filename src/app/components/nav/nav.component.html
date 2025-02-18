@@ -3,8 +3,13 @@
     <div class="logo">
         <img [src]="'logo.png'" alt="Logo" class="logo" />
     </div>
-    <input type="text" class="search" placeholder='{{ "buscaCiudad" | translate }}'>
-    <nav>
+    <input 
+    type="text" 
+    class="search" 
+    placeholder='{{ "buscaCiudad" | translate }}'
+    [(ngModel)]="searchQuery" 
+    (ngModelChange)="onSearch()"
+  >    <nav>
         <button routerLink="/publicarEvento" routerLinkActive="active">{{ "publicarEvento" | translate }}</button>
        
         <div class="language-switcher">

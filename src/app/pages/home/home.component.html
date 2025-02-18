@@ -1,66 +1,54 @@
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discotecas Populares</title>
-</head>
 <body>
+  <section class="filters">
+    <span>Filtrar por:</span>
+    <button class="filter-btn" (click)="toggleDatePicker()">Fechas</button>
+    <button class="filter-btn">Lugares</button>
+    <button class="filter-btn active">Reggaeton</button>
+    <button class="filter-btn">Ambientes</button>
+    <button class="filter-btn">Instalaciones</button>
+  </section>
 
+  <section class="date-picker" *ngIf="showDatePicker">
+    <input type="date" [min]="minDate" (change)="onDateSelect($event)" />
+  </section>
 
-    <section class="filters">
-        <span>Filtrar por:</span>
-        <button class="filter-btn" (click)="toggleDatePicker()">Fechas</button>
-        <button class="filter-btn">Lugares</button>
-        <button class="filter-btn active">Reggaeton</button>
-        <button class="filter-btn">Ambientes</button>
-        <button class="filter-btn">Instalaciones</button>
-    </section>
-    
-    <section class="date-picker" *ngIf="showDatePicker">
-        <input type="date" [min]="minDate" (change)="onDateSelect($event)" />
-    </section>
-    
+  <!-- Etiqueta dinámica que muestra la fecha seleccionada -->
+  <h2 *ngIf="fechaSeleccionada" style="text-align: center; margin-top: 10px;">
+    Eventos desde el {{ fechaSeleccionada }}
+  </h2>
 
-<!-- Etiqueta dinámica que muestra la fecha seleccionada -->
-<h2 *ngIf="fechaSeleccionada" style="text-align: center; margin-top: 10px;">
-  Eventos desde el {{ fechaSeleccionada }}
-</h2>
+  <!-- Etiqueta "Próximos Eventos" siempre visible -->
+  <h2 *ngIf="!fechaSeleccionada" style="text-align: center; margin-top: 10px;">
+    Próximos Eventos
+  </h2>
 
-<!-- Etiqueta "Próximos Eventos" siempre visible -->
-<h2 *ngIf="!fechaSeleccionada" style="text-align: center; margin-top: 10px;">
-  Próximos Eventos
-</h2>
+  <div id="contenedor_card">
+    <div *ngFor="let evento of filteredEventos">
+      <a [routerLink]="['/evento', evento.documentName]">
+        <app-tarjeta-evento [evento]="evento"></app-tarjeta-evento>
+      </a>
+    </div>
+  </div>
 
-    <div id="contenedor_card">
-      <div *ngFor="let evento of proximosEventos ">
-        <a [routerLink]="['/evento', evento.documentName]">
-          <app-tarjeta-evento [evento]=evento></app-tarjeta-evento>
-        </a>
-      </div>
-    </div>    
+  <section class="map">
+    <p>Mapa aquí...</p>
+  </section>
 
+  <h2 style="text-align: center; padding-top: 15px;">Lista de Discotecas</h2>
 
-    <section class="map">
-        <p>Mapa aquí...</p>
-    </section>
+  <div id="contenedor_card">
+    <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
 
-    <h2 style="text-align: center; padding-top: 15px;" >Lista de Discotecas</h2>
-    
-    <div id="contenedor_card">
-      
-      <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
-        <mat-icon>navigate_before</mat-icon>
-      </button> 
-      
-      <div *ngFor="let local of locals  | paginate: { itemsPerPage: 3, currentPage: page }">
-        <a [routerLink]="['/local', local.id]">
-          <app-locales-tarjeta [local]=local></app-locales-tarjeta>
-        </a>
-      </div>
-         
-      <button mat-fab class="btnPaginacion" (click)="goToNextPage()">
-        <mat-icon>navigate_next</mat-icon>
-      </button>
-      
-    </div>    
+    <div *ngFor="let local of filteredLocales | paginate: { itemsPerPage: 3, currentPage: page }">
+      <a [routerLink]="['/local', local.id]">
+        <app-locales-tarjeta [local]="local"></app-locales-tarjeta>
+      </a>
+    </div>
+
+    <button mat-fab class="btnPaginacion" (click)="goToNextPage()">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
 </body>
