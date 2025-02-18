@@ -1,14 +1,64 @@
-mat-card{
-    margin-top: 20px;
+
+#contenedorExterior{
+    padding-top:30px;
+    padding-bottom:30px;
+    display: flex;
+    justify-content: center;
+    
 }
 
-#imagenes{
-    max-height: 500px;
-    max-width: 500px;
-}
-#card{
-    min-height: 450px;
-    max-width: 400px; 
+#imagen{
+   border-radius: 5%;
+   height: 500px;
+   width: 650px;
 }
 
+#imagenContenedor{   
+   padding-left: 50px;
+   padding-right: 50px;
+   display: flex;
+   align-items: center;
 
+}
+#textoContenedor{
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+#cabecera{
+    display: flex;
+   
+    padding-top: 50px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex-direction: column;
+   
+}
+#descripcionContenedor{
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#descripcion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 350px;
+    padding-right: 350px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#body{
+    background-color: aliceblue;
+    border-radius: 10%;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+.datos{
+    display: flex;
+    justify-content: center;
+}
