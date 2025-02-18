@@ -1,0 +1,115 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    height: 100vh;
+}
+
+/* 🔹 Sidebar */
+.sidenav {
+    width: 250px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+/* 🔹 Logo y texto */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.logo-img {
+    width: 50px; /* Tamaño reducido */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+}
+
+.language-container {
+    display: flex; /* Usamos flexbox para controlar la distribución */
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    align-items: flex-start; /* Alinea el selector de idioma hacia la parte superior */
+    margin-bottom: 5px; /* Añade el margen inferior con respecto a los elementos debajo */
+    padding-right: 30px;
+}
+
+
+
+.language-switcher {
+    position: relative;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background 0.3s, color 0.3s ease;
+    background-color: #6200ea; /* Mismo color que la barra de navegación */
+}
+
+.dropdown-btn:hover {
+    background-color: #1c5377;
+    color: #fff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to bottom, #ffffff, #ecf0f1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    padding: 5px 0;
+    backdrop-filter: blur(10px); /* Efecto de difuminado */
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.language-option {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.language-option:hover {
+    background-color: #ecf0f1;
+}
+
+.language-option img {
+    margin-right: 10px;
+    width: 20px;
+    height: 15px;
+}
+
+
+
+
