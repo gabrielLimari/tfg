@@ -1,11 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
-import { ServiceDataService } from './service.service';
-import { Local } from './interfaces/Local';
 import { CommonModule } from '@angular/common';
+import * as mapboxgl from 'mapbox-gl';
+import { LocalesTarjetaComponent } from "./pages/locales/locales-tarjeta/locales-tarjeta.component";
+
+
 import { NavComponent } from "./components/nav/nav.component";
 import { AuthService } from './services/auth.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LocalService } from './services/local.service';
+import { Local } from './interfaces/local';
+
 
 @Component({
   selector: 'app-root',
@@ -16,14 +21,20 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
   title = 'proyecto';
+  map!: mapboxgl.Map;
+  marcadores: any[] = [];
 
   locals: Local[] = [];  
   usuarios: any[] = []; 
 
-  constructor(private router: Router, private serviceDataService: ServiceDataService, private authService: AuthService) {}
+  constructor(
+    private router: Router, 
+    private serviceDataService: LocalService, 
+    private authService: AuthService) {}
 
   ngOnInit() {
-    this.serviceDataService.getServiceData().subscribe((data) => {
+
+    this.serviceDataService.getLocales().subscribe((data) => {
       this.locals = data;
     });
   }
