@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import * as mapboxgl from 'mapbox-gl';
-import { EventoService } from '../../services/evento.service';
-import { Evento } from '../../interfaces/evento';
+import mapboxgl from 'mapbox-gl';
+import { Evento } from '../../../interfaces/evento';
+import { EventoService } from '../../../services/evento.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-tarjeta-evento',
+  selector: 'app-detalles-evento',
   standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './tarjeta-evento.component.html',
-  styleUrls: ['./tarjeta-evento.component.css']
+  imports: [CommonModule,RouterModule],
+  templateUrl: './detalles-evento.component.html',
+  styleUrl: './detalles-evento.component.css'
 })
-
-
-export class TarjetaEventoComponent implements OnInit {
+export class DetallesEventoComponent implements OnInit {
   route: ActivatedRoute | undefined;
   map!: mapboxgl.Map;
   documentName: string = ''; // Aquí almacenamos el nombre del evento
@@ -31,10 +29,10 @@ export class TarjetaEventoComponent implements OnInit {
   ngOnInit(): void {
     // Obtenemos el 'documentName' de la URL
     this.documentName = this.activatedRoute.snapshot.params['documentName'];
-    this.obtenerEventoPorNombre(this.documentName);
+    this.getEventoByNombre(this.documentName);
   }
 
-  obtenerEventoPorNombre(documentName: string): void {
+  getEventoByNombre(documentName: string): void {
     // Llamamos al servicio para obtener el evento usando el documentName
     this.eventoService.getEventoByDocumentName(documentName).subscribe({
       next: (evento) => {

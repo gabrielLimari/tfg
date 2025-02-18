@@ -112,42 +112,82 @@ img {
   }
   
 
-  .eventos-container {
-    display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    margin: 100px;
-    flex-wrap: wrap; /* Asegura que los elementos se ajusten al espacio disponible */
+
+
+.filters span {
+    font-weight: bold;
 }
 
-.imagenEvento {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 20px; /* Ajusta el margen para dejar espacio entre las imágenes */
-    cursor: pointer; /* Añadimos el cursor pointer para simular un clic */
-    transition: all 0.3s ease-in-out;
+.filter-btn {
+    background: #E5E5E5;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.imagenEvento img {
-    border-radius: 8px;
-    width: 300px; /* Ajusta el ancho de las imágenes */
-    height: 500px; /* Ajusta la altura automáticamente */
-    box-shadow: 0px 0px 30px #000;
-    transition: all 0.3s ease-in-out;
+.filter-btn.active {
+    background: #87A9B8;
+    color: white;
 }
 
-.imagenEvento:hover img {
-    transform: scale(1.1); /* Hace que la imagen se agrande al pasar el mouse */
-    box-shadow: 0px 0px 50px #000; /* Efecto de sombra */
+/* 🔹 MAPA */
+.map {
+    background-color: #D9D9D9;
+    padding: 100px;
+    text-align: center;
+    font-size: 20px;
+    color: #555;
+}
+.local-list {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
 }
 
-.imagenEvento h2 {
-    color: rgb(20, 20, 20);
-    font-family: nunito;
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 10px;
 }
 
-.imagenEvento img:hover {
-    transform: scale(1.1); /* Agrandar la imagen */
-    box-shadow: 0px 0px 50px #000; /* Agrandar la sombra */
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
+
+th {
+    background: #333;
+    color: white;
+}
+
+img {
+    border-radius: 5px;
+}
+
+
+.btnPaginacion {
+    background-color: transparent; /* Color llamativo */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto flotante */
+    transition: transform 0.2s ease-in-out, background-color 0.3s;
+    border: none; /* Elimina bordes */
+    outline: none; /* Elimina el contorno al hacer clic */
+    border-radius: 50%; /* Hace que el botón sea completamente redondo */
+    padding: 15px; /* Ajusta el tamaño interno del botón */
+    max-height: 50px;
+    margin-top: 250px;
+}
+
+
+
+  .btnPaginacion:hover {
+    background-color: #f50057; /* Color más intenso al pasar el mouse */
+    transform: scale(1.1); /* Hace que crezca un poco al hacer hover */
+  }
+  .btnPaginacion:active {
+    transform: scale(0.9); /* Hace que el botón se encoja un poco al hacer clic */
+  }
+  

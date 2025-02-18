@@ -1,0 +1,17 @@
+
+<mat-card id="card" class="local-card" appearance="outlined" (click)="verDetalles(evento.documentName)">
+  <img id="imagenes"  mat-card-image [src]="evento.eventImageUrl  || 'img_default.jpg'" alt="Imagen" >
+
+<mat-card-content>
+  <br>
+  <h2><b>{{evento.documentName}}</b></h2>
+  <h4 *ngIf="evento.eventStartDate?.length; ">
+      Fecha de inicio: {{ evento.eventStartDate }}
+</h4>
+<h4 *ngIf="evento.eventEndDate?.length; ">
+  Fecha de fin: {{ evento.eventEndDate }}
+</h4>
+  <!--<p [innerHTML]="local.extraData.schedule"></p>-->
+</mat-card-content>
+
+</mat-card>
