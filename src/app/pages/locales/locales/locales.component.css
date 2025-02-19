@@ -1,0 +1,170 @@
+/* General styles */
+.main {
+    background-color: #1a1126; /* Un morado oscuro para mayor contraste */
+    color: #d4aaff; /* Un morado claro y elegante */
+    font-family: 'Serif', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    background: url('/../img_fondo_marco_local.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    border: 1px solid #d4aaff;
+    max-width: 1000px;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+}
+
+.image {
+    width: 250px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.overlay {
+    position: absolute;
+    bottom: -40px;
+    right: -50px;
+    width: 180px;
+    border: 2px solid #d4aaff;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.overlay:hover {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+}
+
+.text-container {
+    margin-left: 50px;
+    text-align: right;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #d4aaff;
+}
+
+.icon {
+    font-size: 24px;
+    border: 1px solid #d4aaff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    color: #d4aaff;
+}
+
+/* Content layout */
+.content {
+    display: flex;
+    margin-top: 20px;
+    width: 80%;
+}
+
+/* Filtros */
+.filters {
+    width: 250px;
+    padding: 20px;
+    border-left: 1px solid #d4aaff; /* Añadido para separación */
+    position: sticky;
+    top: 20px;
+}
+
+.filter-btn {
+    display: block;
+    background: #6823a6;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.filter-btn:hover {
+    background: #9045d8;
+}
+
+/* Sección de locales */
+.locales {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    justify-content: flex-start; /* Alinea los cards a la izquierda */
+}
+
+/* Estilos del card */
+.mat-card {
+    background: #26133e;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.mat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Añadido para resaltar al pasar el ratón */
+}
+
+.mat-card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.mat-card img:hover {
+    transform: scale(1.05); /* Efecto al pasar el ratón sobre la imagen */
+}
+
+.mat-card-content {
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d4aaff;
+    margin-bottom: 10px;
+}
+
+/* Estilo del card (responsivo) */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .filters {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .locales {
+        flex-direction: column;
+        align-items: center;
+    }
+}
