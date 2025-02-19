@@ -7,12 +7,14 @@ import { DetallesEventoComponent } from './pages/eventos/detalles-evento/detalle
 import { BaresComponent } from './pages/bares/bares.component';
 import { CocteleriasComponent } from './pages/coctelerias/coctelerias.component';
 import { DiscotecasComponent } from './pages/discotecas/discotecas.component';
+import { LandingpageComponent } from './pages/landingpage/landingpage.component';
+import { LocalesComponent } from './pages/locales/locales/locales.component';
 
 export const routes: Routes = [
    
     {
         path: '',
-        component: HomeComponent,
+        component: LandingpageComponent,
         title: 'Inicio'
     },
     {
@@ -23,7 +25,7 @@ export const routes: Routes = [
     {
         path: 'home',
         component: HomeComponent,
-        title: 'Inicio'
+        title: 'Home'
     },
     {
         path: 'bares',
@@ -49,6 +51,12 @@ export const routes: Routes = [
         path: 'evento/:documentName',
         component: DetallesEventoComponent,
         title: 'Tarjeta Evento'
+    }
+    ,
+    {
+        path: 'locales',
+        component: LocalesComponent,
+        title: 'Locales'
     }
 
 ];

@@ -1,5 +1,82 @@
 <body>
+    <mat-sidenav-container fullscreen>
+        <!-- Menú lateral -->
+        <mat-sidenav #sidenav mode="side" class="sidenav">
+            <mat-toolbar color="primary">
+                <span>Menú</span>
+                <span class="spacer"></span>
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-toolbar>
+            <mat-nav-list>
+                <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+                    <mat-icon mat-list-icon>home</mat-icon>
+                    <span>Inicio</span>
+                </a>
+                <a routerLink="./locales" mat-list-item (click)="sidenav.toggle()">
+                    <mat-icon mat-list-icon>favorite</mat-icon>
+                    <span>Eventos</span>
+                </a>
+                <a routerLink="./f" mat-list-item (click)="sidenav.toggle()">
+                    <mat-icon mat-list-icon>favorite</mat-icon>
+                    <span>Fiestas</span>
+                </a>
+                <a routerLink="./buscar" mat-list-item (click)="sidenav.toggle()">
+                    <mat-icon mat-list-icon>search</mat-icon>
+                    <span>Buscar</span>
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <!-- Contenido principal -->
+        <mat-sidenav-content>
+            <mat-toolbar color="primary">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+
+                <div class="spacer"></div> <!-- Empuja los elementos a la derecha -->
+
+                <!-- Logo y texto -->
+                <div class="logo-container" routerLink="/home" >
+                    <div class="logo-text">Festivity</div>
+                    <img src="logo.png" alt="Logo" class="logo-img" />
+                </div>
+            </mat-toolbar>
+
+      
+                <!-- Selector de idioma debajo del logo -->
+                <div class="language-container">
+                    <div class="language-switcher">
+                        <button class="dropdown-btn" (click)="toggleDropdown()">
+                            {{ "cambiarIdioma" | translate }}
+                        </button>
+                        <div class="dropdown-content" [class.show]="dropdownVisible">
+                            <div class="language-option" (click)="translateText('es')">
+                                <img src="espanol.png" alt='{{ "español" | translate}}' class="flag" />
+                                {{ "español" | translate }}
+                            </div>
+                            <div class="language-option" (click)="translateText('eu')">
+                                <img src="euskera.png" alt='{{ "euskera" | translate}}' class="flag" />
+                                {{ "euskera" | translate }}
+                            </div>
+                            <div class="language-option" (click)="translateText('en')">
+                                <img src="ingles.png" alt='{{ "ingles" | translate}}' class="flag" />
+                                {{ "ingles" | translate }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Contenido dinámico -->
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</body>
+<!--Version anterior <body>
     <app-nav *ngIf=" !isLoginPage()">
     </app-nav>
     <router-outlet></router-outlet>
 </body>
+ y borrar el css-->

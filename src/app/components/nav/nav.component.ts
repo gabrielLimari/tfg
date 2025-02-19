@@ -4,11 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SearchService } from '../../services/search.service';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+  import {MatListModule} from '@angular/material/list';
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [RouterLink, RouterModule, TranslateModule, FormsModule],
+  imports: [RouterLink, RouterModule, TranslateModule, FormsModule,MatSidenavModule,MatToolbarModule,
+    MatButtonModule,MatIconModule,MatListModule,RouterLink],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })

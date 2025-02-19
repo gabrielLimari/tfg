@@ -1,0 +1,229 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #dde1ff, #f0f0e8);
+}
+
+/* SECCIÓN LANDING PAGE */
+.landingpage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("/../img_fondo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    }
+
+.landingpage::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #f4f6fb);
+}
+
+
+.landingpage-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.landingpage-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(235, 235, 235);
+}
+
+.landingpage-content p {
+    font-size: 20px;
+    color: rgb(235, 235, 235);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background: #ff007f;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* SECCIÓN EXPLORA CIUDAD */
+.explora-ciudad {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #f4f6fb, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explora-ciudad .contenedor-explora-ciudad {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explora-ciudad h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.mapa {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* SECCIÓN OPINIONES */
+.opiniones {
+    background: #f4f6fb;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.opiniones h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.contenedor-opiniones {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.opinion {
+    width: 30%;
+}
+
+.opinion p {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.opinion h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* SECCIÓN CONTACTO */
+.contacto {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contacto .contenedor {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.info-contacto {
+    width: 40%;
+}
+
+.info-contacto h1 {
+    font-size: 2rem;
+    color: #111;
+}
+
+.info-contacto p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.info-contacto a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.formulario {
+    width: 50%;
+}
+
+.formulario h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 48%;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 80px;
+}
+
+button {
+    padding: 10px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
