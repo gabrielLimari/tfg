@@ -17,7 +17,7 @@ import { SearchService } from '../../services/search.service';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterModule, LocalesTarjetaComponent, NgxPaginationModule, 
-    MatIconModule, TarjetaEventoComponent, TranslateModule, NavComponent],
+    MatIconModule, TarjetaEventoComponent, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   title = 'proyecto';
   locals: Local[] = [];
-  eventos: Evento[] = [];
+  eventos: Evento[] = []; 
   proximosEventos: Evento[] = []; // Para almacenar los tres próximos eventos
   fechaSeleccionada: string | null = null; // Guarda la fecha seleccionada por el usuario
 
