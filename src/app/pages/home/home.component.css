@@ -3,11 +3,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
+}
+a {
+    text-decoration: none;
+    color:black;
 }
 
 /* 🔹 SECCIÓN HERO */
@@ -185,16 +190,16 @@ img {
 
 
 
-  .btnPaginacion:hover {
+.btnPaginacion:hover {
     background-color: #f50057; /* Color más intenso al pasar el mouse */
     transform: scale(1.1); /* Hace que crezca un poco al hacer hover */
-  }
-  .btnPaginacion:active {
+}
+.btnPaginacion:active {
     transform: scale(0.9); /* Hace que el botón se encoja un poco al hacer clic */
-  }
-  
+}
 
-  .search {
+
+.search {
     padding: 10px 15px;
     border-radius: 25px;
     border: 1px solid #ddd;
@@ -207,4 +212,12 @@ img {
 .search:focus {
     border-color: #3498db;
     outline: none;
+}
+
+.contenedor_card{
+    display: flex; 
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top:30px ;
+    margin-bottom: 30px;
 }

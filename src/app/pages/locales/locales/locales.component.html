@@ -1,0 +1,33 @@
+<section class="main">
+  <div class="container">
+    <div class="image-container">
+      <img src="img_discoteca.jpg" alt="alt_img_discoteca" class="image main">
+      <img src="img_coctel.jpg" alt="alt_img_coctel" class="image overlay">
+    </div>
+    <div class="text-container">
+      <h2>Los mejores <br> Locales</h2>
+      <div class="icon">✦</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <!-- Filtros -->
+    <aside class="filters">
+      <h3>Filtrar por tipo</h3>
+      <button class="filter-btn" (click)="filterByCategory('cocteleria')">Coctelería</button>
+      <button class="filter-btn" (click)="filterByCategory('discoteca')">Discoteca</button>
+    </aside>
+
+    <!-- Sección de locales -->
+    <section class="locales">
+      <mat-card id="card" class="local-card" *ngFor="let local of filteredLocales" appearance="outlined" (click)="verDetalles(local.id)">
+        <img id="imagenes" *ngIf="local.multimedia?.images?.length" mat-card-image [src]="local.multimedia.images[0]" alt="{{ 'imagen' | translate }}">
+        
+        <mat-card-content>
+          <br>
+          <h2><b>{{local.basicData.name}}</b></h2>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>
+</section>

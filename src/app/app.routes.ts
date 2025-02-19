@@ -75,5 +75,11 @@ export const routes: Routes = [
         component: DetallesEventoComponent,
         title: 'Tarjeta Evento'
     }
+    ,
+    {
+        path: 'locales',
+        component: LocalesComponent,
+        title: 'Locales'
+    }
 
 ];

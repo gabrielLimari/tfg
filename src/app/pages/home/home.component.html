@@ -1,10 +1,4 @@
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ "discoPopus" | translate }}</title>
-</head>
-
+<body>
   <section class="filters">
     <span>Filtrar por:</span>
     <button class="filter-btn" (click)="toggleDatePicker()">Fechas</button>
@@ -28,7 +22,7 @@
     Próximos Eventos
   </h2>
 
-  <div id="contenedor_card">
+  <div class="contenedor_card">
     <div *ngFor="let evento of filteredEventos">
       <a [routerLink]="['/evento', evento.documentName]">
         <app-tarjeta-evento [evento]="evento"></app-tarjeta-evento>
@@ -49,7 +43,7 @@
 
     <h2 style="text-align: center; padding-top: 15px;" >{{ "listaDiscos" | translate }}</h2>
     
-    <div id="contenedor_card">
+    <div class="contenedor_card">
       
       <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
         <mat-icon>navigate_before</mat-icon>
