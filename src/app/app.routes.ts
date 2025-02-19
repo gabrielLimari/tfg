@@ -8,6 +8,10 @@ import { BaresComponent } from './pages/bares/bares.component';
 import { CocteleriasComponent } from './pages/coctelerias/coctelerias.component';
 import { DiscotecasComponent } from './pages/discotecas/discotecas.component';
 import { LandingpageComponent } from './pages/landingpage/landingpage.component';
+import { LocalesComponent } from './pages/locales/locales.component';
+import { FiestasComponent } from './pages/fiestas/fiestas.component';
+import { BuscarComponent } from './pages/buscar/buscar.component';
+import { EventosComponent } from './pages/eventos/eventos.component';
 
 export const routes: Routes = [
    
@@ -25,6 +29,26 @@ export const routes: Routes = [
         path: 'home',
         component: HomeComponent,
         title: 'Home'
+    },
+    {
+        path: 'buscar',
+        component: BuscarComponent,
+        title: 'Buscar'
+    },
+    {
+        path: 'eventos',
+        component: EventosComponent,
+        title: 'Eventos'
+    },
+    {
+        path: 'fiestas',
+        component: FiestasComponent,
+        title: 'Fiestas'
+    },
+    {
+        path: 'locales',
+        component: LocalesComponent,
+        title: 'Locales'
     },
     {
         path: 'bares',

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SearchService } from '../../services/search.service';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,24 +13,32 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   selector: 'app-nav',
   standalone: true,
   imports: [RouterLink, RouterModule, TranslateModule, FormsModule,MatSidenavModule,MatToolbarModule,
-    MatButtonModule,MatIconModule,MatListModule,RouterLink],
+    MatButtonModule,MatIconModule,MatListModule,RouterLink, RouterOutlet, CommonModule, FormsModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
   constructor(
     private searchService: SearchService,
+    private cdr: ChangeDetectorRef
   ) {}
 
-  dropdownVisible: boolean = false;
+  idiomasVisible: boolean = false;
   mitranslate: TranslateService = inject(TranslateService);
   searchQuery!:string;
+  isLocalesOpen = false;
   @Output() searchEvent: EventEmitter<string> = new EventEmitter();
 
 
-  toggleDropdown() {
-    this.dropdownVisible = !this.dropdownVisible;
+  toggleIdiomas() {
+    this.idiomasVisible = !this.idiomasVisible;
   }
+
+  toggleLocales() {
+    console.log('Toggle Locales clicked');
+    this.isLocalesOpen = !this.isLocalesOpen;
+    this.cdr.detectChanges(); // Forzar la actualización de Angular
+}
 
   translateText(lang: string) {
     this.mitranslate.use(lang);

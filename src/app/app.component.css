@@ -110,6 +110,22 @@ body {
     height: 15px;
 }
 
+mat-nav-list button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background 0.3s, color 0.3s ease;
+    background-color: #6200ea; /* Mismo color que la barra de navegación */
+}
+
+mat-nav-list button:hover {
+    background-color: #1c5377;
+    color: #fff;
+    border-radius: 0%;
+}
+
 
 
 
