@@ -28,14 +28,15 @@
     Próximos Eventos
   </h2>
 
-  <div id="contenedor_card">
+  <div class="contenedor_card">
     <div *ngFor="let evento of filteredEventos">
       <a [routerLink]="['/evento', evento.documentName]">
         <app-tarjeta-evento [evento]="evento"></app-tarjeta-evento>
       </a>
     </div>
   </div>
-
+ 
+<!--
   <section class="map">
     <p>Mapa aquí...</p>
   </section>
@@ -46,10 +47,10 @@
     <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
       <mat-icon>navigate_before</mat-icon>
     </button>
-
+-->
     <h2 style="text-align: center; padding-top: 15px;" >{{ "listaDiscos" | translate }}</h2>
     
-    <div id="contenedor_card">
+    <div class="contenedor_card">
       
       <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
         <mat-icon>navigate_before</mat-icon>

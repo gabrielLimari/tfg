@@ -1,5 +1,9 @@
 mat-card{
     margin-top: 20px;
+    background-color: #303030;
+    margin-bottom: 50px;
+    color: aliceblue;
+    box-shadow: 10px 15px 15px #8b8b8b;
 }
 
 #imagenes{
@@ -20,3 +24,9 @@ mat-card{
 }
 
 
+#texto{
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}

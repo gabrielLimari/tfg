@@ -1,110 +1,30 @@
-<!--<div id="contenedor" *ngIf="local">
-    <img id="imagenes" *ngIf="local?.multimedia?.images?.length" [src]="local.multimedia.images[0]" alt="Imagen_Local" width="100%">
- 
-    <br>
-    <h2><b>{{ local.basicData.name }}</b></h2>
-    <h4 *ngIf="local.basicData.phone?.length; else noPhone">
-        {{ local.basicData.phone }}
-    </h4>
-    <ng-template #noPhone>
-        <h4>No hay un teléfono disponible</h4>
-    </ng-template>
+<!-- <div id="titulo">
+    <h1><b>{{ local.basicData.title }}</b></h1>
     <hr>
- 
-    <p *ngIf="local.basicData.web?.length; else noWEB">
-        <a [href]="local.basicData.web" target="_blank">Visitar</a>
-    </p>
-    <ng-template #noWEB>
-        <p>No Disponemos De Una WEB</p>
-    </ng-template>
-</div>-->   <!--<p [innerHTML]="local.extraData.schedule"></p>-->
-
-<!--basicData: {
-      language: string;
-      name: string;
-      email: string;
-      phone: string;
-      title: string;
-      body: string;
-      web: string;
-    };
-    geoData: {
-      address: string;
-      zipcode: string;
-      country: string;
-      latitude: number;
-      longitude: number;
-      subAdministrativeArea: string;
-    };
-    multimedia: {
-      images: string[];
-    };
-    extraData: {
-      typeId: string;
-      type: string;
-      categories: {
-        idCategoria: string;
-        categoria: string;
-      }[];
-      paymentServices: string;
-      schedule: string;
-
-<div id="contenedorExterior">
-    <div id="contenedorInterior" *ngIf="local">
-        <img id="imagenes" *ngIf="local?.multimedia?.images?.length" 
-            [src]="local.multimedia.images[0]" alt="Imagen_Local"> 
-        <br>
-        <div id="textoContenedor">
-            <h2><b>{{ local.basicData.name }}</b></h2>
-            <h4><b>{{ local.geoData.country }} - {{ local.geoData.address }}</b></h4>
-            
-            <br>
-            <h4 *ngIf="local.basicData.phone?.length; else noPhone">
-                {{ local.basicData.phone }}
-            </h4>
-            <ng-template #noPhone>
-                <h4>No hay un teléfono disponible</h4>
-            </ng-template>
-
-            <h4 *ngIf="local.basicData.email?.length; else noMail">
-                {{ local.basicData.email }}
-            </h4>
-            <ng-template #noMail>
-                <h4>No hay un correo disponible</h4>
-            </ng-template>
-            <hr>
-            <h4><b>Horario</b></h4>
-            <p [innerHTML]="local.extraData.schedule"></p>
-            <hr>
-            <h4><b>Descripción del Local</b></h4>
-            <br>
-            <p [innerHTML]="local.basicData.body"></p>
-
-        </div>
-    </div>
 </div>
--->
+
+
 <div id="contenedorExterior" *ngIf="local">
     <div id="imagenContenedor">
         <div id="imagenes">
-            <img id="imagen" *ngIf="local?.multimedia?.images?.length" 
-            [src]="local.multimedia.images[0]" alt="Imagen_Local"> 
+            <img id="imagen" *ngIf="local?.multimedia?.images?.length"
+            [src]="local.multimedia.images[0]" alt="Imagen_Local">
             <br>
         </div>
     </div>
-    <br>     
+    <br>    
 </div>
 <hr>
 <div id="body">
     <div id="textoContenedor">
         <div id="cabecera">
-            <h1><b>{{ local.basicData.name }}</b></h1>
+            <h3><b>Ubicación</b></h3>
             <br>
             <div class="datos">
                 <p><b>{{ local.geoData.country }} - {{ local.geoData.address }}</b></p>
             </div>
             <hr>
-            <h4><b>Datos de Contacto</b></h4>
+            <h3><b>Datos de Contacto</b></h3>
             <div class="datos">
                 <p *ngIf="local.basicData.phone?.length; else noPhone">
                     {{ local.basicData.phone }}
@@ -112,7 +32,7 @@
                 <ng-template #noPhone>
                     <p>No hay un teléfono disponible</p>
                 </ng-template>
-            
+           
                 <p *ngIf="local.basicData.email?.length; else noMail">
                     {{ local.basicData.email }}
                 </p>
@@ -120,23 +40,103 @@
                     <p>No hay un correo disponible</p>
                 </ng-template>
             </div>
-                <hr>
-                <h4><b>Horario</b></h4>
-                <div class="datos">
+            <hr>
+            <h3><b>Horario</b></h3>
+            <div class="datos">
                 <p [innerHTML]="local.extraData.schedule"></p>
-           </div> 
-           <hr>
+            </div>
+            <hr>
+            <h3><b>WEB Local</b></h3>
+            <div class="datos">
+                <a *ngIf="local.basicData.web?.length; else noWeb" [href]="local.basicData.web" target="_blank">
+                    {{ local.basicData.web }}
+                </a>
+                <br>                
+                <ng-template #noWeb>
+                    <p>No hay una web disponible</p>
+                </ng-template>
+            </div>
+            <hr>
         </div>
-       
-    </div> 
-    
+    </div>
+   
     <div id="descripcionContenedor" *ngIf="local">
-        
-        <h4><b>Descripción del Local</b></h4>
+        <br>
+        <h3><b>Descripción del Local</b></h3>
         <br>
         <div id="descripcion">
             <p  [innerHTML]="local.basicData.body"></p>
         </div>
     </div>
+   
+</div>
+ -->
 
+    <div id="contenedorExterior" *ngIf="local">
+        <div id="imagenContenedor">
+            <div id="imagenes">
+                <img id="imagen" *ngIf="local?.multimedia?.images?.length"
+                [src]="local.multimedia.images[0]" alt="Imagen_Local">
+                <br>
+            </div>
+        </div>
+        <br>    
+    </div>
+    
+<div id="body">
+    <div id="titulo">
+        <h1><b>{{ local.basicData.title }}</b></h1>
+        <hr>
+    </div>
+    <div id="body">
+        <div id="textoContenedor">
+            <table id="tabla">
+                <tr>
+                <th> <h3><b>Ubicación</b></h3> </th>
+                <th> <h3><b>Datos de Contacto</b></h3> </th>
+                <th> <h3><b>Horario</b></h3> </th>
+                <th> <h3><b>WEB</b></h3> </th>
+                </tr>
+                <tr>
+                <td><p><b>{{ local.geoData.country }} - {{ local.geoData.address }}</b></p></td>
+                <td>  
+                    <p *ngIf="local.basicData.phone?.length; else noPhone">
+                            {{ local.basicData.phone }}
+                        </p>
+                        <ng-template #noPhone>
+                            <p>No hay un teléfono disponible</p>
+                        </ng-template>
+                
+                        <p *ngIf="local.basicData.email?.length; else noMail">
+                            {{ local.basicData.email }}
+                        </p>
+                        <ng-template #noMail>
+                            <p>No hay un correo disponible</p>
+                        </ng-template>
+                </td>
+                <td><p [innerHTML]="local.extraData.schedule"></p></td>
+                <td>
+                        <a *ngIf="local.basicData.web?.length; else noWeb" [href]="local.basicData.web" target="_blank">
+                        {{ local.basicData.web }}
+                        </a>
+                        <br>                
+                        <ng-template #noWeb>
+                            <p>No hay una web disponible</p>
+                        </ng-template>
+                </td>
+                </tr>
+            </table>
+            <br>
+
+        </div>
+    </div>
+
+    <div id="descripcionContenedor" *ngIf="local">
+            <br>
+            <h3><b>Descripción del Local</b></h3>
+            <br>
+            <div id="descripcion">
+                <p  [innerHTML]="local.basicData.body"></p>
+            </div>
+    </div>
 </div>

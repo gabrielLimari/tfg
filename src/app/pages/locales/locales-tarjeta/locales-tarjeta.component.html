@@ -4,21 +4,11 @@
 
         <mat-card-content>
             <br>
-            <h2><b>{{local.basicData.name}}</b></h2>
-            <h4 *ngIf="local.basicData.phone?.length; else noPhone">
-                {{ local.basicData.phone }}
-            </h4>
-            <ng-template #noPhone>
-                <h4>{{ "noTelefono" | translate }}</h4>
-            </ng-template>
+            <h3><b>{{local.basicData.name}}</b></h3>
+            <p>{{local.geoData.address}}</p>
             <hr>
-            <!--<p [innerHTML]="local.extraData.schedule"></p>-->
-            <p *ngIf="local.basicData.web?.length; else noWEB">
-                <a [href]="local.basicData.web" target="_blank">{{ "visitar" | translate }}</a>
-            </p>
-            <ng-template #noWEB>
-                <p>{{ "noWeb" | translate }}</p>
-            </ng-template>
+            <h4 id="texto"><b>ACCEDE</b></h4>
+           
         </mat-card-content>
         
-    </mat-card>
+</mat-card>
