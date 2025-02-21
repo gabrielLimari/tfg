@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Evento } from '../../interfaces/evento';
 import { EventoService } from '../../services/evento.service';
 import { LocalesTarjetaComponent } from "../locales/locales-tarjeta/locales-tarjeta.component";
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LocalService } from '../../services/local.service';
-import { Local } from '../../interfaces/local';
+import { Local } from '../../interfaces/locals';
 import { MatIconModule } from '@angular/material/icon';
 import { TarjetaEventoComponent } from "../eventos/tarjeta-evento/tarjeta-evento.component";
 import { TranslateModule } from '@ngx-translate/core';
@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
     private localService: LocalService,
     private eventoService: EventoService,
     private searchService: SearchService,
+    private router: Router
   ) { }
   ngOnInit() {
     // Escuchar cambios en el valor de búsqueda
@@ -174,5 +175,11 @@ export class HomeComponent implements OnInit {
     );
   }
   
+  selectLocal(local: Local): void {
+    this.localService.setSelectedLocal(local);
+    this.router.navigate(['/local']);
+
+  }
+
 
 }

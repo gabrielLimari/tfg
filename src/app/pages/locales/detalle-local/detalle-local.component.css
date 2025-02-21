@@ -85,6 +85,9 @@
 
 */
 
+/*ESTO TENIA ACTIVO LA VERSION PREVIA LO COMENTO/
+/*
+
 #imagen{
     border-radius: 5%;
     height: 450px;
@@ -157,4 +160,72 @@
     margin-right: 150px;
     background-color: rgb(228, 228, 228);
     border-radius: 10%;
+}
+*/
+
+
+/*VERSION NUEVA COMENTAR SI OS GUSTA*/
+
+.container {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 18%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative; /* Para permitir que los elementos hijos se posicionen relativamente a este contenedor */
+}
+
+.image-container img {
+    position: absolute;
+    left: 50%; /* Centra horizontalmente */
+    top: 16%; /* Desplaza la imagen hacia arriba (de modo que 1/8 de ella quede sobre el contenedor) */
+    transform: translateX(-50%); /* Ajusta la imagen para que esté completamente centrada */
+    width: 40%; /* Controla el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.content {
+    color: #333;
+    text-align: left;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    position: relative; /* Asegura que este contenedor quede detrás de la imagen */
+}
+
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.card p {
+    font-size: 14px;
+    color: #777;
 }

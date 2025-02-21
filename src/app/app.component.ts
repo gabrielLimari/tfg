@@ -9,7 +9,7 @@ import { NavComponent } from "./components/nav/nav.component";
 import { AuthService } from './services/auth.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LocalService } from './services/local.service';
-import { Local } from './interfaces/local';
+import { Local } from './interfaces/locals';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';

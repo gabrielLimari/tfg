@@ -66,7 +66,7 @@ export const routes: Routes = [
         title: 'Discotecas'
     },
     {
-        path: 'local/:id', 
+        path: 'local', 
         component: DetalleLocalComponent ,
         title: 'Tarjeta Detalles Local2'
     } ,

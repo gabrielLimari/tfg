@@ -4,7 +4,7 @@ import { Evento } from '../../../interfaces/evento';
 import { CommonModule } from '@angular/common';
 import {  MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { Local } from '../../../interfaces/local';
+import { Local } from '../../../interfaces/locals';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({

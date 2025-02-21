@@ -3,21 +3,31 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { parseString } from 'xml2js'; // Correctly import parseString from xml2js
-import { Local } from '../interfaces/local';
+import { Local } from '../interfaces/locals';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalService {
   private xmlUrl = '/api/opendata/noche_v1_es.xml';
+  private selectedLocal!: Local;
 
   constructor(private http: HttpClient) {}
 
-    getLocales(): Observable<Local[]> {
+  getLocales(): Observable<Local[]> {
+    const storedLocals = localStorage.getItem('locals'); // Verificar si ya hay datos almacenados
+
+    if (storedLocals) {
+      // Si existen, parsearlos y devolverlos
+      return new Observable((observer) => {
+        observer.next(JSON.parse(storedLocals));
+        observer.complete();
+      });
+    } else {
+      // Si no existen, hacer la petición HTTP y almacenarlos
       return this.http.get(this.xmlUrl, { responseType: 'text' }).pipe(
         map((xml) => {
           let result: any;
-          // Parsing the XML and mapping it to the expected Local[] format
           parseString(xml, { explicitArray: false }, (err, json) => {
             if (err) {
               console.error('Error parsing XML:', err);
@@ -26,8 +36,8 @@ export class LocalService {
             }
           });
 
-          // Safely handle 'multimedia.media' in the service data
-          return result.map((service: any) => ({
+          // Mapeamos la respuesta para ajustarla al formato Local[]
+          const locals = result.map((service: any) => ({
             id: service.$.id,
             fechaActualizacion: service.$.fechaActualizacion,
             basicData: {
@@ -50,33 +60,39 @@ export class LocalService {
             multimedia: {
               images: Array.isArray(service.multimedia?.media)
                 ? service.multimedia.media.map((media: any) => media.url)
-                : service.multimedia?.media 
-                  ? [service.multimedia.media.url] // Convierte un solo objeto en un array
-                  : [], // Si no hay multimedia, devuelve un array vacío
+                : service.multimedia?.media
+                ? [service.multimedia.media.url]
+                : [],
             },
             extraData: {
               typeId: service.extradata.item.find((i: any) => i.$.name === 'idTipo')?._,
               type: service.extradata.item.find((i: any) => i.$.name === 'Tipo')?._,
-              // Check if categorias.categoria is an array before using .map()
               categories: Array.isArray(service.extradata.categorias?.categoria)
                 ? service.extradata.categorias.categoria.map((cat: any) => ({
                     idCategoria: cat.item[0]._,
                     categoria: cat.item[1]._,
                   }))
-                : [], // Default to an empty array if categorias.categoria is not an array
+                : [],
               paymentServices: service.extradata.item.find((i: any) => i.$.name === 'Servicios de pago')?._,
               schedule: service.extradata.item.find((i: any) => i.$.name === 'Horario')?._,
             },
           }));
+
+          // Guardamos los datos en localStorage para uso futuro
+          localStorage.setItem('locals', JSON.stringify(locals));
+
+          return locals;
         })
       );
     }
-
-    getLocalById(id: string): Observable<Local | undefined> {
-      return this.getLocales().pipe(
-        map((locals: Local[]) => locals.find(local => local.id === id))
-      );
-    }
-    
-
   }
+
+  getSelectedLocal() {
+    return this.selectedLocal;
+  }
+
+  setSelectedLocal(local: Local): void {
+    this.selectedLocal = local;
+    localStorage.setItem('selectedLocal', JSON.stringify(local)); // Guardamos el local en localStorage
+  }
+}

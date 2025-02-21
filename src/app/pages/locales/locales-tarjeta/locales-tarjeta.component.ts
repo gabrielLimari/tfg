@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
-import { Local } from '../../../interfaces/local';
+import { Local } from '../../../interfaces/locals';
 import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-locales-tarjeta',
