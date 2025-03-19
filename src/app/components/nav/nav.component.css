@@ -9,6 +9,8 @@
     display: flex;
     align-items: center;
     padding-left: 20px;
+    cursor: pointer;
+
 }
 
 .logo-img {
@@ -31,9 +33,7 @@
 }
 
 
-button.mat-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
+
 
 .language-switcher {
     position: relative;
@@ -48,7 +48,7 @@ button.mat-button:hover {
 }
 
 .dropdown-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(236, 226, 226, 0.1);
 }
 
 .dropdown-content {
@@ -71,7 +71,7 @@ button.mat-button:hover {
 }
 
 .language-option:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(216, 200, 200, 0.1);
     cursor: pointer;
 }
 
@@ -93,16 +93,16 @@ button.mat-button:hover {
 
 }
 
-mat-icon {
-    color: white;
-}
+
 .botones {
     display: flex;
     margin-left: auto ;
 }
 
-button.mat-button, .botones button, .sidenav button {
+mat-icon , button.mat-button, .botones button, .sidenav button {
     color: white; 
 }
-
+.botones button:hover{
+    background-color: rgb(218, 57, 57);
+}
 
