@@ -1,91 +1,56 @@
-/* Estilos generales */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+
+.mat-toolbar {
+    background-color: rgba(2, 1, 43, 255);
+    display: flex; 
+    color: white;
 }
 
-.container {
-    height: 100vh;
-}
-
-/* 🔹 Sidebar */
-.sidenav {
-    width: 250px;
-}
-
-.spacer {
-    flex: 1;
-}
-
-/* 🔹 Logo y texto */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-right: 20px;
+    padding-left: 20px;
+    cursor: pointer;
 }
 
 .logo-img {
-    width: 50px; /* Tamaño reducido */
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo-container:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-
+    height: 60px; 
+    margin-right: 10px; 
 }
 
 .logo-text {
-    font-size: 1.8rem;
+    font-size: 30px;
     font-weight: bold;
-    color: black;
+    color: white;
 }
 
-.language-container {
-    display: flex; /* Usamos flexbox para controlar la distribución */
-    justify-content: flex-end; /* Alinea el contenido a la derecha */
-    align-items: flex-start; /* Alinea el selector de idioma hacia la parte superior */
-    margin-bottom: 5px; /* Añade el margen inferior con respecto a los elementos debajo */
-    padding-right: 30px;
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
-
-
 
 .language-switcher {
     position: relative;
 }
 
 .dropdown-btn {
-    background: none;
+    background-color: transparent;
+    color: white; 
+    display: flex;
+    align-items: center;
     border: none;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: background 0.3s, color 0.3s ease;
-    background-color: #6200ea; /* Mismo color que la barra de navegación */
 }
 
 .dropdown-btn:hover {
-    background-color: #1c5377;
-    color: #fff;
+    background-color: rgba(236, 226, 226, 0.1);
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background: linear-gradient(to bottom, #ffffff, #ecf0f1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    z-index: 10;
-    top: 100%;
-    left: 0;
-    min-width: 160px;
-    padding: 5px 0;
-    backdrop-filter: blur(10px); /* Efecto de difuminado */
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .dropdown-content.show {
@@ -93,39 +58,90 @@ body {
 }
 
 .language-option {
-    padding: 10px;
+    padding: 8px 12px;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: white;
 }
 
 .language-option:hover {
-    background-color: #ecf0f1;
-}
-
-.language-option img {
-    margin-right: 10px;
-    width: 20px;
-    height: 15px;
-}
-
-mat-nav-list button {
-    border: none;
-    color: white;
+    background-color: rgba(216, 200, 200, 0.1);
     cursor: pointer;
-    font-weight: bold;
-    padding: 10px 20px;
-    transition: background 0.3s, color 0.3s ease;
-    background-color: #6200ea; /* Mismo color que la barra de navegación */
 }
 
-mat-nav-list button:hover {
-    background-color: #1c5377;
+.flag {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.sub-menu {
+    display: none;
+}
+
+.sub-menu.show {
+    display: block;
+}
+
+.mat-sidenav {
+    background-color: rgba(2, 1, 43, 255);
+
+}
+
+.botones {
+    display: flex;
+    margin-left: auto ;
+}
+
+mat-icon , button.mat-button, .botones button, .sidenav button {
+    color: white; 
+}
+.botones button:hover{
+    background-color: rgb(218, 57, 57);
+}
+
+/* Estilo general del contenedor del footer */
+.footer {
+    background-color: #333; 
     color: #fff;
-    border-radius: 0%;
+    padding: 20px 0;
+    text-align: center;
 }
 
+.footer-container {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
 
+.footer-content p {
+    font-size: 14px;
+    margin: 10px 0;
+}
 
+.footer-content a {
+    color: #ff4081; 
+    text-decoration: none;
+}
 
+.footer-content a:hover {
+    text-decoration: underline;
+}
+.social-links {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 15px; 
+    margin-top: 15px;
+}
+
+.social-icon img {
+    width: 40px; 
+    height: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); 
+    opacity: 0.8; 
+}

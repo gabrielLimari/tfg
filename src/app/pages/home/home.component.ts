@@ -10,7 +10,6 @@ import { Local } from '../../interfaces/locals';
 import { MatIconModule } from '@angular/material/icon';
 import { TarjetaEventoComponent } from "../eventos/tarjeta-evento/tarjeta-evento.component";
 import { TranslateModule } from '@ngx-translate/core';
-import { NavComponent } from "../../components/nav/nav.component";
 import { SearchService } from '../../services/search.service';
 
 @Component({

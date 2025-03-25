@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
-import { TarjetaEventoComponent } from './pages/eventos/tarjeta-evento/tarjeta-evento.component';
 import { DetalleLocalComponent } from './pages/locales/detalle-local/detalle-local.component';
 import { DetallesEventoComponent } from './pages/eventos/detalles-evento/detalles-evento.component';
 import { BaresComponent } from './pages/bares/bares.component';

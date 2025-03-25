@@ -1,158 +1,10 @@
-<!-- <div id="titulo">
-    <h1><b>{{ local.basicData.title }}</b></h1>
-    <hr>
-</div>
-
-
-<div id="contenedorExterior" *ngIf="local">
-    <div id="imagenContenedor">
-        <div id="imagenes">
-            <img id="imagen" *ngIf="local?.multimedia?.images?.length"
-            [src]="local.multimedia.images[0]" alt="Imagen_Local">
-            <br>
-        </div>
-    </div>
-    <br>    
-</div>
-<hr>
-<div id="body">
-    <div id="textoContenedor">
-        <div id="cabecera">
-            <h3><b>Ubicación</b></h3>
-            <br>
-            <div class="datos">
-                <p><b>{{ local.geoData.country }} - {{ local.geoData.address }}</b></p>
-            </div>
-            <hr>
-            <h3><b>Datos de Contacto</b></h3>
-            <div class="datos">
-                <p *ngIf="local.basicData.phone?.length; else noPhone">
-                    {{ local.basicData.phone }}
-                </p>
-                <ng-template #noPhone>
-                    <p>No hay un teléfono disponible</p>
-                </ng-template>
-           
-                <p *ngIf="local.basicData.email?.length; else noMail">
-                    {{ local.basicData.email }}
-                </p>
-                <ng-template #noMail>
-                    <p>No hay un correo disponible</p>
-                </ng-template>
-            </div>
-            <hr>
-            <h3><b>Horario</b></h3>
-            <div class="datos">
-                <p [innerHTML]="local.extraData.schedule"></p>
-            </div>
-            <hr>
-            <h3><b>WEB Local</b></h3>
-            <div class="datos">
-                <a *ngIf="local.basicData.web?.length; else noWeb" [href]="local.basicData.web" target="_blank">
-                    {{ local.basicData.web }}
-                </a>
-                <br>                
-                <ng-template #noWeb>
-                    <p>No hay una web disponible</p>
-                </ng-template>
-            </div>
-            <hr>
-        </div>
-    </div>
-   
-    <div id="descripcionContenedor" *ngIf="local">
-        <br>
-        <h3><b>Descripción del Local</b></h3>
-        <br>
-        <div id="descripcion">
-            <p  [innerHTML]="local.basicData.body"></p>
-        </div>
-    </div>
-   
-</div>
- -->
-<!-- Version Anterior la Comento
-    <div id="contenedorExterior" *ngIf="local">
-        <div id="imagenContenedor">
-            <div id="imagenes">
-                <img id="imagen" *ngIf="local?.multimedia?.images?.length"
-                [src]="local.multimedia.images[0]" alt="Imagen_Local">
-                <br>
-            </div>
-        </div>
-        <br>    
-    </div>
-    
-<div id="body">
-    <div id="titulo">
-        <h1><b>{{ local.basicData.title }}</b></h1>
-        <hr>
-    </div>
-    <div id="body">
-        <div id="textoContenedor">
-            <table id="tabla">
-                <tr>
-                <th> <h3><b>Ubicación</b></h3> </th>
-                <th> <h3><b>Datos de Contacto</b></h3> </th>
-                <th> <h3><b>Horario</b></h3> </th>
-                <th> <h3><b>WEB</b></h3> </th>
-                </tr>
-                <tr>
-                <td><p><b>{{ local.geoData.country }} - {{ local.geoData.address }}</b></p></td>
-                <td>  
-                    <p *ngIf="local.basicData.phone?.length; else noPhone">
-                            {{ local.basicData.phone }}
-                        </p>
-                        <ng-template #noPhone>
-                            <p>No hay un teléfono disponible</p>
-                        </ng-template>
-                
-                        <p *ngIf="local.basicData.email?.length; else noMail">
-                            {{ local.basicData.email }}
-                        </p>
-                        <ng-template #noMail>
-                            <p>No hay un correo disponible</p>
-                        </ng-template>
-                </td>
-                <td><p [innerHTML]="local.extraData.schedule"></p></td>
-                <td>
-                        <a *ngIf="local.basicData.web?.length; else noWeb" [href]="local.basicData.web" target="_blank">
-                        {{ local.basicData.web }}
-                        </a>
-                        <br>                
-                        <ng-template #noWeb>
-                            <p>No hay una web disponible</p>
-                        </ng-template>
-                </td>
-                </tr>
-            </table>
-            <br>
-
-        </div>
-    </div>
-
-    <div id="descripcionContenedor" *ngIf="local">
-            <br>
-            <h3><b>Descripción del Local</b></h3>
-            <br>
-            <div id="descripcion">
-                <p  [innerHTML]="local.basicData.body"></p>
-            </div>
-    </div>
-</div>
-
-
--->
-
 <div class="image-container">
+    <h1>{{ local.basicData.title }}</h1>
     <img [src]="local.multimedia.images[0]" alt="Imagen_Local">
 </div>
 
-
 <div class="container">
-
     <div class="content">
-        <h1>{{ local.basicData.title }}</h1>
         <button>
             <mat-icon>favorite</mat-icon>
         </button>
@@ -162,10 +14,8 @@
             </span>
         </p>
 
-
         <h2>Descripción del lugar</h2>
         <p [innerHTML]="local.basicData.body"></p>
-
 
         <div class="info-cards">
             <div class="card">
@@ -173,9 +23,9 @@
                 <p [innerHTML]="local.extraData.schedule"></p>
             </div>
         </div>
+    </div>
+</div>
 
-    </div>
-    <div class="col-md-7">
-        <div id="mapa" style="width: 100%; height: 88.5vh; border-style: solid"></div>
-    </div>
+<div class="contenedor_mapa">
+    <div id="mapa" ></div>
 </div>

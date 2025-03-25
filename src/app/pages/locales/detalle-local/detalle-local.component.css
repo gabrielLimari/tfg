@@ -1,173 +1,4 @@
-/*#titulo{
-    display: flex;
-    justify-content: center;
-   
-}
-
-
-#contenedorExterior{
-    padding-top:30px;
-    padding-bottom:30px;
-    display: flex;
-    justify-content: center;
-   
-}
-
-
-#imagen{
-   border-radius: 5%;
-   height: 450px;
-   width: 600px;
-   box-shadow: 10px 15px 15px #8b8b8b;
-
-}
-
-
-#imagenContenedor{  
-   padding-left: 50px;
-   padding-right: 50px;
-   display: flex;
-   align-items: center;
-
-
-}
-#textoContenedor{
-   
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-#cabecera{
-    display: flex;
-   
-    padding-top: 50px;
- 
-    flex-direction: column;
-   
-}
-#descripcionContenedor{
-   
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 100px;
-    padding-top: 20px;
-}
-
-
-#descripcion{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-left: 250px;
-    padding-right: 250px;
-   
-}
-
-
-#body{
-    box-shadow: 10px 15px 15px #8b8b8b;
-
-    background-color: rgb(192, 171, 131);
-    border-radius: 15%;
-    margin-left: 300px;
-    margin-right: 300px;
-    margin-bottom: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.datos{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-*/
-
-/*ESTO TENIA ACTIVO LA VERSION PREVIA LO COMENTO/
-/*
-
-#imagen{
-    border-radius: 5%;
-    height: 450px;
-    width: 750px;
- 
- }
- 
- 
- #imagenContenedor{  
-    padding-left: 50px;
-    padding-right: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
- 
- }
-
- #titulo{
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-   
-}
-
- #textoContenedor{
-   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
-
- th,td{
-   
-    padding-left: 100px;
-    text-align: center;
- }
- th{
-    padding-top: 50px;
- }
- td{
-    padding-top: 20px;
- }
- 
-
- #descripcionContenedor{
-   
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    
-  
-}
-
-
-#descripcion{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-left: 450px;
-    margin-right: 450px;
-   padding-bottom: 50px;
-}
-
-#body{
-  
-    margin-left: 150px;
-    margin-right: 150px;
-    background-color: rgb(228, 228, 228);
-    border-radius: 10%;
-}
-*/
-
-
-/*VERSION NUEVA COMENTAR SI OS GUSTA*/
-
 .container {
-    margin-top: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,17 +8,22 @@
     backdrop-filter: blur(10px);
     width: 90%;
     max-width: 1000px;
-    padding: 20px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative; /* Para permitir que los elementos hijos se posicionen relativamente a este contenedor */
 }
 
+.image-container{
+    text-align: center;
+  
+}
 .image-container img {
+    
     position: absolute;
     left: 50%; /* Centra horizontalmente */
-    top: 16%; /* Desplaza la imagen hacia arriba (de modo que 1/8 de ella quede sobre el contenedor) */
+    top: 20%; /* Desplaza la imagen hacia arriba (de modo que 1/8 de ella quede sobre el contenedor) */
     transform: translateX(-50%); /* Ajusta la imagen para que esté completamente centrada */
     width: 40%; /* Controla el tamaño de la imagen */
     height: auto; /* Mantiene la proporción de la imagen */
@@ -229,3 +65,21 @@
     font-size: 14px;
     color: #777;
 }
+
+    #mapa {
+        padding-left: 200px;
+        height: 100%;
+        border: 2px solid;
+        border-radius: 15px;
+        width: 50%;
+      }
+      
+      .contenedor_mapa{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 40%;
+        padding-bottom: 20px;
+      }

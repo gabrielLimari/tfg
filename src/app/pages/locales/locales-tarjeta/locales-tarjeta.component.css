@@ -11,8 +11,8 @@ mat-card{
     max-width: 500px;
 }
 #card{
-    min-height: 450px;
-    max-width: 400px; 
+    min-height: 380px;
+    max-width: 330px; 
 }
 
 .local-card {
