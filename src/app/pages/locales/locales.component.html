@@ -1,1 +1,48 @@
-<p>locales works!</p>
+<section class="main">
+    <div class="container">
+        <div class="image-container">
+            <img src="img_discoteca.jpg" alt="alt_img_discoteca" class="image main">
+            <img src="img_coctel.jpg" alt="alt_img_coctel" class="image overlay">
+        </div>
+        <div class="text-container">
+            <h2>Los mejores <br> Locales</h2>
+            <div class="icon">✦</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Filtros -->
+        <aside class="filters">
+            <h3>Filtrar por tipo</h3>
+            <button class="filter-btn">Coctelería</button>
+            <button class="filter-btn">Discoteca</button>
+        </aside>
+
+        <!-- Sección de locales -->
+        <div class="Carousel">
+            <h2>Locales</h2>
+            <div class="slick-list" #slickList>
+                <button class="slick-arrow slick-prev" (click)="prevSlide()">
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+                <div class="slick-track" #track>
+                    <div class="slick" *ngFor="let local of paginatedLocals">
+                            <div>
+                                <a href="/">
+                                    <h4><small>{{local.basicData.title}}</small>Watch</h4>
+                                    <picture>
+                                        <img [src]="local.multimedia.images[0]" alt="Imagen_Local">
+
+                                    </picture>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+                <button class="slick-arrow slick-next" (click)="nextSlide()">
+                    <mat-icon>chevron_right</mat-icon>
+                </button>
+            </div>
+        </div>
+        
+    </div>        
+</section>
