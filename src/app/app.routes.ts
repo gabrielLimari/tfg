@@ -11,6 +11,7 @@ import { LocalesComponent } from './pages/locales/locales.component';
 import { FiestasComponent } from './pages/fiestas/fiestas.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { EventosComponent } from './pages/eventos/eventos.component';
+import { LTarjetaComponent } from './pages/locales/l-tarjeta/l-tarjeta.component';
 
 export const routes: Routes = [
    
@@ -74,11 +75,6 @@ export const routes: Routes = [
         component: DetallesEventoComponent,
         title: 'Tarjeta Evento'
     }
-    ,
-    {
-        path: 'locales',
-        component: LocalesComponent,
-        title: 'Locales'
-    }
+    
 
 ];

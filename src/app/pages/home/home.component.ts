@@ -177,7 +177,6 @@ export class HomeComponent implements OnInit {
   selectLocal(local: Local): void {
     this.localService.setSelectedLocal(local);
     this.router.navigate(['/local']);
-
   }
 
 

@@ -1,13 +1,14 @@
-<div class="image-container">
-    <h1>{{ local.basicData.title }}</h1>
-    <img [src]="local.multimedia.images[0]" alt="Imagen_Local">
-</div>
-
-<div class="container">
-    <div class="content">
-        <button>
-            <mat-icon>favorite</mat-icon>
-        </button>
+    <div class="content-section">
+        <div class="image-section">
+            <img [src]="local.multimedia.images[0]" alt="Imagen del Local">
+           
+        </div>
+        <div class="titulo-btnfavorito">
+            <h1>{{ local.basicData.title }}</h1>
+            <button>
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
         <p class="tags">
             <span *ngFor="let c of local.extraData.categories; let i = index">
                 {{ c.categoria }} <span *ngIf="i < local.extraData.categories.length - 1"> - </span>
@@ -17,15 +18,14 @@
         <h2>Descripción del lugar</h2>
         <p [innerHTML]="local.basicData.body"></p>
 
-        <div class="info-cards">
-            <div class="card">
+            <div class="horario-card">
                 <h3>Horario</h3>
                 <p [innerHTML]="local.extraData.schedule"></p>
             </div>
-        </div>
+            <div class="map-container">
+                <div id="mapa"></div>
+            </div>
     </div>
-</div>
 
-<div class="contenedor_mapa">
-    <div id="mapa" ></div>
-</div>
+   
+

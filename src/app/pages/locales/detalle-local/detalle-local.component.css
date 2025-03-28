@@ -1,85 +1,158 @@
-.container {
+/* Ajustes generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+}
+
+/* Contenedor principal */
+.content-section {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin-top: 18%;
-    background: rgba(255, 255, 255, 0.1);
+    align-items: center;
+    justify-content: flex-start;
     backdrop-filter: blur(10px);
-    width: 90%;
     max-width: 1000px;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    position: relative; /* Para permitir que los elementos hijos se posicionen relativamente a este contenedor */
-}
-
-.image-container{
-    text-align: center;
-  
-}
-.image-container img {
-    
-    position: absolute;
-    left: 50%; /* Centra horizontalmente */
-    top: 20%; /* Desplaza la imagen hacia arriba (de modo que 1/8 de ella quede sobre el contenedor) */
-    transform: translateX(-50%); /* Ajusta la imagen para que esté completamente centrada */
-    width: 40%; /* Controla el tamaño de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
+    padding: 30px 20px;
+    margin: 2% auto;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
-    z-index: 1;
-}
-
-.content {
     color: #333;
-    text-align: left;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    position: relative; /* Asegura que este contenedor quede detrás de la imagen */
+    line-height: 1.8;
+    font-size: 18px;
+    font-weight: 400;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-.info-cards {
+.content-section:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección de imagen */
+.image-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-section img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.image-section img:hover {
+    transform: scale(1.05);
+}
+
+/* Título y botón de favorito */
+.titulo-btnfavorito {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.titulo-btnfavorito h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+}
+
+.titulo-btnfavorito button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.titulo-btnfavorito button:hover {
+    background-color: #ff1f56;
+}
+
+.mat-icon {
+    font-size: 24px;
+}
+
+/* Sección de categorías/tags */
+.tags {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.tags span {
+    margin-right: 8px;
+}
+
+.tags span:last-child {
+    margin-right: 0;
+}
+
+/* Sección de descripción */
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* Horario */
+.horario-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
     margin-top: 20px;
-}
-
-.card {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.card h3 {
-    font-size: 18px;
-    color: #333;
+.horario-card:hover {
+    transform: scale(1.02);
 }
 
-.card p {
-    font-size: 14px;
-    color: #777;
+.horario-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
 }
 
-    #mapa {
-        padding-left: 200px;
-        height: 100%;
-        border: 2px solid;
-        border-radius: 15px;
-        width: 50%;
-      }
-      
-      .contenedor_mapa{
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 40%;
-        padding-bottom: 20px;
-      }
+.horario-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Mapa */
+#mapa {
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    transition: border-color 0.3s ease;
+}
+
+#mapa:hover {
+    border-color: #ff4081;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}

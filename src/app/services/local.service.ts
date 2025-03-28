@@ -67,12 +67,28 @@ export class LocalService {
             extraData: {
               typeId: service.extradata.item.find((i: any) => i.$.name === 'idTipo')?._,
               type: service.extradata.item.find((i: any) => i.$.name === 'Tipo')?._,
-              categories: Array.isArray(service.extradata.categorias?.categoria)
-                ? service.extradata.categorias.categoria.map((cat: any) => ({
-                    idCategoria: cat.item[0]._,
-                    categoria: cat.item[1]._,
-                  }))
-                : [],
+              categories: Array.isArray(service.extradata?.categorias?.categoria) // Verifica si es un array
+              ? service.extradata.categorias.categoria.map((cat: any) => {
+                  // Procesa cada elemento si es un array (varios elementos)
+                  const idCategoria = cat.item?.find((i: any) => i.$.name === 'idCategoria')?._;
+                  const categoria = cat.item?.find((i: any) => i.$.name === 'Categoria')?._;
+            
+                  console.log("Elemento de categoria:", { idCategoria, categoria });
+            
+                  return {
+                    idCategoria: idCategoria ?? "Sin ID",
+                    categoria: categoria ?? "Sin nombre",
+                  };
+                })
+              : service.extradata?.categorias?.categoria // Si no es un array, significa que es un solo elemento
+              ? [
+                  {
+                    idCategoria: service.extradata.categorias.categoria.item?.find((i: any) => i.$.name === 'idCategoria')?._ ?? "Sin ID",
+                    categoria: service.extradata.categorias.categoria.item?.find((i: any) => i.$.name === 'Categoria')?._ ?? "Sin nombre",
+                  }
+                ]
+              : [],
+            
               paymentServices: service.extradata.item.find((i: any) => i.$.name === 'Servicios de pago')?._,
               schedule: service.extradata.item.find((i: any) => i.$.name === 'Horario')?._,
             },

@@ -11,38 +11,19 @@
     </div>
 
     <div class="content">
-        <!-- Filtros -->
         <aside class="filters">
             <h3>Filtrar por tipo</h3>
             <button class="filter-btn">Coctelería</button>
             <button class="filter-btn">Discoteca</button>
         </aside>
 
-        <!-- Sección de locales -->
-        <div class="Carousel">
-            <h2>Locales</h2>
-            <div class="slick-list" #slickList>
-                <button class="slick-arrow slick-prev" (click)="prevSlide()">
-                    <mat-icon>chevron_left</mat-icon>
-                </button>
-                <div class="slick-track" #track>
-                    <div class="slick" *ngFor="let local of paginatedLocals">
-                            <div>
-                                <a href="/">
-                                    <h4><small>{{local.basicData.title}}</small>Watch</h4>
-                                    <picture>
-                                        <img [src]="local.multimedia.images[0]" alt="Imagen_Local">
+        <div *ngFor="let local of locals | paginate: { itemsPerPage: 8, currentPage: page} ">
+            <a (click)="selectLocal(local)">
+              <app-l-tarjeta class="tarjeta" [local]=local></app-l-tarjeta>
+            </a>
+          </div>
+               <!-- Paginación -->
+    <pagination-controls (pageChange)="page = $event" class="d-flex justify-content-center"></pagination-controls>
 
-                                    </picture>
-                                </a>
-                            </div>
-                    </div>
-                </div>
-                <button class="slick-arrow slick-next" (click)="nextSlide()">
-                    <mat-icon>chevron_right</mat-icon>
-                </button>
-            </div>
-        </div>
-        
     </div>        
 </section>

@@ -1,7 +1,6 @@
 
 <mat-card id="card" class="local-card" appearance="outlined" (click)="verDetalles(local.id)">
             <img id="imagenes" *ngIf="local.multimedia.images.length"  mat-card-image [src]="local.multimedia.images[0]" alt='{{ "imagen" | translate }}' >
-
         <mat-card-content>
             <br>
             <h3><b>{{local.basicData.name}}</b></h3>

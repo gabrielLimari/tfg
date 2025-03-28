@@ -43,7 +43,7 @@ export class DetalleLocalComponent implements OnInit {
 
 
   inicializarMapa() {
-
+    console.log(this.local);
 
     var nuevoMarcador = {
       lng: this.local.geoData.longitude,
