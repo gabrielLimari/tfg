@@ -22,7 +22,7 @@ body {
     border-radius: 15px;
     color: #333;
     line-height: 1.8;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
@@ -46,15 +46,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-.image-section img:hover {
-    transform: scale(1.05);
-}
 
 /* Título y botón de favorito */
 .titulo-btnfavorito {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     width: 100%;
     margin-bottom: 20px;
 }
@@ -65,8 +62,8 @@ body {
     color: #222;
 }
 
-.titulo-btnfavorito button {
-    background-color: #ff4081;
+.favorite-btn, .not-favorite-btn  {
+margin-left: 10px;
     color: white;
     border: none;
     border-radius: 100%;
@@ -81,6 +78,19 @@ body {
 .titulo-btnfavorito button:hover {
     background-color: #ff1f56;
 }
+
+
+.favorite-btn {
+    background-color: #ff4081;
+    color: white;
+}
+
+.not-favorite-btn {
+    background-color: gray;
+    color: white;
+}
+
+
 
 .mat-icon {
     font-size: 24px;
@@ -155,4 +165,42 @@ h2 {
     justify-content: center;
     width: 100%;
     margin-top: 40px;
+}
+
+
+/* Estilos para los botones de navegación (prev / next) */
+.image-section {
+    position: relative;
+}
+
+/* Botones de navegación imgs */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    cursor: pointer;
+    font-size: 38px;
+    border-radius: 40%;
+    transition: background 2s ease;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Asegura que los botones estén encima de la imagen */
+}
+
+.prev-btn {
+    left: 0px; 
+}
+
+.next-btn {
+    right: 0px; 
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.prev-btn:disabled,
+.next-btn:disabled {
+    visibility: hidden;
 }

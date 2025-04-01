@@ -21,6 +21,8 @@ export class DetalleLocalComponent implements OnInit {
   localId!: string;
   local!: Local;
   map!: mapboxgl.Map;
+  imageIndexes: number = 0;  
+  isFavorite: boolean = false; // propiedad para controlar el estado de favoritos
 
   constructor(
     private localService: LocalService,
@@ -30,11 +32,17 @@ export class DetalleLocalComponent implements OnInit {
     const localData = localStorage.getItem('selectedLocal');
     if (localData) {
       this.local = JSON.parse(localData); // Recuperamos el local de localStorage
+      
     } else {
       // Si no hay local en localStorage, redirige o muestra un error
       console.error('No se encontró un local seleccionado');
     }
-  
+      // Verificamos si el lugar está en los favoritos
+      const userData = JSON.parse(localStorage.getItem('usuarioLogueado') || '{}');
+      if (userData && userData.favoritos) {
+        this.isFavorite = userData.favoritos.includes(this.local.id);
+
+      }
     this.inicializarMapa();
   }
   
@@ -70,5 +78,47 @@ export class DetalleLocalComponent implements OnInit {
       ) 
       .addTo(this.map); 
   }
+
+
+  prevImage() {
+    if (this.imageIndexes > 0) {
+      this.imageIndexes--;
+    }
+  }
+
+  nextImage() {
+    if (this.imageIndexes < this.local.multimedia.images.length - 1) {
+      this.imageIndexes++;
+    }
+  }
+
+   // Método que se llama cuando el usuario hace clic en "Agregar a favoritos"
+  agregarFav() {
+  const userData = JSON.parse(localStorage.getItem('usuarioLogueado') || '{}'); // Obtener datos del usuario
+  if (userData && userData.id) {
+    // Si existe el usuario, agregar o quitar el id del local a los favoritos
+    if (!userData.favoritos) {
+      userData.favoritos = [];  // Crear la lista de favoritos si no existe
+    }
+
+    // Comprobar si el lugar ya está en los favoritos
+    if (userData.favoritos.includes(this.local.id)) {
+      // Si el local ya está en los favoritos, eliminarlo
+      userData.favoritos = userData.favoritos.filter((id: string) => id !== this.local.id);
+      localStorage.setItem('usuarioLogueado', JSON.stringify(userData)); // Guardar el usuario actualizado
+      this.isFavorite = false; // Cambiar estado a no favorito
+      console.log('Local eliminado de favoritos');
+    } else {
+      // Si el local no está en los favoritos, agregarlo
+      userData.favoritos.push(this.local.id);
+      localStorage.setItem('usuarioLogueado', JSON.stringify(userData)); // Guardar el usuario actualizado
+      this.isFavorite = true; // Cambiar estado a favorito
+      console.log('Local añadido a favoritos');
+    }
+  } else {
+    console.log('No se encontró usuario en el almacenamiento local');
+  }
+}
+
 
 }

@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   private usuarioLogeado: Usuario | null = null;
   private apiUrl = 'http://localhost:3000'; //Url de la ejecución del index.js
+  //json-server .\usuarios.json
 
   constructor(private router: Router, private http: HttpClient) {
     // En el constructor, se intenta recuperar el usuario almacenado en el localStorage
@@ -53,7 +54,9 @@ export class AuthService {
 
   // Obtener todos los usuarios desde la base de datos
   getUsersBD(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/getUsers`);
+    
+    return this.http.get<Usuario[]>(`${this.apiUrl}/usuarios`);
+
   }
 
 

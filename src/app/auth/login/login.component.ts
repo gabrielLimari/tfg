@@ -29,15 +29,21 @@ private authService: AuthService) {}
   }
 
   loadUsers(): void {
-    this.authService.getUsersBD().subscribe((data) => {
-      this.usuarios = data;
+
+    this.authService.getUsersBD().subscribe((usuarios: Usuario[]) => {
+      console.log(usuarios); 
+      this.usuarios = usuarios;
+
     });
   }
 
   comprobarLogin(): void {
     // Buscamos si hay un usuario con el mismo username y password
     const user = this.usuarios.find(u => u.username === this.username && u.password === this.password);
-
+    this.usuarios.forEach(u => {
+      console.log(u.username)
+      
+    });
     if (user) {
       this.authService.login(user);
       this.snackbar.open('Login correcto', 'Cerrar', {

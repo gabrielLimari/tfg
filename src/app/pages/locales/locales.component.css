@@ -1,9 +1,10 @@
-.main {
+/* Sección principal */
+.section-locales {
     background-color: #f5f5f5;
-    color: #d4aaff; 
     align-items: center;
 }
 
+/* Contenedor principal */
 .container {
     display: flex;
     align-items: center;
@@ -15,11 +16,13 @@
     position: relative;
 }
 
+/* Contenedor de las imágenes */
 .image-container {
     position: relative;
     display: flex;
 }
 
+/* Estilos para las imágenes */
 .image {
     width: 250px;
     border-radius: 8px;
@@ -31,6 +34,7 @@
     filter: brightness(1.2);
 }
 
+/* Estilo para la imagen superpuesta */
 .overlay {
     position: absolute;
     bottom: -40px;
@@ -45,6 +49,7 @@
     filter: brightness(1.3);
 }
 
+/* Estilos para el texto */
 .text-container {
     margin-left: 50px;
     text-align: right;
@@ -57,6 +62,7 @@
     color: #d4aaff;
 }
 
+/* Icono */
 .icon {
     font-size: 24px;
     border: 1px solid #d4aaff;
@@ -70,7 +76,158 @@
     color: #d4aaff;
 }
 
-
-.tarjeta{
-    width: 30px;
+/* Contenedor de la lista de eventos */
+.container_list {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
+
+/* Estilos de la barra lateral */
+.sidebar-filtros {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-filtros h3 {
+    margin-bottom: 15px;
+}
+
+.sidebar-filtros label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidebar-filtros select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Estilo de la lista de eventos */
+.event-list {
+    flex: 1;
+    margin-left: 20px;
+}
+
+/* Estilos para la tarjeta de evento */
+.event-card {
+    display: flex;
+    background: white;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Para que los botones de navegación se ubiquen correctamente */
+}
+
+/* Imagen del evento */
+.event-card img {
+    width: 250px;
+    border-radius: 8px;
+}
+
+/* Contenido de la información del evento */
+.event-info {
+    margin-left: 15px;
+}
+
+/* Estilo para el botón de acceso */
+button {
+    background: teal;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Estilos para los botones de navegación (prev / next) */
+.event-image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botones de navegación imgs */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 40%;
+    transition: background 2s ease;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Asegura que los botones estén encima de la imagen */
+}
+
+.prev-btn {
+    left: 0px; 
+}
+
+.next-btn {
+    right: 0px; 
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn:disabled,
+.next-btn:disabled {
+    visibility: hidden;
+}
+
+/* Título y botón de favorito */
+.titulo-btnfavorito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.titulo-btnfavorito h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+}
+
+.favorite-btn, .not-favorite-btn  {
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+    
+    .titulo-btnfavorito button:hover {
+        background-color: #ff1f56;
+    }
+    
+    
+    .favorite-btn {
+        background-color: #ff4081;
+        color: white;
+    }
+    
+    .not-favorite-btn {
+        background-color: gray;
+        color: white;
+    }
+    
+    
+    

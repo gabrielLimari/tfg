@@ -1,31 +1,38 @@
-    <div class="content-section">
-        <div class="image-section">
-            <img [src]="local.multimedia.images[0]" alt="Imagen del Local">
-           
-        </div>
-        <div class="titulo-btnfavorito">
-            <h1>{{ local.basicData.title }}</h1>
-            <button>
-                <mat-icon>favorite</mat-icon>
-            </button>
-        </div>
-        <p class="tags">
-            <span *ngFor="let c of local.extraData.categories; let i = index">
-                {{ c.categoria }} <span *ngIf="i < local.extraData.categories.length - 1"> - </span>
-            </span>
-        </p>
+<div class="content-section">
+    <div class="image-section">
 
-        <h2>Descripción del lugar</h2>
-        <p [innerHTML]="local.basicData.body"></p>
+        <button class="prev-btn" (click)="prevImage()" [disabled]="imageIndexes === 0">❮</button>
 
-            <div class="horario-card">
-                <h3>Horario</h3>
-                <p [innerHTML]="local.extraData.schedule"></p>
-            </div>
-            <div class="map-container">
-                <div id="mapa"></div>
-            </div>
+        <img [src]="local.multimedia.images[imageIndexes]" [alt]="local.basicData.title" class="event-image">
+
+        <button class="next-btn" (click)="nextImage()"
+            [disabled]="imageIndexes === local.multimedia.images.length - 1">❯</button>
     </div>
 
-   
 
+    <div class="titulo-btnfavorito">
+        <h1>{{ local.basicData.title }}</h1>
+        <button (click)="agregarFav()" [ngClass]="isFavorite ? 'favorite-btn' : 'not-favorite-btn'">
+            <mat-icon >favorite</mat-icon>
+        </button>
+    </div>
+
+
+    <p class="tags">
+        <span *ngFor="let c of local.extraData.categories; let i = index">
+            {{ c.categoria }} <span *ngIf="i < local.extraData.categories.length - 1"> - </span>
+        </span>
+    </p>
+
+    <h2>Descripción del lugar</h2>
+    <p [innerHTML]="local.basicData.body"></p>
+
+    <div class="horario-card">
+        <h3>Horario</h3>
+        <p [innerHTML]="local.extraData.schedule"></p>
+    </div>
+    <div class="map-container">
+        <div id="mapa"></div>
+    </div>
+    div#mi  
+</div>

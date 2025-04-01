@@ -1,4 +1,4 @@
-<section class="main">
+<section class="section-locales">
     <div class="container">
         <div class="image-container">
             <img src="img_discoteca.jpg" alt="alt_img_discoteca" class="image main">
@@ -10,20 +10,64 @@
         </div>
     </div>
 
-    <div class="content">
-        <aside class="filters">
-            <h3>Filtrar por tipo</h3>
-            <button class="filter-btn">Coctelería</button>
-            <button class="filter-btn">Discoteca</button>
+    <div class="container_list">
+        <aside class="sidebar-filtros">
+            <h3>Filtros avanzados</h3>
+            <label>Provincia
+                <select>
+                    <option>Bizkaia</option>
+                </select>
+            </label>
+            <label for="categoryFilter">Categoría de evento</label>
+            <select id="categoryFilter" [(ngModel)]="selectedCategory" (change)="filterByCategory()">
+                <option value="">Todas</option>
+                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
         </aside>
 
-        <div *ngFor="let local of locals | paginate: { itemsPerPage: 8, currentPage: page} ">
-            <a (click)="selectLocal(local)">
-              <app-l-tarjeta class="tarjeta" [local]=local></app-l-tarjeta>
-            </a>
-          </div>
-               <!-- Paginación -->
-    <pagination-controls (pageChange)="page = $event" class="d-flex justify-content-center"></pagination-controls>
+        <main class="event-list">
+            <div class="event-card"
+                *ngFor="let local of filteredLocals | paginate: { itemsPerPage: 5, currentPage: page}; let i = index">
 
-    </div>        
+                <!-- Contenedor de la imagen con botones de navegación -->
+                <div class="event-image-container">
+                    <button class="prev-btn" (click)="prevImage(i)" [disabled]="imageIndexes[i] === 0">❮</button>
+
+                    <img [src]="local.multimedia.images[imageIndexes[i]]" [alt]="local.basicData.title"
+                        class="event-image">
+
+                    <button class="next-btn" (click)="nextImage(i)"
+                        [disabled]="imageIndexes[i] === local.multimedia.images.length - 1">❯</button>
+                </div>
+
+                <div class="event-info">
+                    <div class="titulo-btnfavorito">
+
+                        <h2>{{ local.basicData.title }}</h2>
+                        <button (click)="agregarFav(local)" [ngClass]="isFavorite(local) ? 'favorite-btn' : 'not-favorite-btn'">
+                            <mat-icon>favorite</mat-icon>
+                          </button>
+                          
+                    </div>
+                    <p [innerHTML]="limitarPalabrasInfoLocal(local.basicData.body, 30)"></p>
+                    <p><strong>Ubicación:</strong> {{ local.geoData.address }}</p>
+
+                    <!-- Categorías separadas por " - " -->
+                    <p>
+                        <strong>Categoría:</strong>
+                        <span *ngFor="let c of local.extraData.categories; let last = last">
+                            {{ c.categoria }}<span *ngIf="!last"> - </span>
+                        </span>
+                    </p>
+
+                    <button (click)="selectLocal(local)">Accede</button>
+                </div>
+            </div>
+
+            <pagination-controls (pageChange)="page = $event" class="pagination-controls"></pagination-controls>
+        </main>
+
+    </div>
+
+
 </section>
