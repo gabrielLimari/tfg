@@ -1,0 +1,25 @@
+<div class="page-container">
+    <h1>{{ "registro" | translate }}</h1>
+    <div class="register-container">
+        <img [src]="'usuario.png'" alt="Registro">
+
+        <form (ngSubmit)="registerUser()">
+            <div class="form-group">
+                <label for="newUsername">{{ "nuevoUsuario" | translate }}</label>
+                <input type="text" id="newUsername" name="newUsername" placeholder='{{"usuario" | translate }}' required
+                    [(ngModel)]="newUsername">
+            </div>
+            <div class="form-group">
+                <label for="newPassword">{{ "nuevaContrasena" | translate }}</label>
+                <input type="password" id="newPassword" name="newPassword" placeholder='{{"contrasena" | translate }}'
+                    required [(ngModel)]="newPassword">
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="register-button">{{ "registrarse" | translate }}</button>
+                <button type="button" class="back-button" (click)="navigateToLogin()">{{ "volverLogin" | translate }}</button>
+            </div>
+        </form>
+
+    </div>
+</div>

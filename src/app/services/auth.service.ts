@@ -58,6 +58,10 @@ export class AuthService {
     return this.http.get<Usuario[]>(`${this.apiUrl}/usuarios`);
 
   }
+//Registrrse
+ registrarse(usuario: Usuario): Observable<Usuario> {
+  return this.http.post<Usuario>(`${this.apiUrl}/usuarios`, usuario);
+}
 
 
 }

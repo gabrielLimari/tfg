@@ -11,6 +11,7 @@ import { LocalesComponent } from './pages/locales/locales.component';
 import { FiestasComponent } from './pages/fiestas/fiestas.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { EventosComponent } from './pages/eventos/eventos.component';
+import { RegistroComponent } from './auth/login/registro/registro.component';
 
 export const routes: Routes = [
    
@@ -23,6 +24,11 @@ export const routes: Routes = [
         path: 'login',
         component: LoginComponent,
         title: 'Login'
+    },
+    {
+        path: 'registro',
+        component: RegistroComponent,
+        title: 'registro'
     },
     {
         path: 'home',
