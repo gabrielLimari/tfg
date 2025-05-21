@@ -1,11 +1,11 @@
 
   <section class="filters">
-    <span>Filtrar por:</span>
-    <button class="filter-btn" (click)="toggleDatePicker()">Fechas</button>
-    <button class="filter-btn">Lugares</button>
-    <button class="filter-btn active">Reggaeton</button>
-    <button class="filter-btn">Ambientes</button>
-    <button class="filter-btn">Instalaciones</button>
+    <span>{{"filtrar" | translate}}</span>
+    <button class="filter-btn" (click)="toggleDatePicker()">{{"fechas" | translate}}</button>
+    <button class="filter-btn">{{"lugares" | translate}}</button>
+    <button class="filter-btn active">{{"reggaeton" | translate}}</button>
+    <button class="filter-btn">{{"ambientes" | translate}}</button>
+    <button class="filter-btn">{{"instalaciones" | translate}}</button>
   </section>
 
   <section class="date-picker" *ngIf="showDatePicker">
@@ -14,12 +14,12 @@
 
   <!-- Etiqueta dinámica que muestra la fecha seleccionada -->
   <h2 *ngIf="fechaSeleccionada" style="text-align: center; margin-top: 10px;">
-    Eventos desde el {{ fechaSeleccionada }}
+    {{"eventosDesde"| translate}} {{ fechaSeleccionada }}
   </h2>
 
   <!-- Etiqueta "Próximos Eventos" siempre visible -->
   <h2 *ngIf="!fechaSeleccionada" style="text-align: center; margin-top: 10px;">
-    Próximos Eventos
+    {{"proximosEventos" | translate}}
   </h2>
 
   <div class="contenedor_card">
