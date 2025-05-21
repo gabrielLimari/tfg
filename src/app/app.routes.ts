@@ -8,7 +8,6 @@ import { CocteleriasComponent } from './pages/coctelerias/coctelerias.component'
 import { DiscotecasComponent } from './pages/discotecas/discotecas.component';
 import { LandingpageComponent } from './pages/landingpage/landingpage.component';
 import { LocalesComponent } from './pages/locales/locales.component';
-import { FiestasComponent } from './pages/fiestas/fiestas.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { EventosComponent } from './pages/eventos/eventos.component';
 import { RegistroComponent } from './auth/login/registro/registro.component';
@@ -44,11 +43,6 @@ export const routes: Routes = [
         path: 'eventos',
         component: EventosComponent,
         title: 'Eventos'
-    },
-    {
-        path: 'fiestas',
-        component: FiestasComponent,
-        title: 'Fiestas'
     },
     {
         path: 'locales',
