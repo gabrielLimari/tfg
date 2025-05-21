@@ -62,4 +62,8 @@ private authService: AuthService) {}
       });
     }
   }
+
+registrarse(): void {
+  this.router.navigate(['/registro']);
+}
 }
