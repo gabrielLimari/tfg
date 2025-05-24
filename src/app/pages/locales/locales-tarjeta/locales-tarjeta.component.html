@@ -6,7 +6,11 @@
             <h3><b>{{local.basicData.name}}</b></h3>
             <p>{{local.geoData.address}}</p>
             <hr>
-            <h4 id="texto"><b>{{"ACCEDE" | translate}}</b></h4>
+            <!--<h4 id="texto"><b>{{"ACCEDE" | translate}}</b></h4> -->
+            <p [innerHTML]="obtenerTextoCorto(local.basicData.body)"></p>
+            <a (click)="mostrarTextoCompleto = !mostrarTextoCompleto" style="color: blue; cursor: pointer;">
+                {{ mostrarTextoCompleto ? 'Ver menos' : 'Ver más' }}
+            </a>
            
         </mat-card-content>
         

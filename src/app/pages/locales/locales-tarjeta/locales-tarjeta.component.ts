@@ -18,7 +18,8 @@ export class LocalesTarjetaComponent {
   
   locals: Local[] = [];
   @Input() local!: Local;
- 
+  mostrarTextoCompleto = false;
+
   constructor(private router: Router,
         private localService: LocalService,
     
@@ -27,5 +28,19 @@ export class LocalesTarjetaComponent {
   verDetalles(id: string) {
     this.localService.setSelectedLocal(this.local);
     this.router.navigate(['/local']);
+  }
+
+   obtenerTextoCorto(texto: string): string {
+    if (this.mostrarTextoCompleto || texto.length <= 250) {
+      return texto;
+    }
+
+    const textoCortado = texto.slice(0, 250);
+    const ultimoEspacio = textoCortado.lastIndexOf(' ');
+
+    // Si hay un espacio antes del carácter 250, corta ahí, si no, corta al máximo permitido
+    const resultado = ultimoEspacio > -1 ? textoCortado.slice(0, ultimoEspacio) : textoCortado;
+
+    return resultado + ' ...';
   }
 }
