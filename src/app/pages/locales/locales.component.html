@@ -5,22 +5,22 @@
             <img src="img_coctel.jpg" alt="alt_img_coctel" class="image overlay">
         </div>
         <div class="text-container">
-            <h2>Los mejores <br> Locales</h2>
+            <h2>{{"mejores" | translate}} <br> {{"locales" | translate}}</h2>
             <div class="icon">✦</div>
         </div>
     </div>
 
     <div class="container_list">
         <aside class="sidebar-filtros">
-            <h3>Filtros avanzados</h3>
-            <label>Provincia
+            <h3>{{"filtrosAvanzados" | translate}}</h3>
+            <label>{{"provincia" | translate}}
                 <select>
                     <option>Madrid</option>
                 </select>
             </label>
-            <label for="categoryFilter">Categoría de evento</label>
+            <label for="categoryFilter">{{"categoriaEvento" | translate}}</label>
             <select id="categoryFilter" [(ngModel)]="selectedCategory" (change)="filterByCategory()">
-                <option value="">Todas</option>
+                <option value="">{{"todas" | translate}}</option>
                 <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
             </select>
         </aside>
@@ -50,17 +50,17 @@
                           
                     </div>
                     <p [innerHTML]="limitarPalabrasInfoLocal(local.basicData.body, 30)"></p>
-                    <p><strong>Ubicación:</strong> {{ local.geoData.address }}</p>
+                    <p><strong>{{"ubicacion" | translate}}:</strong> {{ local.geoData.address }}</p>
 
                     <!-- Categorías separadas por " - " -->
                     <p>
-                        <strong>Categoría:</strong>
+                        <strong>{{"categoria" | translate}}:</strong>
                         <span *ngFor="let c of local.extraData.categories; let last = last">
                             {{ c.categoria }}<span *ngIf="!last"> - </span>
                         </span>
                     </p>
 
-                    <button (click)="selectLocal(local)">Accede</button>
+                    <button (click)="selectLocal(local)">{{"accede" | translate}}</button>
                 </div>
             </div>
 

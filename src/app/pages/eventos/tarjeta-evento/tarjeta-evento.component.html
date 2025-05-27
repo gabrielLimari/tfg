@@ -7,7 +7,7 @@
     <hr>
     <br>
     <p *ngIf="evento.eventStartDate?.length || evento.eventEndDate?.length">
-      Duración del Evento
+      {{"duracionEvento" | translate }}
       <br>
       {{ evento.eventStartDate }} - {{ evento.eventEndDate }}
     </p>

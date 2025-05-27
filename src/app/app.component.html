@@ -1,7 +1,7 @@
 <mat-sidenav-container fullscreen>
     <mat-sidenav #sidenav class="sidenav">
         <mat-toolbar class="menu">
-            <span>Menú</span>
+            <span>{{"menu" | translate}}</span>
             <span class="spacer"></span>
             <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>close</mat-icon>
@@ -11,11 +11,11 @@
 
         <mat-nav-list>
             <button mat-button routerLink="/home" (click)="sidenav.toggle()">
-                <mat-icon>home</mat-icon> Inicio
+                <mat-icon>home</mat-icon> {{"inicio" | translate}}
             </button>
             <mat-divider></mat-divider>
             <button mat-button routerLink="/buscar" (click)="sidenav.toggle()">
-                <mat-icon>search</mat-icon> Buscar
+                <mat-icon>search</mat-icon> {{"buscar" | translate}}
             </button>
             <mat-divider></mat-divider>
             <button mat-button routerLink="/eventos" (click)="sidenav.toggle()">
@@ -28,7 +28,7 @@
             <div class="locales">
                 <button mat-button routerLink="/locales">
                     <mat-icon>store</mat-icon>
-                    Locales
+                    {{"locales" | translate}}
                     <mat-icon (click)="toggleLocales()">{{ isLocalesOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
                 </button>
                 <mat-divider></mat-divider>
@@ -71,7 +71,7 @@
 
                 <div class="botones">
                     <button mat-button routerLink="/login">
-                        <mat-icon>login</mat-icon> Iniciar sesión
+                        <mat-icon>login</mat-icon> {{"inicioSesion" | translate}}
                     </button>
 
                     <div class="language-switcher">
@@ -103,8 +103,8 @@
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-content">
-                    <p>&copy; 2025 Festivity. Todos los derechos reservados.</p>
-                    <p><a href="#">Política de privacidad</a> | <a href="#">Términos y condiciones</a></p>
+                    <p>&copy; {{"copyright" | translate}}</p>
+                    <p><a href="#">{{"politica" | translate}}</a> | <a href="#">{{"terminos" | translate}}</a></p>
                     <div class="social-links">
                         <a href="mailto:soporte@festivity.com" target="_blank" class="social-icon">
                             <img src="logos_redes_sociales/email.png" alt="Gmail">

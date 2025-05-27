@@ -24,11 +24,11 @@
         </span>
     </p>
 
-    <h2>Descripción del lugar</h2>
+    <h2>{{"Desc lugar" | translate}}</h2>
     <p [innerHTML]="local.basicData.body"></p>
 
     <div class="horario-card">
-        <h3>Horario</h3>
+        <h3>{{"horario" | translate}}</h3>
         <p [innerHTML]="local.extraData.schedule"></p>
     </div>
     <div class="map-container">
