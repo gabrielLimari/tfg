@@ -1,0 +1,119 @@
+/* CONTENEDOR GENERAL DE BÚSQUEDA */
+.search-container {
+  background: linear-gradient(to right, #f8f9fc, #eef1f7);
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+/* ETIQUETA */
+.search-label {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #2c2c54;
+  display: block;
+}
+
+/* INPUT + BOTÓN */
+.search-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.custom-input {
+  width: 320px;
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  transition: box-shadow 0.3s ease;
+}
+
+.custom-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(58, 55, 107, 0.3);
+}
+
+.search-button {
+  background: linear-gradient(to right, #3a376b, #5c55b6);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-button:hover {
+  background: linear-gradient(to right, #c80046, #e2005f);
+  transform: translateY(-2px);
+}
+
+/* MENSAJE NO RESULTADOS */
+.no-results {
+  color: #c80046;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+/* TARJETAS DE RESULTADOS */
+.contenedor_card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  background: #ffffff;
+}
+
+/* PAGINACIÓN VISUAL */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 40px 0;
+}
+
+.btnPaginacion {
+  background: linear-gradient(to right, #3a376b, #5c55b6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btnPaginacion:hover:not(:disabled) {
+  background: linear-gradient(to right, #c80046, #e2005f);
+  transform: scale(1.1);
+}
+
+.btnPaginacion:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagina-actual {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+}

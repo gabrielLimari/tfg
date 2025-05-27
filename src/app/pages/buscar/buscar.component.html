@@ -1,50 +1,43 @@
+<!-- Contenedor de búsqueda -->
+<section class="search-container">
+  <label for="search-input" class="search-label">Buscar Locales</label>
+  <div class="search-input">
+    <input
+      id="search-input"
+      type="text"
+      [(ngModel)]="searchQuery"
+      (input)="buscarLocales()"
+      placeholder="Nombre, dirección o categoría"
+      class="custom-input"
+    />
+    <button class="search-button" (click)="buscarLocales()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+</section>
 
-<!-- <body>
-    <div class="search-container">
-      <div class="search-input">
-        <label for="search-input" class="search-label">Buscar Eventos y Locales</label>
-        <input
-          id="search-input"
-          type="text"
-          [(ngModel)]="searchQuery"
-          placeholder="Nombre, Apellido o Ciclo"
-          class="custom-input"
-        />
-        <button class="search-button" (click)="buscarUsuario()">
-          <mat-icon>search</mat-icon>
-        </button>
-      </div>
-      <button class="create-button" [routerLink]="['/crear-modificar']" >
-        <mat-icon>person_add</mat-icon> Crear Usuario
-      </button>
-    </div>
-    
-    <div class="usuario-container">
-      <!-- ngFor para iterar sobre los usuarios -->
-      <!-- <div class="usuario" *ngFor="let usuario of filteredUsuarios">
-          <div class="usuario-info">
-              <span><strong>Nombre:</strong> {{ usuario.nombre }}</span>
-              <span><strong>Apellidos:</strong> {{usuario.apellidos }}</span>
-              <span><strong>Email:</strong> {{ usuario.email }}</span>
-              <span><strong>DNI:</strong> {{ usuario.dni }}</span>
-              <span><strong>Teléfono:</strong> {{ usuario.telefono1 }}</span>
-              <span><strong>Dirección:</strong> {{ usuario.direccion }}</span>
-          </div>
-          <div class="usuario-foto">
-            <img *ngIf="fotos[usuario.id]" [src]="fotos[usuario.id]" alt="Foto de {{ usuario.nombre }}" />
-            <img *ngIf="!fotos[usuario.id]" [src]="'usuario.png'" alt="Imagen por defecto" />
-          </div>
-          <div class="usuario-actions">
-            <button class="modify-button" (click)="navigateToModificar(usuario.id)">
-              <mat-icon>edit</mat-icon> Modificar
-            </button>
-            
-            <button class="delete-button" (click)="borrarUsuario(usuario.id)">
-              <mat-icon>delete</mat-icon> Borrar
-            </button>
-          </div>
-          <mat-divider [inset]="true"></mat-divider>
-      </div>
-    </div>
-  </body>
- --> 
+<!-- Resultados de búsqueda -->
+<h2 *ngIf="searchQuery && filteredLocals.length === 0" class="no-results">
+  No se encontraron locales con esa búsqueda.
+</h2>
+
+<div class="contenedor_card" *ngIf="filteredLocals.length > 0">
+  <div *ngFor="let local of filteredLocals | paginate: { itemsPerPage: 3, currentPage: page }">
+    <a (click)="selectLocal(local)">
+      <app-locales-tarjeta [local]="local"></app-locales-tarjeta>
+    </a>
+  </div>
+</div>
+
+<!-- Paginación -->
+<div class="paginacion" *ngIf="filteredLocals.length > 3">
+  <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
+    <mat-icon>navigate_before</mat-icon>
+  </button>
+  
+  <span class="pagina-actual">Página {{ page }}</span>
+  
+  <button class="btnPaginacion" mat-fab (click)="goToNextPage()" [disabled]="(page * 3) >= filteredLocals.length">
+    <mat-icon>navigate_next</mat-icon>
+  </button>
+</div>

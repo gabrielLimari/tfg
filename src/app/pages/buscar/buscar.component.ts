@@ -1,17 +1,78 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { LocalesTarjetaComponent } from '../locales/locales-tarjeta/locales-tarjeta.component';
+import { FormsModule } from '@angular/forms';
+import { Local } from '../../interfaces/locals';
+import { LocalService } from '../../services/local.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-buscar',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule, LocalesTarjetaComponent, FormsModule, 
+    MatIconModule, NgxPaginationModule],
   templateUrl: './buscar.component.html',
   styleUrl: './buscar.component.css'
 })
-export class BuscarComponent {
-  
+
+
+export class BuscarComponent implements OnInit { 
   searchQuery: string = '';
-  
+  locals: Local[] = [];
+  filteredLocals: Local[] = [];
+  page: number = 1; // Página actual para la paginación
+
+  constructor(
+    private router: Router,
+    private localService: LocalService
+  ) {}
+
+  ngOnInit(): void {
+      this.localService.getLocales().subscribe((data: Local[]) => {
+        this.locals = data;
+        this.filteredLocals = [...this.locals]; // Inicializar con todos los locales
+      });
+  }
+
+  buscarLocales(): void {
+    const query = this.searchQuery.toLowerCase().trim();
+    if (!query) {
+      this.filteredLocals = [...this.locals]; 
+      this.page = 1; // Resetear a la primera página si no hay consulta
+      return;
+    }
+
+    this.filteredLocals = this.locals.filter((local) =>
+      local.basicData?.name?.toLowerCase().includes(query) ||
+      local.geoData?.address?.toLowerCase().includes(query) ||
+      local.extraData?.categories?.some((cat) =>
+        cat.categoria?.toLowerCase().includes(query)
+    )
+    );
+    this.page = 1; // Resetear a la primera página después de filtrar
+  }
+
+
+  selectLocal(local: Local): void {
+    this.localService.setSelectedLocal(local);
+    this.router.navigate(['/locales', local.id]);
+  }
+
+  goToPreviousPage(): void {
+    if (this.page > 1) {
+      this.page--;
+    }
+  }
+
+  goToNextPage(): void {
+    const totalPages = Math.ceil(this.filteredLocals.length / 3);
+    if (this.page < totalPages) {
+      this.page++;
+    }
+  }
+}
 /*
   constructor(private router:Router, private usuariosService: UsuariosService,
   ) { }
@@ -77,4 +138,3 @@ export class BuscarComponent {
 navigateToModificar(id: number) {
   this.router.navigate(['/crear-modificar', id]);
 }*/
-}
