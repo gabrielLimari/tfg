@@ -1,60 +1,32 @@
-<div class="container mt-4">
-    <div class="text-center mb-4">
-      <h2>{{ evento?.documentName }}</h2>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-5">
-        <div class="card">
-          <div class="card-header bg-primary text-white">
-            <h4>{{ "datosEvento" | translate }}</h4>
-          </div>
-          <div class="card-body">
-            <table class="table table-bordered">
-              <tbody>
-                <tr>
-                  <th>{{ "descripcion" | translate }}</th>
-                  <td>{{ evento?.documentDescription }}</td>
-                </tr>
-                <tr>
-                  <th>{{ "tipEvento" | translate }}</th>
-                  <td>{{ evento?.eventType }}</td>
-                </tr>
-                <tr>
-                  <th>{{ "fechaInicio" | translate }}</th>
-                  <td>{{ evento?.eventStartDate | date: 'short' }}</td>
-                </tr>
-                <tr>
-                  <th>{{ "fechaFin" | translate }}</th>
-                  <td>{{ evento?.eventEndDate | date: 'short' }}</td>
-                </tr>
-                <tr>
-                  <th>{{ "ubicacion" | translate }}</th>
-                  <td>{{ evento?.eventLocation }}</td>
-                </tr>
-                <tr>
-                  <th>{{ "lugar" | translate }}</th>
-                  <td>{{ evento?.latwgs84 }}</td>
-                </tr>
-                <tr>
-                  <th>{{ "precio" | translate }}</th>
-                  <td>{{ evento?.lonwgs84 }}</td>
-                </tr>
-                <tr>
-                  <th>{{ "duracion" | translate }}</th>
-                  <td>{{ evento?.eventDuration }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-  
-      
-  
-      <!-- Columna del mapa -->
-      <div class="col-md-7">
-        <div id="mapa" style="width: 100%; height: 88.5vh; border-style: solid;"></div>
-      </div>
-    </div>
+<div class="evento-container">
+  <!-- Título del Evento -->
+  <div class="evento-titulo">
+    <h1>{{ evento?.documentName }}</h1>
   </div>
-  
+
+  <!-- Imagen Principal -->
+  <div class="evento-imagen">
+    <img id="imagenes" mat-card-image [src]="evento?.eventImageUrl || randomDefaultImage" alt="{{ 'Imagen' | translate }}">
+  </div>
+
+  <!-- Descripción -->
+  <div class="evento-descripcion">
+    <h2>{{ "descripcion" | translate }}</h2>
+    <p>{{ evento?.documentDescription }}</p>
+  </div>
+
+  <!-- Datos del evento -->
+  <div class="evento-datos">
+    <h3>{{ "datosEvento" | translate }}</h3>
+    <ul>
+      <li><strong>{{ "fechaInicio" | translate }}:</strong> {{ evento?.eventStartDate }}</li>
+      <li><strong>{{ "fechaFin" | translate }}:</strong> {{ evento?.eventEndDate }}</li>
+      <li><strong>{{ "ubicacion" | translate }}:</strong> {{ evento?.municipality }}</li>
+    </ul>
+  </div>
+
+  <!-- Mapa -->
+  <div class="evento-mapa">
+    <div id="mapa"></div>
+  </div>
+</div>

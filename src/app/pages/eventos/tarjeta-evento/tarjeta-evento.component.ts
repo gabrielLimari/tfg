@@ -17,11 +17,27 @@ import { TranslateModule } from '@ngx-translate/core';
 
 
 export class TarjetaEventoComponent  { locals: Local[] = [];
-  @Input() evento!: Evento;
- 
+private _evento!: Evento;
+
+@Input() 
+set evento(value: Evento) {
+  this._evento = value;
+  const randomIndex = Math.floor(Math.random() * this.defaultImages.length);
+  this.randomDefaultImage = this.defaultImages[randomIndex];
+}
+
+get evento(): Evento {
+  return this._evento;
+} defaultImages = [
+  'img_aleatorias/img_default.jpg',
+  'img_aleatorias/img_default2.jpg',
+  'img_aleatorias/img_default3.jpg',
+  'img_aleatorias/img_default4.jpg'
+];
+randomDefaultImage: string = '';
   constructor(private router: Router) {}
   
   verDetalles(documentName: string) {
-    this.router.navigate(['/detalles', documentName]);
+    this.router.navigate(['/evento', documentName]);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Local } from '../../interfaces/locals';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { LocalService } from '../../services/local.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -28,7 +28,7 @@ export class LocalesComponent implements OnInit {
   imageIndexes: number[] = [];   // Este array almacenará el índice actual de la imagen activa para cada local
 
 
-  constructor(private localService: LocalService, private router: Router) {}
+  constructor(private localService: LocalService, private router: Router,   private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.localService.getLocales().subscribe((data) => {
@@ -41,6 +41,15 @@ export class LocalesComponent implements OnInit {
       
       // Inicializar el listado filtrado
       this.filteredLocals = this.locals;
+
+        // Leer la categoría desde los parámetros de URL
+      this.route.queryParams.subscribe(params => {
+      const categoriaParam = params['categoria'];
+      if (categoriaParam) {
+        this.selectedCategory = categoriaParam;
+        this.filterByCategory(); // Aplicar filtro directamente
+      }
+    });
     });
   }
 

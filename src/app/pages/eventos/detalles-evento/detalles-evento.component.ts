@@ -21,6 +21,18 @@ export class DetallesEventoComponent implements OnInit {
   participantes: any;  // Aquí se espera que los participantes también sean obtenidos por el servicio
   centros: any[] = [];
   markers: any[] = [];
+defaultImages = [
+  'img_aleatorias/img_default.jpg',
+  'img_aleatorias/img_default2.jpg',
+  'img_aleatorias/img_default3.jpg',
+  'img_aleatorias/img_default4.jpg'
+
+];
+
+randomDefaultImage: string = '';
+
+
+
 
   constructor(
     private eventoService: EventoService, // Usamos el servicio que se adapta al documentName
@@ -31,6 +43,9 @@ export class DetallesEventoComponent implements OnInit {
     // Obtenemos el 'documentName' de la URL
     this.documentName = this.activatedRoute.snapshot.params['documentName'];
     this.getEventoByNombre(this.documentName);
+  const randomIndex = Math.floor(Math.random() * this.defaultImages.length);
+  this.randomDefaultImage = this.defaultImages[randomIndex];
+
   }
 
   getEventoByNombre(documentName: string): void {
@@ -38,6 +53,7 @@ export class DetallesEventoComponent implements OnInit {
     this.eventoService.getEventoByDocumentName(documentName).subscribe({
       next: (evento) => {
         this.evento = evento;
+         this.inicializarMapa();
       },
       error: (err) => {
         console.error('Error al obtener el evento:', err);
@@ -48,9 +64,6 @@ export class DetallesEventoComponent implements OnInit {
 
 
   inicializarMapa(): void {
-
-   
-
         this.markers = [{
           lat: Number(this.evento!.latwgs84),
           lng: Number(this.evento!.lonwgs84),
@@ -76,4 +89,6 @@ export class DetallesEventoComponent implements OnInit {
         });
       }
   
+
+      
   }

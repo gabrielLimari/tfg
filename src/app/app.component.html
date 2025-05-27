@@ -19,12 +19,9 @@
             </button>
             <mat-divider></mat-divider>
             <button mat-button routerLink="/eventos" (click)="sidenav.toggle()">
-                <mat-icon>event</mat-icon> Eventos
+                <mat-icon>event</mat-icon> Evento Cercano
             </button>
             <mat-divider></mat-divider>
-            <button mat-button routerLink="/fiestas" (click)="sidenav.toggle()">
-                <mat-icon>celebration</mat-icon> Fiestas
-            </button>
             <mat-divider></mat-divider>
 
             <!-- Menú desplegable para Locales -->
@@ -37,17 +34,18 @@
                 <mat-divider></mat-divider>
 
                 <div class="sub-menu" [class.show]="isLocalesOpen">
-                    <button mat-button routerLink="/bares" (click)="sidenav.toggle()">
-                        <mat-icon>sports_bar</mat-icon> Bares
+                  <button mat-button [routerLink]="['/locales']" [queryParams]="{ categoria: 'Bares' }" (click)="sidenav.toggle()">
+                    <mat-icon>sports_bar</mat-icon> Bares
                     </button>
                     <mat-divider></mat-divider>
-                    <button mat-button routerLink="/coctelerias" (click)="sidenav.toggle()">
-                        <mat-icon>local_bar</mat-icon> Coctelerías
+                    <button mat-button [routerLink]="['/locales']" [queryParams]="{ categoria: 'Coctelerías' }" (click)="sidenav.toggle()">
+                    <mat-icon>local_bar</mat-icon> Coctelerías
                     </button>
                     <mat-divider></mat-divider>
-                    <button mat-button routerLink="/discotecas" (click)="sidenav.toggle()">
-                        <mat-icon>nightlife</mat-icon> Discotecas
+                    <button mat-button [routerLink]="['/locales']" [queryParams]="{ categoria: 'Discoteca' }" (click)="sidenav.toggle()">
+                    <mat-icon>nightlife</mat-icon> Discotecas
                     </button>
+
                     <mat-divider></mat-divider>
                 </div>
             </div>

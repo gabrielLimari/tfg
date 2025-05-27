@@ -1,0 +1,86 @@
+.evento-container {
+  max-width: 1000px;
+  margin: 2% auto;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.evento-titulo h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.evento-imagen img {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  margin: 0 auto 30px auto;
+}
+
+.evento-descripcion {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.evento-descripcion h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.evento-descripcion p {
+  font-size: 16px;
+  color: #555;
+}
+
+.evento-datos {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.evento-datos h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.evento-datos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.evento-datos li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #444;
+}
+
+.evento-mapa {
+  margin-top: 30px;
+}
+
+#mapa {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+#mapa:hover {
+  border-color: #ff4081;
+}
