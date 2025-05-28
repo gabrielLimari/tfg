@@ -3,9 +3,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DetalleLocalComponent } from './pages/locales/detalle-local/detalle-local.component';
 import { DetallesEventoComponent } from './pages/eventos/detalles-evento/detalles-evento.component';
-import { BaresComponent } from './pages/bares/bares.component';
-import { CocteleriasComponent } from './pages/coctelerias/coctelerias.component';
-import { DiscotecasComponent } from './pages/discotecas/discotecas.component';
 import { LandingpageComponent } from './pages/landingpage/landingpage.component';
 import { LocalesComponent } from './pages/locales/locales.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
@@ -15,7 +12,7 @@ import { RegistroComponent } from './auth/login/registro/registro.component';
 export const routes: Routes = [
    
     {
-        path: '',
+        path: 'inicio',
         component: LandingpageComponent,
         title: 'Inicio'
     },
@@ -48,21 +45,6 @@ export const routes: Routes = [
         path: 'locales',
         component: LocalesComponent,
         title: 'Locales'
-    },
-    {
-        path: 'bares',
-        component: BaresComponent,
-        title: 'Bares'
-    },
-    {
-        path: 'coctelerias',
-        component: CocteleriasComponent,
-        title: 'Coctelerías'
-    },
-    {
-        path: 'discotecas',
-        component: DiscotecasComponent,
-        title: 'Discotecas'
     },
     {
         path: 'local', 

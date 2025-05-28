@@ -8,11 +8,14 @@ import { MatCardModule } from '@angular/material/card';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
 import * as mapboxgl from 'mapbox-gl';
+import { Resenia } from '../../../interfaces/resenia';
+import { FormsModule } from '@angular/forms';
+import { Usuario } from '../../../interfaces/usuario';
 
 @Component({
   selector: 'app-detalle-local',
   standalone: true,
-  imports: [MatCardModule, CommonModule, MatButtonModule, TranslateModule, MatIconModule],
+  imports: [MatCardModule, CommonModule, MatButtonModule, TranslateModule, MatIconModule, FormsModule],
   templateUrl: './detalle-local.component.html',
   styleUrl: './detalle-local.component.css'
 })
@@ -20,9 +23,14 @@ export class DetalleLocalComponent implements OnInit {
   route!: ActivatedRoute;
   localId!: string;
   local!: Local;
+  resenia!: Resenia;
   map!: mapboxgl.Map;
   imageIndexes: number = 0;  
+  nuevoComentario: string = ''; // propiedad para controlarlas reseñas
+  comentarios: Resenia[] = [];
   isFavorite: boolean = false; // propiedad para controlar el estado de favoritos
+  usuarioLogueado: any = null;
+  valoracion: number = 0;
 
   constructor(
     private localService: LocalService,
@@ -32,6 +40,8 @@ export class DetalleLocalComponent implements OnInit {
     const localData = localStorage.getItem('selectedLocal');
     if (localData) {
       this.local = JSON.parse(localData); // Recuperamos el local de localStorage
+      // Cargar comentarios del local actual al iniciar
+      this.comentarios = this.obtenerResenias(this.local.id);
       
     } else {
       // Si no hay local en localStorage, redirige o muestra un error
@@ -43,12 +53,15 @@ export class DetalleLocalComponent implements OnInit {
         this.isFavorite = userData.favoritos.includes(this.local.id);
 
       }
+
     this.inicializarMapa();
   }
+  // Aquí agregas el método isUserLogged()
+  isUserLogged(): boolean {
+    const userData = localStorage.getItem('usuarioLogueado');
+    return !!userData; // devuelve true si existe usuario logueado
+  }
   
-
-
-
 
   inicializarMapa() {
     console.log(this.local);
@@ -118,7 +131,36 @@ export class DetalleLocalComponent implements OnInit {
   } else {
     console.log('No se encontró usuario en el almacenamiento local');
   }
+  
 }
 
+  agregarResenia() {
+    const userData = JSON.parse(localStorage.getItem('usuarioLogueado') || '{}');
 
+    if (userData && userData.id) {
+      const nuevaResenia: Resenia = {
+        comentario: this.nuevoComentario,
+        fecha: new Date().toISOString(),
+        username: userData.username || 'Anónimo',
+        valoracion: this.valoracion
+      };
+
+      this.comentarios.push(nuevaResenia);
+      this.guardarResenias(this.local.id, this.comentarios);
+      this.nuevoComentario = '';
+      this.valoracion = 0;
+    } else {
+      console.warn('Debes iniciar sesión para agregar una reseña.');
+      alert('Debes iniciar sesión para agregar una reseña.');
+    }
+  }
+
+  obtenerResenias(localId: string): Resenia[] {
+    const resenias = localStorage.getItem('resenias_' + localId);
+    return resenias ? JSON.parse(resenias) : [];
+  }
+
+  guardarResenias(localId: string, resenias: Resenia[]) {
+    localStorage.setItem('resenias_' + localId, JSON.stringify(resenias));
+  }
 }

@@ -19,10 +19,11 @@ export class LoginComponent {
   username: string = ''; 
   password: string = ''; 
   loginError: string = ''; 
+  loginCorrecto: boolean = false;
 
   constructor(private router: Router,
   private snackbar: MatSnackBar,
-private authService: AuthService) {}
+  private authService: AuthService) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -33,7 +34,7 @@ private authService: AuthService) {}
     this.authService.getUsersBD().subscribe((usuarios: Usuario[]) => {
       console.log(usuarios); 
       this.usuarios = usuarios;
-
+      
     });
   }
 
@@ -51,8 +52,9 @@ private authService: AuthService) {}
         horizontalPosition: 'center',
         duration: 2000,
       });
-      
-        this.router.navigate(['/home']);
+      this.loginCorrecto=true;
+      this.router.navigate(['/inicio']);
+       
 
     } else {
       this.snackbar.open('Las credenciales son incorrectas.', 'Cerrar', {
@@ -60,6 +62,7 @@ private authService: AuthService) {}
         horizontalPosition: 'center',
         duration: 3000,
       });
+       console.log("1")
     }
   }
 

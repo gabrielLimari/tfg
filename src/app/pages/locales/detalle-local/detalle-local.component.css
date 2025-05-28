@@ -98,6 +98,7 @@ body {
 
 /* Sección de categorías/tags */
 .tags {
+    margin-top: 50px;
     font-size: 16px;
     margin-bottom: 30px;
     color: #555;
@@ -170,11 +171,12 @@ h2 {
 
 /* Estilos para los botones de navegación (prev / next) */
 .image-section {
+    margin-top: 10px;
     position: relative;
 }
 
 /* Botones de navegación imgs */
-.prev-btn,
+/*.prev-btn,
 .next-btn {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
@@ -185,22 +187,60 @@ h2 {
     transition: background 2s ease;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10; /* Asegura que los botones estén encima de la imagen */
+    z-index: 10; /* Asegura que los botones estén encima de la imagen 
+}*/
+.prev-btn,
+.next-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  color: rgb(11, 1, 1);
+  cursor: pointer;
+  font-size: 38px;
+  padding: 0;
+  top: 30%;
+  margin-top: 250px;
 }
 
+
 .prev-btn {
-    left: 0px; 
+    left: 150px; 
 }
 
 .next-btn {
-    right: 0px; 
+    right: 150px; 
 }
 
 .prev-btn:hover,
 .next-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background: none;
 }
 .prev-btn:disabled,
 .next-btn:disabled {
     visibility: hidden;
+}
+
+.resenia-container{
+    padding-top: 50px;
+
+}
+
+#resenia{
+    padding-bottom: 50px;
+}
+.valoracion-estrellas {
+  margin-bottom: 10px;
+}
+
+.valoracion-estrellas mat-icon {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.estrella-activa {
+  color: gold;
+}
+
+.estrella-inactiva {
+  color: lightgray;
 }

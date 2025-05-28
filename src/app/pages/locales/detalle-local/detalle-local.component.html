@@ -1,4 +1,12 @@
 <div class="content-section">
+    <div class="titulo-btnfavorito">
+        <h1>{{ local.basicData.title }}</h1>
+    </div>
+
+    <button (click)="agregarFav()" [ngClass]="isFavorite ? 'favorite-btn' : 'not-favorite-btn'">
+            <mat-icon >favorite</mat-icon>
+    </button>
+
     <div class="image-section">
 
         <button class="prev-btn" (click)="prevImage()" [disabled]="imageIndexes === 0">❮</button>
@@ -8,15 +16,6 @@
         <button class="next-btn" (click)="nextImage()"
             [disabled]="imageIndexes === local.multimedia.images.length - 1">❯</button>
     </div>
-
-
-    <div class="titulo-btnfavorito">
-        <h1>{{ local.basicData.title }}</h1>
-        <button (click)="agregarFav()" [ngClass]="isFavorite ? 'favorite-btn' : 'not-favorite-btn'">
-            <mat-icon >favorite</mat-icon>
-        </button>
-    </div>
-
 
     <p class="tags">
         <span *ngFor="let c of local.extraData.categories; let i = index">
@@ -33,5 +32,59 @@
     </div>
     <div class="map-container">
         <div id="mapa"></div>
+    </div>
+    
+    
+    <div class="resenia-container">
+        <div id="resenia">
+          <h3 id="resenia">{{"resenias" | translate}}</h3>  
+          <div *ngIf="comentarios.length === 0">
+          <p>No hay reseñas todavía. Sé el primero en comentar.</p>
+        </div>
+
+      <div *ngFor="let resenia of comentarios" class="comentario">
+        <p><strong>{{ resenia.username }}</strong> <em>({{ resenia.fecha | date:'short' }})</em></p>
+        <p>{{ resenia.comentario }}</p>
+        <p *ngIf="resenia.valoracion">
+          Valoración:
+          <mat-icon *ngFor="let i of [1,2,3,4,5]" [ngClass]="resenia.valoracion >= i ? 'estrella-activa' : 'estrella-inactiva'">
+            star
+          </mat-icon>
+        </p>
+        <hr>
+      </div>
+
+      <div *ngIf="isUserLogged() else notLogged" class="nueva-resenia">
+        <div class="valoracion-estrellas">
+          <label>Valoración:</label>
+          <span *ngFor="let estrella of [1,2,3,4,5]">
+            <mat-icon
+              (click)="valoracion = estrella"
+              [ngClass]="valoracion >= estrella ? 'estrella-activa' : 'estrella-inactiva'"
+            >
+              star
+            </mat-icon>
+          </span>
+        </div>
+        <textarea
+          [(ngModel)]="nuevoComentario"
+          placeholder="Escribe tu reseña aquí..."
+          rows="4"
+          cols="50"
+        ></textarea>
+        <br>
+        <button
+          (click)="agregarResenia()"
+          [disabled]="nuevoComentario.trim().length === 0"
+        >
+         {{"enviarResenia" | translate}}
+        </button>
+      </div>
+
+      <ng-template #notLogged>
+        <p>Debes iniciar sesión para agregar una reseña.</p>
+      </ng-template>
+
+    </div>
     </div>
 </div>
