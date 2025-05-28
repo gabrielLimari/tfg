@@ -1,119 +1,141 @@
-/* CONTENEDOR GENERAL DE BÚSQUEDA */
-.search-container {
-  background: linear-gradient(to right, #f8f9fc, #eef1f7);
-  padding: 60px 20px;
-  text-align: center;
-  border-bottom: 2px solid #ddd;
+/* FONDO GENERAL */
+body {
+  background: linear-gradient(135deg, #d6a7f3, #fce3f3);
+  font-family: 'Segoe UI', sans-serif;
+  color: #2a2a2a;
 }
 
-/* ETIQUETA */
+/* CONTENEDOR DE BÚSQUEDA */
+.search-container {
+  padding: 70px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #f7e9ff, #674893);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
 .search-label {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: #2c2c54;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
   display: block;
 }
 
-/* INPUT + BOTÓN */
 .search-input {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 16px;
 }
 
 .custom-input {
-  width: 320px;
+  width: 340px;
   padding: 14px 20px;
   font-size: 16px;
-  border: none;
+  border: 2px solid #d380ff;
   border-radius: 50px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background: white;
-  transition: box-shadow 0.3s ease;
+  background: #fff;
+  transition: box-shadow 0.3s ease, border-color 0.3s;
 }
 
 .custom-input:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(58, 55, 107, 0.3);
+  border-color: #ff2992;
+  box-shadow: 0 0 0 3px rgba(255, 41, 146, 0.2);
 }
 
 .search-button {
-  background: linear-gradient(to right, #3a376b, #5c55b6);
+  background: linear-gradient(45deg, #ae00ff, #ff2992);
   border: none;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 50px;
   color: white;
-  cursor: pointer;
   font-size: 18px;
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .search-button:hover {
-  background: linear-gradient(to right, #c80046, #e2005f);
+  background: linear-gradient(45deg, #ff005d, #ff65b8);
   transform: translateY(-2px);
 }
 
-/* MENSAJE NO RESULTADOS */
+/* NO RESULTADOS */
 .no-results {
-  color: #c80046;
+  color: #d10049;
   font-size: 1.4rem;
   margin-top: 30px;
   font-weight: 500;
+  text-align: center;
 }
 
-/* TARJETAS DE RESULTADOS */
+/* CONTENEDOR DE TARJETAS */
 .contenedor_card {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  padding: 40px 20px;
-  background: #ffffff;
+  padding: 60px 20px;
+  background: transparent;
 }
 
-/* PAGINACIÓN VISUAL */
+/* TARJETAS DE LOCALES */
+.contenedor_card > div {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(174, 0, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenedor_card > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(255, 41, 146, 0.2);
+}
+
+/* PAGINACIÓN */
 .paginacion {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
-  padding: 40px 0;
+  gap: 30px;
+  background: #fff1fa;
+  padding: 45px 20px;
+  border-top: 2px solid #ff9ad2;
 }
 
 .btnPaginacion {
-  background: linear-gradient(to right, #3a376b, #5c55b6);
+  background: linear-gradient(to right, #ae00ff, #ff2992);
   color: white;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .btnPaginacion:hover:not(:disabled) {
-  background: linear-gradient(to right, #c80046, #e2005f);
+  background: linear-gradient(to right, #ff005d, #ff65b8);
   transform: scale(1.1);
 }
 
 .btnPaginacion:disabled {
-  background: #ccc;
+  background: #dddddd;
   cursor: not-allowed;
   box-shadow: none;
 }
 
 .pagina-actual {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: #444;
+  color: #0b010f;
 }
