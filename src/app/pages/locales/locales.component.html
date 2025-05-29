@@ -63,8 +63,12 @@
                     <button (click)="selectLocal(local)">{{"accede" | translate}}</button>
                 </div>
             </div>
-
-            <pagination-controls (pageChange)="page = $event" class="pagination-controls"></pagination-controls>
+            <pagination-controls
+  [previousLabel]="previousLabel"
+  [nextLabel]="nextLabel"
+  (pageChange)="page = $event"
+  class="pagination-controls">
+</pagination-controls>
         </main>
 
     </div>

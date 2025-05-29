@@ -18,6 +18,7 @@
     "bares": "Bares",
     "discos": "Discotecas",
     "filtrar": "Filtrar por:",
+    "filtrarFechas": "Filtrar por Fecha",
     "fechas": "Fechas",
     "lugares": "Lugares",
     "reggaeton": "Reggaeton",
@@ -54,7 +55,7 @@
     "accede": "Accede",
     "ACCEDE": "ACCEDE",
     "descLugar": "Descripción del lugar",
-    "horario": "Horario", 
+    "horario": "Horario",
     "menu": "Menú",
     "inicio": "Inicio",
     "buscar": "Buscar",
@@ -64,5 +65,10 @@
     "politica": "Política de privacidad",
     "terminos": "Términos y condiciones",
     "resenias": "RESEÑAS",
-    "enviarResenia":"Enviar Reseña"
+    "enviarResenia": "Enviar Reseña",
+    "seleccionaFecha": "Selecciona una fecha",
+    "PAGINATION": {
+        "PREVIOUS": "Anterior",
+        "NEXT": "Siguiente"
+    }
 }

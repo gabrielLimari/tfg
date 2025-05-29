@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { LocalService } from '../../services/local.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TarjetaEventoComponent } from '../eventos/tarjeta-evento/tarjeta-evento.component';
 import { FormsModule } from '@angular/forms';
@@ -26,9 +26,10 @@ export class LocalesComponent implements OnInit {
   categories: string[] = [];  // Lista de categorías únicas
   selectedCategory: string = '';  // Categoría seleccionada por el usuario
   imageIndexes: number[] = [];   // Este array almacenará el índice actual de la imagen activa para cada local
+  previousLabel: string = '';
+  nextLabel: string = '';
 
-
-  constructor(private localService: LocalService, private router: Router,   private route: ActivatedRoute) {}
+  constructor(private localService: LocalService, private router: Router,   private route: ActivatedRoute, private translate: TranslateService) {}
 
   ngOnInit() {
     this.localService.getLocales().subscribe((data) => {
@@ -50,6 +51,18 @@ export class LocalesComponent implements OnInit {
         this.filterByCategory(); // Aplicar filtro directamente
       }
     });
+    });
+
+    this.setPaginationLabels();
+    this.translate.onLangChange.subscribe(() => {
+      this.setPaginationLabels();
+    });
+  }
+
+  setPaginationLabels() {
+    this.translate.get(['PAGINATION.PREVIOUS', 'PAGINATION.NEXT']).subscribe(translations => {
+      this.previousLabel = translations['PAGINATION.PREVIOUS'];
+      this.nextLabel = translations['PAGINATION.NEXT'];
     });
   }
 
@@ -126,5 +139,7 @@ export class LocalesComponent implements OnInit {
     const userData = JSON.parse(localStorage.getItem('usuarioLogueado') || '{}');
     return userData && userData.favoritos ? userData.favoritos.includes(local.id) : false;
   }
+
+
 
 }

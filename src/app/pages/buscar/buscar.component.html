@@ -21,7 +21,7 @@
   No se encontraron locales con esa búsqueda.
 </h2>
 
-<div class="contenedor_card" *ngIf="filteredLocals.length > 0">
+<div class="container-card" *ngIf="filteredLocals.length > 0">
   <div *ngFor="let local of filteredLocals | paginate: { itemsPerPage: 3, currentPage: page }">
     <a (click)="selectLocal(local)">
       <app-locales-tarjeta [local]="local"></app-locales-tarjeta>

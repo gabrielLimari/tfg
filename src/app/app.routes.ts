@@ -10,7 +10,11 @@ import { EventosComponent } from './pages/eventos/eventos.component';
 import { RegistroComponent } from './auth/login/registro/registro.component';
 
 export const routes: Routes = [
-   
+    {
+        path: '',
+        redirectTo: 'inicio',
+        pathMatch: 'full'
+    },
     {
         path: 'inicio',
         component: LandingpageComponent,
@@ -47,15 +51,15 @@ export const routes: Routes = [
         title: 'Locales'
     },
     {
-        path: 'local', 
-        component: DetalleLocalComponent ,
-        title: 'Tarjeta Detalles Local2'
-    } ,
+        path: 'local',
+        component: DetalleLocalComponent,
+        title: 'Detalles del Local'
+    },
     {
         path: 'evento/:documentName',
         component: DetallesEventoComponent,
         title: 'Tarjeta Evento'
     }
-    
+
 
 ];

@@ -18,6 +18,7 @@
     "bares": "Bars",
     "discos": "Nightclubs",
     "filtrar": "Filter by:",
+    "filtrarFechas": "Filter by Date",
     "fechas": "Dates",
     "lugares": "Places",
     "reggaeton": "Reggaeton",
@@ -64,6 +65,10 @@
     "politica": "Privacy Policy",
     "terminos": "Terms and Conditions",
     "resenias": "REVIEWS",
-    "enviarResenia":"Send Review"
-
+    "enviarResenia": "Send Review",
+    "seleccionaFecha": "Select a date",
+    "PAGINATION": {
+        "PREVIOUS": "Previous",
+        "NEXT": "Next"
+    }
 }

@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   locals: Local[] = [];
   eventos: Evento[] = []; 
   proximosEventos: Evento[] = []; // Para almacenar los tres próximos eventos
-  fechaSeleccionada: string | null = null; // Guarda la fecha seleccionada por el usuario
+  fechaSeleccionada: Date | null = null; // Guarda la fecha seleccionada por el usuario
 
   searchQuery: string = ''; // La consulta de búsqueda
   filteredEventos: Evento[] = [];
@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit {
     private searchService: SearchService,
     private router: Router
   ) { }
+
   ngOnInit() {
     // Escuchar cambios en el valor de búsqueda
       this.searchService.searchQuery$.subscribe((query) => {
@@ -73,11 +74,12 @@ export class HomeComponent implements OnInit {
     this.showDatePicker = !this.showDatePicker;
   }
 
-  onDateSelect(event: any) {
-    const selectedDate = new Date(event.target.value);
-    this.fechaSeleccionada = event.target.value; // Guarda la fecha seleccionada
-    this.filtrarEventosPorFecha(selectedDate);
-  }
+onDateSelect(event: any) {
+  const selectedDate = new Date(event.target.value);
+  this.fechaSeleccionada = selectedDate; // Guarda como Date
+  this.filtrarEventosPorFecha(selectedDate);
+}
+
 
   filtrarEventosPorFecha(selectedDate: Date) {
     // Asegurarse de que tanto la fecha seleccionada como la fecha de hoy no tengan la hora

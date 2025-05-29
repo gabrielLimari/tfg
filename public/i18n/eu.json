@@ -18,6 +18,7 @@
     "bares": "Tabernak",
     "discos": "Diskotekak",
     "filtrar": "Filtratu honen arabera:",
+    "filtrarFechas": "Filtratu dataren arabera",
     "fechas": "Datak",
     "lugares": "Tokiak",
     "reggaeton": "Reggaetoia",
@@ -64,6 +65,10 @@
     "politica": "Pribatutasun politika",
     "terminos": "Baldintzak eta terminoak",
     "resenias": "ERRESEINAK",
-    "enviarResenia":"Erreseina Bidali" 
-
+    "enviarResenia": "Erreseina Bidali",
+    "seleccionaFecha": "Hautatu data bat",
+    "PAGINATION": {
+        "PREVIOUS": "Aurrekoa",
+        "NEXT": "Hurrengoa"
+    }
 }
