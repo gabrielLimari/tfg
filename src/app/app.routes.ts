@@ -18,7 +18,7 @@ export const routes: Routes = [
     {
         path: 'inicio',
         component: LandingpageComponent,
-        title: 'Inicio'
+        title: 'Bienvenida'
     },
     {
         path: 'login',
@@ -28,12 +28,12 @@ export const routes: Routes = [
     {
         path: 'registro',
         component: RegistroComponent,
-        title: 'registro'
+        title: 'Registro'
     },
     {
         path: 'home',
         component: HomeComponent,
-        title: 'Home'
+        title: 'Inicio'
     },
     {
         path: 'buscar',
@@ -58,7 +58,7 @@ export const routes: Routes = [
     {
         path: 'evento/:documentName',
         component: DetallesEventoComponent,
-        title: 'Tarjeta Evento'
+        title: 'Detalles del Evento'
     }
 
 

@@ -67,6 +67,12 @@
     "resenias": "ERRESEINAK",
     "enviarResenia": "Erreseina Bidali",
     "seleccionaFecha": "Hautatu data bat",
+     "descubreEvLoc": "Ezagutu zure hiriko ekitaldi eta lokal onenak",
+    "descripcionEventos": "Dataren arabera filtratu eta aste honetan primeran pasatzeko lekua aurkitu",
+    "nuevoUsuario": "Erabiltzaile Berria",
+    "nuevaContrasena": "Pasahitz Berria",
+    "registro": "Erregistratu",
+    "volver": "Itzuli",
     "PAGINATION": {
         "PREVIOUS": "Aurrekoa",
         "NEXT": "Hurrengoa"

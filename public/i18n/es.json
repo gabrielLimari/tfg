@@ -69,6 +69,10 @@
     "seleccionaFecha": "Selecciona una fecha",
     "descubreEvLoc": "Descubre los mejores eventos y locales en tu ciudad",
     "descripcionEventos": "Filtra por fecha y encuentra dónde pasarlo genial esta semana",
+    "nuevoUsuario": "Nuevo Usuario",
+    "nuevaContrasena": "Nueva Contraseña",
+    "registro": "Registrarse",
+    "volver": "Volver",
     "PAGINATION": {
         "PREVIOUS": "Anterior",
         "NEXT": "Siguiente"

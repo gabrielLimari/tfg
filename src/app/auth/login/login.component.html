@@ -1,25 +1,27 @@
-<div class="page-container">
-    <!-- Login Section -->
-    <h1>{{ "inicioSesion" | translate }}</h1>
-    <div class="login-container">
-        <img [src]="'usuario.png'" alt="Login">
-        <form>
-            <div class="form-group">
-                <label for="username">{{ "introduceUsuario" | translate }}</label>
-                <input type="text" id="username" name="username" placeholder='{{"usuario" | translate }}' required
-                    [(ngModel)]="username">
-            </div>
-            <div class="form-group">
-                <label for="password">{{ "introduceContrasena" | translate }}</label>
-                <input type="password" id="password" name="password" placeholder='{{"contrasena" | translate }}'
-                    required [(ngModel)]="password">
-            </div>
-            <div class="button-group">
-                <button type="button" (click)="comprobarLogin()" class="login-button">Login</button>
-                <button type="button" class="secondary-button" (click)="registrarse()">{{ "Registrarse" | translate
-                    }}</button>
-            </div>
-        </form>
+<body class="login-body">
+    <div class="page-container">
+        <!-- Login Section -->
+        <h1>{{ "inicioSesion" | translate }}</h1>
+        <div class="login-container">
+            <img [src]="'usuario.png'" alt="Login">
+            <form>
+                <div class="form-group">
+                    <label for="username">{{ "introduceUsuario" | translate }}</label>
+                    <input type="text" id="username" name="username" placeholder='{{"usuario" | translate }}' required
+                        [(ngModel)]="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">{{ "introduceContrasena" | translate }}</label>
+                    <input type="password" id="password" name="password" placeholder='{{"contrasena" | translate }}'
+                        required [(ngModel)]="password">
+                </div>
+                <div class="button-group">
+                    <button type="button" (click)="comprobarLogin()" class="login-button">Login</button>
+                    <button type="button" class="secondary-button" (click)="registrarse()">{{ "Registrarse" | translate
+                        }}</button>
+                </div>
+            </form>
 
+        </div>
     </div>
-</div>
+</body>
