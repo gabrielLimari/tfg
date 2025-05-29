@@ -67,6 +67,8 @@
     "resenias": "RESEÑAS",
     "enviarResenia": "Enviar Reseña",
     "seleccionaFecha": "Selecciona una fecha",
+    "descubreEvLoc": "Descubre los mejores eventos y locales en tu ciudad",
+    "descripcionEventos": "Filtra por fecha y encuentra dónde pasarlo genial esta semana",
     "PAGINATION": {
         "PREVIOUS": "Anterior",
         "NEXT": "Siguiente"

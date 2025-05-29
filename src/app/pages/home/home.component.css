@@ -1,330 +1,269 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 }
+
 a {
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
-/* 🔹 SECCIÓN HERO */
-.hero {
-    background-image: url('/fondo.jpg');
-    background-size: cover;  /* Asegura que la imagen cubra todo el área */
-    background-position: center;  /* Centra la imagen */
-    padding: 50px 20px;
-    text-align: center;
-    color: white;
+/* SECCIÓN DE INTRODUCCIÓN */
+.intro-section {
+    background: linear-gradient(to right, #bb85d0, #a9e4fa);
+    padding: 60px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.hero .menu {
-    margin-top: 20px;
-}
-
-.hero .menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    font-weight: bold;
-    padding-bottom: 5px;
-}
-
-.hero .menu .active {
-    border-bottom: 3px solid white;
-}
-
-/* 🔹 FILTROS */
-.filters {
-    background-color: white;
-    padding: 15px 20px;
+.intro-content {
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.filters span {
-    font-weight: bold;
-}
-
-.filter-btn {
-    background: #E5E5E5;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.filter-btn.active {
-    background: #87A9B8;
-    color: white;
-}
-
-/* 🔹 MAPA */
-.map {
-    background-color: #D9D9D9;
-    padding: 100px;
-    text-align: center;
-    font-size: 20px;
-    color: #555;
-}
-.local-list {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background: #333;
-    color: white;
-}
-
-img {
-    border-radius: 5px;
-}
-.date-picker {
-    margin-top: 10px;
-  }
-  
-  input[type="date"] {
-    padding: 5px;
-    border: 1px solid #ccc;
-  }
-  
-
-
-
-.filters span {
-    font-weight: bold;
-}
-
-.filter-btn {
-    background: #E5E5E5;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.filter-btn.active {
-    background: #87A9B8;
-    color: white;
-}
-
-/* 🔹 MAPA */
-.map {
-    background-color: #D9D9D9;
-    padding: 100px;
-    text-align: center;
-    font-size: 20px;
-    color: #555;
-}
-.local-list {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background: #333;
-    color: white;
-}
-
-img {
-    border-radius: 5px;
-}
-
-
-.btnPaginacion {
-    background-color: transparent; /* Color llamativo */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto flotante */
-    background: linear-gradient(45deg, #ae00ff, #ff2992);
-    border: none; /* Elimina bordes */
-    color: white;
-    outline: none; /* Elimina el contorno al hacer clic */
-    border-radius: 50%; /* Hace que el botón sea completamente redondo */
-    padding: 15px; /* Ajusta el tamaño interno del botón */
-    max-height: 50px;
-    margin-top: 250px;
-}
-
-
-
-.btnPaginacion:hover {
-    background: linear-gradient(135deg, #6c5ce7, #00cec9); /* Color más intenso al pasar el mouse */
-    transform: scale(1.1); /* Hace que crezca un poco al hacer hover */
-}
-.btnPaginacion:active {
-    transform: scale(0.9); /* Hace que el botón se encoja un poco al hacer clic */
-}
-
-
-.search {
-    padding: 10px 15px;
-    border-radius: 25px;
-    border: 1px solid #ddd;
-    width: 250px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    flex-grow: 0.5;
-}
-
-.search:focus {
-    border-color: #3498db;
-    outline: none;
-}
-
-.contenedor_card{
-    background-color: #f5f5f5;
-    display: flex; 
-    justify-content: space-around;
+    max-width: 1200px;
+    gap: 50px;
     flex-wrap: wrap;
-    margin-top:30px ;
-    margin-bottom: 30px;   
+    justify-content: center;
+    background-color: white;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.intro-image {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.intro-image:hover {
+    transform: scale(1.03);
+}
+
+.intro-text {
+    max-width: 600px;
+    text-align: center;
+}
+
+.intro-text h1 {
+    font-size: 2.5rem;
+    color: #6a1b9a;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+}
+
+
+
+
+/* FILTROS */
+.filters {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-btn {
+    background: #E5E5E5;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: #87A9B8;
+    color: white;
 }
 
 .date-filter-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centrado horizontal */
-  margin-top: 10px;
-  width: 100%;
-}
-
-.date-toggle-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-background: linear-gradient(45deg, #ae00ff, #ff2992);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.date-toggle-btn:hover {
-  background: linear-gradient(135deg, #6c5ce7, #00cec9);
-  transform: scale(1.05);
-}
-
-.date-picker-container {
-  margin-top: 20px;
-  background: linear-gradient(to bottom right, #f3e5f5, #ede7f6);
-  padding: 25px 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(108, 92, 231, 0.2);
-  animation: fadeIn 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  border: 1px solid #d1c4e9;
-  transition: all 0.3s ease;
-}
-
-.date-picker-container:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(108, 92, 231, 0.3);
-}
-
-.animated-fade {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-
-.date-label {
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 16px;
-  color: #2c3e50;
-  text-align: center;
-}
-
-.styled-date-input {
-  padding: 12px 15px;
-  border-radius: 10px;
-  border: 2px solid #865d9c;
-  font-size: 15px;
-  width: 220px;
-  color: #5f3991; /* texto morado */
-  background-color: #f3f0ff;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.styled-date-input:focus {
-   border-color: #913fc7; 
-  outline: none;
-  box-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
-}
-
-/* Centrado del h2 que muestra la fecha seleccionada */
-.fecha-label, h2 {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 20px;
-  color: #2d3436;
-}
-
-.filter-title {
-  font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .date-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 15px;
 }
 
-/* Reduce ancho del selector de fecha si se ve muy ancho */
+.date-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(45deg, #ae00ff, #ff2992);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.date-toggle-btn:hover {
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
+    transform: scale(1.05);
+}
+
 .date-picker-container {
-  margin-top: 0; /* Quita la separación extra */
+    margin-top: 20px;
+    background: linear-gradient(to bottom right, #f3e5f5, #ede7f6);
+    padding: 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #d1c4e9;
+}
+
+.date-label {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.styled-date-input {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #865d9c;
+    font-size: 15px;
+    width: 220px;
+    color: #5f3991;
+    background-color: #f3f0ff;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.styled-date-input:focus {
+    border-color: #913fc7;
+    outline: none;
+    box-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
+}
+
+/* FECHA SELECCIONADA */
+.fecha-label {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #2d3436;
+}
+
+/* CARDS */
+.seccion-eventos-locales {
+    background: linear-gradient(to bottom, #fcdbf3, #d6f2ff, #f7defd);
+    padding: 40px 20px;
+    border-radius: 30px;
+    margin: 40px auto;
+    max-width: 80%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor_card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.contenedor_card a {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+}
+
+.contenedor_card a:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* PAGINACIÓN */
+.btnPaginacion {
+    background: linear-gradient(45deg, #ae00ff, #ff2992);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    padding: 18px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.btnPaginacion:hover {
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
+    transform: scale(1.1);
+}
+
+.btnPaginacion:active {
+    transform: scale(0.95);
+}
+
+/* Alinear los botones de paginación con las tarjetas */
+.contenedor_card .btnPaginacion:first-child {
+    order: -1;
+    align-self: center;
+}
+
+.contenedor_card .btnPaginacion:last-child {
+    order: 1;
+    align-self: center;
+}
+
+/* Título de "Lista de Locales" */
+h2.fecha-label {
+    font-size: 2.4rem;
+    color: #6a1b9a;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+h2.fecha-label::after {
+    content: "";
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(to right, #ae00ff, #00bcd4);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
