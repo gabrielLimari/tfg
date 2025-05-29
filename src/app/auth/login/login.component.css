@@ -1,57 +1,57 @@
 /* General */
 .login-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  min-height: 100vh;
-  background: radial-gradient(circle at top left, #dbeafe, #f3e8ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #dbeafe, #f3e8ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
 }
 
 h1 {
-  font-size: 2.8rem;
-  color: #3b0764;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 2.8rem;
+    color: #3b0764;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenedor principal */
 .page-container {
-  max-width: 1200px;
-  width: 100%;
-  padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
 }
 
 /* Estilo del contenedor del login */
 .login-container {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(10px);
-  border-radius: 25px;
-  padding: 3rem;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 3rem;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
 /* Imagen */
 .login-container img {
     max-width: 350px;
-  border-radius: 20px;
-  transition: transform 0.3s ease;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
 }
 
 .login-container img:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 /* Formulario */
 form {
-  flex: 1;
+    flex: 1;
 }
 
 .form-group {
@@ -86,63 +86,60 @@ form {
 
 /* Grupo de botones */
 .button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 /* Botón de Login */
 .login-button {
-  background: linear-gradient(to right, #ba72d7, #84caf9);
-  color: white;
-  border: none;
-  padding: 0.9rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    background: linear-gradient(to right, #ba72d7, #84caf9);
+    color: white;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
 
-.login-button:hover {  
-     background: linear-gradient(to right, #ae38dc, #2493de);
-  transform: translateY(-2px);
+.login-button:hover {
+    background: linear-gradient(to right, #ae38dc, #2493de);
+    transform: translateY(-2px);
 }
 
 /* Botón de Registro */
 .secondary-button {
-  background: white;
-  color: #6d28d9;
-  border: 2px solid #6d28d9;
-  padding: 0.9rem;
-  border-radius: 12px;
-  font-size: 1.05rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    background: white;
+    color: #6d28d9;
+    border: 2px solid #6d28d9;
+    padding: 0.9rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .secondary-button:hover {
-  background: linear-gradient(to right, #ae38dc, #2493de);
-  color: white;
-  transform: translateY(-1px);
+    background: linear-gradient(to right, #ae38dc, #2493de);
+    color: white;
+    transform: translateY(-1px);
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .login-container {
-    flex-direction: column;
-    text-align: center;
-  }
+    .login-container {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  .login-container img {
-    width: 100%;
-    max-width: 250px;
-    margin-bottom: 1rem;
-  }
+    .login-container img {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 1rem;
+    }
 }
-
-
-

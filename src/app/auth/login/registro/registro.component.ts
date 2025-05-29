@@ -25,6 +25,7 @@ export class RegistroComponent implements OnInit {
     private snackbar: MatSnackBar,
     private authService: AuthService 
   ) {}
+
   ngOnInit(): void {
     this.loadUsers();
   }
@@ -38,6 +39,7 @@ export class RegistroComponent implements OnInit {
 
     });
   }
+  // Método para registrar un nuevo usuario
   registerUser(): void {
   const usuarioExistente = this.usuarios.find(
     (u) => u.username === this.newUsername || u.email === this.newEmail
