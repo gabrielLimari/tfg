@@ -39,33 +39,46 @@ export class RegistroComponent implements OnInit {
     });
   }
   registerUser(): void {
-    const newUser: Usuario = {
-      id: this.usuarios.length + 1, // Asignamos un ID único
-      username: this.newUsername,
-      password: this.newPassword,
-      email: this.newEmail,
-      favoritos: [] 
-    };
+  const usuarioExistente = this.usuarios.find(
+    (u) => u.username === this.newUsername || u.email === this.newEmail
+  );
 
-    this.authService.registrarse(newUser).subscribe(
-      (user) => {
-        this.snackbar.open('Usuario registrado exitosamente', 'Cerrar', {
-          verticalPosition: 'top',
-          horizontalPosition: 'center',
-          duration: 3000,
-        });
-
-        this.router.navigate(['/login']);
-      },
-      (error) => {
-        this.snackbar.open('Error al registrar el usuario.', 'Cerrar', {
-          verticalPosition: 'top',
-          horizontalPosition: 'center',
-          duration: 3000,
-        });
-      }
-    );
+  if (usuarioExistente) {
+    this.snackbar.open('El nombre de usuario o correo ya están registrados.', 'Cerrar', {
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+      duration: 3000,
+    });
+    return; // Salir del método si el usuario ya existe
   }
+
+  const newUser: Usuario = {
+    id: this.usuarios.length + 1,
+    username: this.newUsername,
+    password: this.newPassword,
+    email: this.newEmail,
+    favoritos: []
+  };
+
+  this.authService.registrarse(newUser).subscribe(
+    (user) => {
+      this.snackbar.open('Usuario registrado exitosamente', 'Cerrar', {
+        verticalPosition: 'top',
+        horizontalPosition: 'center',
+        duration: 3000,
+      });
+      this.router.navigate(['/login']);
+    },
+    (error) => {
+      this.snackbar.open('Error al registrar el usuario.', 'Cerrar', {
+        verticalPosition: 'top',
+        horizontalPosition: 'center',
+        duration: 3000,
+      });
+    }
+  );
+}
+
 
   // Método para navegar al inicio de sesión
   navigateToLogin(): void {
