@@ -66,6 +66,8 @@
     "terminos": "Terms and Conditions",
     "resenias": "REVIEWS",
     "enviarResenia": "Send Review",
+    "noResenia":"There are no reviews yet. Be the first to comment.",
+    "valoraciones":"Rating",
     "seleccionaFecha": "Select a date",
      "descubreEvLoc": "Discover the best events and venues in your city",
     "descripcionEventos": "Filter by date and find where to have a great time this week",

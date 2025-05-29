@@ -66,6 +66,8 @@
     "terminos": "Baldintzak eta terminoak",
     "resenias": "ERRESEINAK",
     "enviarResenia": "Erreseina Bidali",
+    "noResenia":"Oraindik ez dago iritzirik. Izan iruzkintzen lehena.",
+    "valoraciones":"Balorazioa",
     "seleccionaFecha": "Hautatu data bat",
      "descubreEvLoc": "Ezagutu zure hiriko ekitaldi eta lokal onenak",
     "descripcionEventos": "Dataren arabera filtratu eta aste honetan primeran pasatzeko lekua aurkitu",
@@ -77,4 +79,6 @@
         "PREVIOUS": "Aurrekoa",
         "NEXT": "Hurrengoa"
     }
+
+
 }

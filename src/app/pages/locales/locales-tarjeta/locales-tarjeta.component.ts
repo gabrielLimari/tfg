@@ -31,14 +31,14 @@ export class LocalesTarjetaComponent {
   }
 
    obtenerTextoCorto(texto: string): string {
-    if (this.mostrarTextoCompleto || texto.length <= 250) {
+    if (this.mostrarTextoCompleto || texto.length <= 175) {
       return texto;
     }
 
-    const textoCortado = texto.slice(0, 250);
+    const textoCortado = texto.slice(0, 175);
     const ultimoEspacio = textoCortado.lastIndexOf(' ');
 
-    // Si hay un espacio antes del carácter 250, corta ahí, si no, corta al máximo permitido
+    // Si hay un espacio antes del carácter 175, corta ahí, si no, corta al máximo permitido
     const resultado = ultimoEspacio > -1 ? textoCortado.slice(0, ultimoEspacio) : textoCortado;
 
     return resultado + ' ...';

@@ -23,7 +23,7 @@
         </span>
     </p>
 
-    <h2>{{"Desc lugar" | translate}}</h2>
+    <h2>{{"descLugar" | translate}}</h2>
     <p [innerHTML]="local.basicData.body"></p>
 
     <div class="horario-card">
@@ -39,14 +39,14 @@
         <div id="resenia">
           <h3 id="resenia">{{"resenias" | translate}}</h3>  
           <div *ngIf="comentarios.length === 0">
-          <p>No hay reseñas todavía. Sé el primero en comentar.</p>
+          <p>{{"noResenia" | translate}}</p>
         </div>
 
       <div *ngFor="let resenia of comentarios" class="comentario">
         <p><strong>{{ resenia.username }}</strong> <em>({{ resenia.fecha | date:'short' }})</em></p>
         <p>{{ resenia.comentario }}</p>
         <p *ngIf="resenia.valoracion">
-          Valoración:
+          {{"valoracion" | translate}}
           <mat-icon *ngFor="let i of [1,2,3,4,5]" [ngClass]="resenia.valoracion >= i ? 'estrella-activa' : 'estrella-inactiva'">
             star
           </mat-icon>

@@ -66,6 +66,8 @@
     "terminos": "Términos y condiciones",
     "resenias": "RESEÑAS",
     "enviarResenia": "Enviar Reseña",
+    "noResenia":"No hay reseñas todavía. Sé el primero en comentar.",
+    "valoraciones":"Valoración",
     "seleccionaFecha": "Selecciona una fecha",
     "descubreEvLoc": "Descubre los mejores eventos y locales en tu ciudad",
     "descripcionEventos": "Filtra por fecha y encuentra dónde pasarlo genial esta semana",
