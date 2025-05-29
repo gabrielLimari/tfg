@@ -18,7 +18,7 @@
 
 <!-- Resultados de búsqueda -->
 <h2 *ngIf="searchQuery && filteredLocals.length === 0" class="no-results">
-  No se encontraron locales con esa búsqueda.
+  {{ "noLocales" | translate }}
 </h2>
 
 <div class="container-card" *ngIf="filteredLocals.length > 0">

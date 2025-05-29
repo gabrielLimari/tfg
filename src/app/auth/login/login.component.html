@@ -16,9 +16,8 @@
                         required [(ngModel)]="password">
                 </div>
                 <div class="button-group">
-                    <button type="button" (click)="comprobarLogin()" class="login-button">Login</button>
-                    <button type="button" class="secondary-button" (click)="registrarse()">{{ "Registrarse" | translate
-                        }}</button>
+                    <button type="button" (click)="comprobarLogin()" class="login-button">{{ "inicioSesion" | translate }}</button>
+                    <button type="button" class="secondary-button" (click)="registrarse()">{{ "Registrarse" | translate }}</button>
                 </div>
             </form>
 

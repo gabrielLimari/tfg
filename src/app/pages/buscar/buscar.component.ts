@@ -7,12 +7,13 @@ import { Local } from '../../interfaces/locals';
 import { LocalService } from '../../services/local.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatIconModule } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-buscar',
   standalone: true,
   imports: [RouterLink, CommonModule, LocalesTarjetaComponent, FormsModule, 
-    MatIconModule, NgxPaginationModule],
+    MatIconModule, NgxPaginationModule, TranslateModule],
   templateUrl: './buscar.component.html',
   styleUrl: './buscar.component.css'
 })
