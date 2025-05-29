@@ -17,7 +17,7 @@ a {
 
 /* SECCIÓN DE INTRODUCCIÓN */
 .intro-section {
-    background: linear-gradient(to right, #bb85d0, #a9e4fa);
+    background: linear-gradient(to right, #c5a3d2, #b7e0f0);
     padding: 60px 30px;
     display: flex;
     justify-content: center;
@@ -183,7 +183,7 @@ a {
 
 /* CARDS */
 .seccion-eventos-locales {
-    background: linear-gradient(to bottom, #fcdbf3, #d6f2ff, #f7defd);
+    background: linear-gradient(to right, #c5a3d2, #b7e0f0);
     padding: 40px 20px;
     border-radius: 30px;
     margin: 40px auto;
