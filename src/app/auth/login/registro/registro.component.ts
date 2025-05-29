@@ -41,12 +41,13 @@ export class RegistroComponent implements OnInit {
   }
   // Método para registrar un nuevo usuario
   registerUser(): void {
+   
   const usuarioExistente = this.usuarios.find(
-    (u) => u.username === this.newUsername || u.email === this.newEmail
+    (u) => u.username === this.newUsername
   );
 
   if (usuarioExistente) {
-    this.snackbar.open('El nombre de usuario o correo ya están registrados.', 'Cerrar', {
+    this.snackbar.open('El nombre de usuario ya esta registrado.', 'Cerrar', {
       verticalPosition: 'top',
       horizontalPosition: 'center',
       duration: 3000,
