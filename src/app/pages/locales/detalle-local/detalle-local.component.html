@@ -1,53 +1,54 @@
 <div class="content-section">
-    <div class="titulo-btnfavorito">
-        <h1>{{ local.basicData.title }}</h1>
-    </div>
+  <div class="titulo-btnfavorito">
+    <h1>{{ local.basicData.title }}</h1>
+
 
     <button (click)="agregarFav()" [ngClass]="isFavorite ? 'favorite-btn' : 'not-favorite-btn'">
-            <mat-icon >favorite</mat-icon>
+      <mat-icon>favorite</mat-icon>
     </button>
+  </div>
+  <div class="image-section">
 
-    <div class="image-section">
+    <button class="prev-btn" (click)="prevImage()" [disabled]="imageIndexes === 0">❮</button>
 
-        <button class="prev-btn" (click)="prevImage()" [disabled]="imageIndexes === 0">❮</button>
+    <img [src]="local.multimedia.images[imageIndexes]" [alt]="local.basicData.title" class="event-image">
 
-        <img [src]="local.multimedia.images[imageIndexes]" [alt]="local.basicData.title" class="event-image">
+    <button class="next-btn" (click)="nextImage()"
+      [disabled]="imageIndexes === local.multimedia.images.length - 1">❯</button>
+  </div>
 
-        <button class="next-btn" (click)="nextImage()"
-            [disabled]="imageIndexes === local.multimedia.images.length - 1">❯</button>
-    </div>
+  <p class="tags">
+    <span *ngFor="let c of local.extraData.categories; let i = index">
+      {{ c.categoria }} <span *ngIf="i < local.extraData.categories.length - 1"> - </span>
+    </span>
+  </p>
 
-    <p class="tags">
-        <span *ngFor="let c of local.extraData.categories; let i = index">
-            {{ c.categoria }} <span *ngIf="i < local.extraData.categories.length - 1"> - </span>
-        </span>
-    </p>
+  <h2>{{"descLugar" | translate}}</h2>
+  <p [innerHTML]="local.basicData.body"></p>
 
-    <h2>{{"descLugar" | translate}}</h2>
-    <p [innerHTML]="local.basicData.body"></p>
+  <div class="horario-card">
+    <h3>{{"horario" | translate}}</h3>
+    <p [innerHTML]="local.extraData.schedule"></p>
+  </div>
+  <div class="map-container">
+    <div id="mapa"></div>
+  </div>
 
-    <div class="horario-card">
-        <h3>{{"horario" | translate}}</h3>
-        <p [innerHTML]="local.extraData.schedule"></p>
-    </div>
-    <div class="map-container">
-        <div id="mapa"></div>
-    </div>
-    
-    
-    <div class="resenia-container">
-        <div id="resenia">
-          <h3 id="resenia">{{"resenias" | translate}}</h3>  
-          <div *ngIf="comentarios.length === 0">
-          <p>{{"noResenia" | translate}}</p>
-        </div>
+
+  <div class="resenia-container">
+    <div id="resenia">
+      <h3 id="resenia">{{"resenias" | translate}}</h3>
+      <div *ngIf="comentarios.length === 0">
+        <p>{{"noResenia" | translate}}</p>
+      </div>
 
       <div *ngFor="let resenia of comentarios" class="comentario">
         <p><strong>{{ resenia.username }}</strong> <em>({{ resenia.fecha | date:'short' }})</em></p>
         <p>{{ resenia.comentario }}</p>
         <p *ngIf="resenia.valoracion">
           {{"valoracion" | translate}}
-          <mat-icon *ngFor="let i of [1,2,3,4,5]" [ngClass]="resenia.valoracion >= i ? 'estrella-activa' : 'estrella-inactiva'">
+          <mat-icon *ngFor="let i of [1,2,3,4,5]"
+            [ngClass]="resenia.valoracion >= i ? 'estrella-activa' : 'estrella-inactiva'">
             star
           </mat-icon>
         </p>
@@ -58,26 +59,16 @@
         <div class="valoracion-estrellas">
           <label>Valoración:</label>
           <span *ngFor="let estrella of [1,2,3,4,5]">
-            <mat-icon
-              (click)="valoracion = estrella"
-              [ngClass]="valoracion >= estrella ? 'estrella-activa' : 'estrella-inactiva'"
-            >
+            <mat-icon (click)="valoracion = estrella"
+              [ngClass]="valoracion >= estrella ? 'estrella-activa' : 'estrella-inactiva'">
               star
             </mat-icon>
           </span>
         </div>
-        <textarea
-          [(ngModel)]="nuevoComentario"
-          placeholder="Escribe tu reseña aquí..."
-          rows="4"
-          cols="50"
-        ></textarea>
+        <textarea [(ngModel)]="nuevoComentario" placeholder="Escribe tu reseña aquí..." rows="4" cols="50"></textarea>
         <br>
-        <button
-          (click)="agregarResenia()"
-          [disabled]="nuevoComentario.trim().length === 0"
-        >
-         {{"enviarResenia" | translate}}
+        <button (click)="agregarResenia()" [disabled]="nuevoComentario.trim().length === 0">
+          {{"enviarResenia" | translate}}
         </button>
       </div>
 
@@ -86,5 +77,5 @@
       </ng-template>
 
     </div>
-    </div>
+  </div>
 </div>

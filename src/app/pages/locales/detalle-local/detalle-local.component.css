@@ -8,62 +8,56 @@ body {
 
 /* Contenedor principal */
 .content-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    backdrop-filter: blur(10px);
-    max-width: 1000px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 30px 20px;
+    max-width: 1200px;
     margin: 2% auto;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
+    padding: 40px 30px;
+    background: linear-gradient(to right, #d8b7ff, #b8ecff);
+    border-radius: 20px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', sans-serif;
     color: #333;
     line-height: 1.8;
-    font-size: 16px;
-    font-weight: 400;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
+    text-align: center;
 }
 
 .content-section:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Sección de imagen */
-.image-section {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.image-section img {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-}
-
-
 /* Título y botón de favorito */
 .titulo-btnfavorito {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     margin-bottom: 20px;
 }
 
 .titulo-btnfavorito h1 {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 700;
-    color: #222;
+    color: #3e0a5c;
+    margin: 0;
 }
 
-.favorite-btn, .not-favorite-btn  {
-    margin-left: 10px;
+.titulo-btnfavorito button {
+    color: white;
+    margin-top: 10px;
+    border-radius: 50%;
+    padding-top: 13px;
+    padding-right: 15px;
+    padding-left: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.titulo-btnfavorito button:hover {
+    background-color: #e91e63;
+}
+
+
+.favorite-btn,
+.not-favorite-btn {
+    margin-left: 15px;
     color: white;
     border: none;
     border-radius: 100%;
@@ -75,33 +69,46 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.titulo-btnfavorito button:hover {
-    background-color: #ff1f56;
-}
-
-
 .favorite-btn {
     background-color: #ff4081;
     color: white;
 }
 
 .not-favorite-btn {
-    background-color: gray;
+    background-color: rgb(164, 163, 163);
     color: white;
 }
-
-
 
 .mat-icon {
     font-size: 24px;
 }
 
+
+/* Sección de imagen */
+.image-section {
+    position: relative;
+    margin: 10px 0 20px;
+}
+
+.image-section img {
+    width: 100%;
+    max-width: 800px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-section img:hover {
+    transform: scale(1.02);
+    filter: brightness(1.05);
+}
+
 /* Sección de categorías/tags */
 .tags {
-    margin-top: 50px;
     font-size: 16px;
-    margin-bottom: 30px;
-    color: #555;
+    color: #5f2e88;
+    margin: 25px 0;
 }
 
 .tags span {
@@ -114,21 +121,24 @@ body {
 
 /* Sección de descripción */
 h2 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #222;
+    font-size: 28px;
+    color: #3e0a5c;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    color: #444;
 }
 
 /* Horario */
 .horario-card {
-    background: rgba(255, 255, 255, 0.95);
+    background-color: white;
+    border: 2px solid #d4aaff;
     padding: 20px;
-    margin-top: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    margin-top: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .horario-card:hover {
@@ -149,16 +159,17 @@ h2 {
 
 /* Mapa */
 #mapa {
-    border: 2px solid #ccc;
-    border-radius: 12px;
+    border: 3px solid #d4aaff;
+    border-radius: 16px;
     width: 100%;
-    height: 300px;
+    height: 320px;
     margin-top: 30px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #mapa:hover {
-    border-color: #ff4081;
+    border-color: #4089ff;
+    box-shadow: 0 0 12px rgba(255, 64, 129, 0.4);
 }
 
 .map-container {
@@ -175,72 +186,116 @@ h2 {
     position: relative;
 }
 
-/* Botones de navegación imgs */
-/*.prev-btn,
-.next-btn {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    cursor: pointer;
-    font-size: 38px;
-    border-radius: 40%;
-    transition: background 2s ease;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10; /* Asegura que los botones estén encima de la imagen 
-}*/
 .prev-btn,
 .next-btn {
-  position: absolute;
-  background: none;
-  border: none;
-  color: rgb(11, 1, 1);
-  cursor: pointer;
-  font-size: 38px;
-  padding: 0;
-  top: 30%;
-  margin-top: 250px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #3e0a5c;
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
 }
 
 
 .prev-btn {
-    left: 150px; 
+    left: 20px;
 }
 
 .next-btn {
-    right: 150px; 
+    right: 20px;
 }
 
 .prev-btn:hover,
 .next-btn:hover {
-    background: none;
+    background-color: #d4aaff;
 }
+
 .prev-btn:disabled,
 .next-btn:disabled {
     visibility: hidden;
 }
 
-.resenia-container{
-    padding-top: 50px;
-
+.resenia-container {
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #d4aaff;
 }
 
-#resenia{
+.resenia-container h3 {
+    color: #3e0a5c;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#resenia {
     padding-bottom: 30px;
 }
+
+.comentario {
+    text-align: left;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.comentario p {
+    margin: 5px 0;
+}
+
+/*Estrellas*/
 .valoracion-estrellas {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .valoracion-estrellas mat-icon {
-  cursor: pointer;
-  font-size: 25px;
+    cursor: pointer;
+    font-size: 26px;
 }
 
 .estrella-activa {
-  color: gold;
+    color: gold;
 }
 
 .estrella-inactiva {
-  color: lightgray;
+    color: #ccc;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    padding: 10px;
+    resize: vertical;
+    margin-top: 10px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.nueva-resenia button {
+    background: linear-gradient(to right, #ae00ff, #ff2992);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nueva-resenia button:hover {
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
 }
