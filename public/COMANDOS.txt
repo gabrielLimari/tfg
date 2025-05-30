@@ -1,0 +1,8 @@
+
+Desde public:
+
+   - json-server .\usuarios.json
+
+Para lanzar localhost:
+
+   - ng serve --proxy-config proxy.conf.json

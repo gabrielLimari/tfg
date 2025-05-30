@@ -92,6 +92,11 @@
     margin-left: auto ;
 }
 
+.nombre-usuario{
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
 mat-icon , button.mat-button, .botones button, .sidenav button {
     color: white; 
 }

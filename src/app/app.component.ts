@@ -9,6 +9,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SearchService } from './services/search.service';
+import { AuthService } from './services/auth.service';
+import { Usuario } from './interfaces/usuario';
 
 
 @Component({
@@ -23,13 +25,21 @@ import { SearchService } from './services/search.service';
 })
 export class AppComponent {
   title = 'proyecto';
+  usuarioLogueado: Usuario | null = null;
 
 
+  
   constructor(
     private router: Router,
     private searchService: SearchService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private authService: AuthService
   ) { }
+
+  ngOnInit() {
+      // Al iniciar, carga el usuario desde el servicio (localStorage)
+      this.usuarioLogueado = this.authService.getUsuarioLogeado();
+    }
 
   idiomasVisible: boolean = false;
   mitranslate: TranslateService = inject(TranslateService);
@@ -53,6 +63,11 @@ export class AppComponent {
   }
   onSearch() {
     this.searchService.updateSearchQuery(this.searchQuery);
+  }
+
+  cerrarSesion() {
+    this.authService.logout();
+    this.usuarioLogueado = null; // Actualiza variable local para ocultar usuario
   }
 
 

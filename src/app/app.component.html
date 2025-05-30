@@ -70,9 +70,16 @@
                 </div>
 
                 <div class="botones">
-                    <button mat-button routerLink="/login">
+                    <button mat-button *ngIf="!usuarioLogueado; else btnLogout" routerLink="/login">
                         <mat-icon>login</mat-icon> {{"inicioSesion" | translate}}
                     </button>
+
+                    <ng-template #btnLogout>
+                        <span class="nombre-usuario">{{ usuarioLogueado?.username }}</span>
+                        <button mat-button (click)="cerrarSesion()">
+                            <mat-icon>logout</mat-icon> {{"cerrarSesion" | translate}}
+                        </button>
+                    </ng-template>
 
                     <div class="language-switcher">
                         <button mat-button class="dropdown-btn" (click)="toggleIdiomas()">
