@@ -75,7 +75,8 @@
                     </button>
 
                     <ng-template #btnLogout>
-                        <span class="nombre-usuario">{{ usuarioLogueado?.username }}</span>
+                        <span class="nombre-usuario">
+                            <mat-icon>person</mat-icon> {{ usuarioLogueado?.username }}</span>
                         <button mat-button (click)="cerrarSesion()">
                             <mat-icon>logout</mat-icon> {{"cerrarSesion" | translate}}
                         </button>

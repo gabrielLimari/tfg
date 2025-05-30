@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   private usuarioLogeado: Usuario | null = null;
   private apiUrl = 'http://localhost:3000'; //Url de la ejecución del index.js

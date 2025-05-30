@@ -1,7 +1,9 @@
 /* Sección principal */
 .section-locales {
-    background-color: #f5f5f5;
+    background: linear-gradient(to right, #c5a3d2, #b7e0f0);
     align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 2rem 1rem;
 }
 
 /* Contenedor principal */
@@ -10,10 +12,14 @@
     align-items: center;
     background: url('/../img_fondo_marco_local.jpg') no-repeat center center;
     background-size: cover;
-    padding: 20px;
+    padding: 30px 20px;
     border: 1px solid #d4aaff;
-    max-width: 1000px;
+    max-width: 1160px;
+    margin: auto;
+    flex-wrap: wrap;
     position: relative;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 /* Contenedor de las imágenes */
@@ -25,8 +31,9 @@
 /* Estilos para las imágenes */
 .image {
     width: 250px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, filter 0.3s;
 }
 
 .image:hover {
@@ -51,12 +58,12 @@
 
 /* Estilos para el texto */
 .text-container {
-    margin-left: 50px;
+    margin-left: 40px;
     text-align: right;
 }
 
 .text-container h2 {
-    font-size: 28px;
+    font-size: 2.5rem;
     font-weight: bold;
     line-height: 1.2;
     color: #d4aaff;
@@ -64,16 +71,18 @@
 
 /* Icono */
 .icon {
-    font-size: 24px;
-    border: 1px solid #d4aaff;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    font-size: 22px;
     display: flex;
-    align-items: center;
+    background-color: white;
+    color: #7f7fd5;
+    margin-left: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+    border: 1px solid #d4aaff;
+    text-align: center;
     justify-content: center;
-    margin-top: 10px;
-    color: #d4aaff;
 }
 
 /* Contenedor de la lista de eventos */
@@ -82,47 +91,60 @@
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 /* Estilos de la barra lateral */
 .sidebar-filtros {
-    width: 250px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    height: 325px;
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-filtros h3 {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.25rem;
 }
 
 .sidebar-filtros label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #666;
 }
 
 .sidebar-filtros select {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 0.6rem;
+    border-radius: 15px;
+    border: 1px solid #df9ff7;
+    font-size: 0.95rem;
 }
 
 /* Estilo de la lista de eventos */
 .event-list {
-    flex: 1;
+    flex: 3;
     margin-left: 20px;
+    min-width: 500px;
 }
 
 /* Estilos para la tarjeta de evento */
 .event-card {
     display: flex;
     background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative; /* Para que los botones de navegación se ubiquen correctamente */
+    position: relative;
+    /* Para que los botones de navegación se ubiquen correctamente */
 }
 
 /* Imagen del evento */
@@ -133,6 +155,7 @@
 
 /* Contenido de la información del evento */
 .event-info {
+    flex: 1;
     margin-left: 15px;
 }
 
@@ -159,23 +182,24 @@ button {
 .prev-btn,
 .next-btn {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     cursor: pointer;
-    font-size: 18px;
-    border-radius: 40%;
-    transition: background 2s ease;
+    font-size: 20px;
+    border: none;
+    padding: 8px 12px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10; /* Asegura que los botones estén encima de la imagen */
+    z-index: 1;
+    /* Asegura que los botones estén encima de la imagen */
 }
 
 .prev-btn {
-    left: 0px; 
+    left: 0px;
 }
 
 .next-btn {
-    right: 0px; 
+    right: 0px;
 }
 
 .prev-btn:hover,
@@ -194,40 +218,98 @@ button {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.titulo-btnfavorito h1 {
+.titulo-btnfavorito h2 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: bold;
     color: #222;
 }
 
-.favorite-btn, .not-favorite-btn  {
+.favorite-btn,
+.not-favorite-btn {
     color: white;
-    border: none;
     border-radius: 50%;
     padding-top: 15px;
     padding-right: 15px;
     padding-left: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    }
-    
-    .titulo-btnfavorito button:hover {
-        background-color: #ff1f56;
-    }
-    
-    
-    .favorite-btn {
-        background-color: #ff4081;
-        color: white;
-    }
-    
-    .not-favorite-btn {
-        background-color: gray;
-        color: white;
-    }
-    
-    
-    
+}
+
+
+.titulo-btnfavorito button:hover {
+    background-color: #ff1f56;
+}
+
+
+.favorite-btn {
+    background-color: #ff4081;
+    color: white;
+}
+
+.not-favorite-btn {
+    background-color: rgb(176, 175, 175);
+    color: white;
+}
+
+.btn-accede {
+    background: linear-gradient(45deg, #ae00ff, #ff2992);
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn-accede:hover {
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
+    transform: translateY(-2px);
+}
+
+/* PAGINACIÓN */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border-top: 2px solid #ffffff;
+}
+
+.btnPaginacion {
+    background: linear-gradient(to right, #ae00ff, #ff2992);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btnPaginacion:hover:not(:disabled) {
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
+    transform: scale(1.1);
+}
+
+.btnPaginacion:disabled {
+    background: #dddddd;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.pagina-actual {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0b010f;
+}

@@ -9,12 +9,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { TarjetaEventoComponent } from '../eventos/tarjeta-evento/tarjeta-evento.component';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-locales',
   standalone: true,
   imports: [
-    CommonModule, RouterModule, 
-    NgxPaginationModule, MatIconModule, TarjetaEventoComponent, TranslateModule, FormsModule
+    CommonModule, RouterModule, NgxPaginationModule,
+    MatIconModule, TarjetaEventoComponent,
+    TranslateModule, FormsModule
   ],
   templateUrl: './locales.component.html',
   styleUrls: ['./locales.component.css']
@@ -29,28 +31,28 @@ export class LocalesComponent implements OnInit {
   previousLabel: string = '';
   nextLabel: string = '';
 
-  constructor(private localService: LocalService, private router: Router,   private route: ActivatedRoute, private translate: TranslateService) {}
+  constructor(private localService: LocalService, private router: Router, private route: ActivatedRoute, private translate: TranslateService) { }
 
   ngOnInit() {
     this.localService.getLocales().subscribe((data) => {
       this.locals = data;
       // Inicializa los índices de las imágenes en 0 para cada local
       this.imageIndexes = new Array(data.length).fill(0);
-      
+
       // Obtener las categorías únicas
       this.extractCategories();
-      
+
       // Inicializar el listado filtrado
       this.filteredLocals = this.locals;
 
-        // Leer la categoría desde los parámetros de URL
+      // Leer la categoría desde los parámetros de URL
       this.route.queryParams.subscribe(params => {
-      const categoriaParam = params['categoria'];
-      if (categoriaParam) {
-        this.selectedCategory = categoriaParam;
-        this.filterByCategory(); // Aplicar filtro directamente
-      }
-    });
+        const categoriaParam = params['categoria'];
+        if (categoriaParam) {
+          this.selectedCategory = categoriaParam;
+          this.filterByCategory(); // Aplicar filtro directamente
+        }
+      });
     });
 
     this.setPaginationLabels();
@@ -77,13 +79,13 @@ export class LocalesComponent implements OnInit {
   // Función para aplicar el filtro de categoría
   filterByCategory() {
     if (this.selectedCategory) {
-      this.filteredLocals = this.locals.filter(local => 
+      this.filteredLocals = this.locals.filter(local =>
         local.extraData.categories.some(c => c.categoria === this.selectedCategory)
       );
     } else {
       this.filteredLocals = this.locals;  // Si no hay categoría seleccionada, mostrar todos
     }
-    this.page= 1; //Situamos la paginacion al comienzo si no puede dar problemas en el caso de que se encuentre en un indice que no existe al cambiar de una categoria a otra .
+    this.page = 1; //Situamos la paginacion al comienzo si no puede dar problemas en el caso de que se encuentre en un indice que no existe al cambiar de una categoria a otra .
 
   }
 
@@ -109,15 +111,15 @@ export class LocalesComponent implements OnInit {
       this.imageIndexes[index]++;
     }
   }
-  
+
   agregarFav(local: Local) {
     const userData = JSON.parse(localStorage.getItem('usuarioLogueado') || '{}'); // Obtener datos del usuario
-    
+
     if (userData && userData.id) {
       if (!userData.favoritos) {
         userData.favoritos = [];  // Crear la lista de favoritos si no existe
       }
-  
+
       // Comprobar si el lugar ya está en los favoritos
       if (userData.favoritos.includes(local.id)) {
         // Si el local ya está en los favoritos, eliminarlo
@@ -128,7 +130,7 @@ export class LocalesComponent implements OnInit {
         userData.favoritos.push(local.id);
         console.log(`Local ${local.id} añadido a favoritos`);
       }
-      
+
       localStorage.setItem('usuarioLogueado', JSON.stringify(userData)); // Guardar el usuario actualizado
     } else {
       console.log('No se encontró usuario en el almacenamiento local');
@@ -140,6 +142,18 @@ export class LocalesComponent implements OnInit {
     return userData && userData.favoritos ? userData.favoritos.includes(local.id) : false;
   }
 
+  goToPreviousPage(): void {
+    if (this.page > 1) {
+      this.page--;
+    }
+  }
+
+  goToNextPage(): void {
+    const totalPages = Math.ceil(this.filteredLocals.length / 3);
+    if (this.page < totalPages) {
+      this.page++;
+    }
+  }
 
 
 }

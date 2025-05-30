@@ -48,6 +48,13 @@
       "password": "3",
       "email": "",
       "favoritos": []
+    },
+    {
+      "id": 8,
+      "username": "leire",
+      "password": "1234",
+      "email": "",
+      "favoritos": []
     }
   ]
 }

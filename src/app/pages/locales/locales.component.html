@@ -44,14 +44,14 @@
                     <div class="titulo-btnfavorito">
 
                         <h2>{{ local.basicData.title }}</h2>
-                        <button (click)="agregarFav(local)" [ngClass]="isFavorite(local) ? 'favorite-btn' : 'not-favorite-btn'">
+                        <button (click)="agregarFav(local)"
+                            [ngClass]="isFavorite(local) ? 'favorite-btn' : 'not-favorite-btn'">
                             <mat-icon>favorite</mat-icon>
-                          </button>
-                          
+                        </button>
+
                     </div>
                     <p [innerHTML]="limitarPalabrasInfoLocal(local.basicData.body, 30)"></p>
                     <p><strong>{{"ubicacion" | translate}}:</strong> {{ local.geoData.address }}</p>
-
                     <!-- Categorías separadas por " - " -->
                     <p>
                         <strong>{{"categoria" | translate}}:</strong>
@@ -59,19 +59,19 @@
                             {{ c.categoria }}<span *ngIf="!last"> - </span>
                         </span>
                     </p>
-
-                    <button (click)="selectLocal(local)">{{"accede" | translate}}</button>
+                    <button class="btn-accede" (click)="selectLocal(local)">{{"accede" | translate}}</button>
                 </div>
             </div>
-            <pagination-controls
-  [previousLabel]="previousLabel"
-  [nextLabel]="nextLabel"
-  (pageChange)="page = $event"
-  class="pagination-controls">
-</pagination-controls>
+            <div class="paginacion" *ngIf="filteredLocals.length > 5">
+                <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
+                    <mat-icon>navigate_before</mat-icon>
+                </button>
+                <span class="pagina-actual">Página {{ page }}</span>
+                <button class="btnPaginacion" mat-fab (click)="goToNextPage()"
+                    [disabled]="(page * 5) >= filteredLocals.length">
+                    <mat-icon>navigate_next</mat-icon>
+                </button>
+            </div>
         </main>
-
     </div>
-
-
 </section>

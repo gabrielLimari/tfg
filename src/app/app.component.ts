@@ -39,7 +39,12 @@ export class AppComponent {
   ngOnInit() {
       // Al iniciar, carga el usuario desde el servicio (localStorage)
       this.usuarioLogueado = this.authService.getUsuarioLogeado();
-    }
+
+      this.router.events.subscribe(() => {
+        this.usuarioLogueado = this.authService.getUsuarioLogeado();
+        // Actualiza la variable usuarioLogueado cada vez que cambie la ruta
+    });
+  }
 
   idiomasVisible: boolean = false;
   mitranslate: TranslateService = inject(TranslateService);

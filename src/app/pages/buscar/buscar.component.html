@@ -2,14 +2,8 @@
 <section class="search-container">
   <label for="search-input" class="search-label">Buscar Locales</label>
   <div class="search-input">
-    <input
-      id="search-input"
-      type="text"
-      [(ngModel)]="searchQuery"
-      (input)="buscarLocales()"
-      placeholder="Nombre, dirección o categoría"
-      class="custom-input"
-    />
+    <input id="search-input" type="text" [(ngModel)]="searchQuery" (input)="buscarLocales()"
+      placeholder="Nombre, dirección o categoría" class="custom-input" />
     <button class="search-button" (click)="buscarLocales()">
       <mat-icon>search</mat-icon>
     </button>
@@ -34,9 +28,9 @@
   <button class="btnPaginacion" mat-fab (click)="goToPreviousPage()" [disabled]="page <= 1">
     <mat-icon>navigate_before</mat-icon>
   </button>
-  
+
   <span class="pagina-actual">Página {{ page }}</span>
-  
+
   <button class="btnPaginacion" mat-fab (click)="goToNextPage()" [disabled]="(page * 3) >= filteredLocals.length">
     <mat-icon>navigate_next</mat-icon>
   </button>

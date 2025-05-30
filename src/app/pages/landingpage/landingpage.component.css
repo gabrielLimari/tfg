@@ -39,7 +39,7 @@
 }
 
 .landingpage-content h1 {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bold;
 }
 
@@ -64,7 +64,7 @@ button {
 
 /* Efecto Hover */
 button:hover {
-    background: rgb(200, 0, 70);
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
     transform: scale(1.05);
 }
 
